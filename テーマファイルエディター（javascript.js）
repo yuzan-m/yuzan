@@ -99,6 +99,37 @@ jQuery(function($) {
     yuzanCustomizeMenu();
   });
 
+	// --- 波紋の色をカテゴリに合わせて設定する処理 ---
+  function yuzanApplyRippleColors() {
+    // 通常のカード、最新記事、ランキングのすべてを対象にする
+    var cards = document.querySelectorAll('.entry-card-wrap, .new-entry-card-link, .popular-entry-card-link');
+    
+    cards.forEach(function(card) {
+      // カテゴリラベルを探索（通常、最新、ランキングそれぞれのクラス名に対応）
+      var catLabel = card.querySelector('.cat-label, .new-entry-card-category, .popular-entry-card-category');
+      
+      if (catLabel) {
+        var catText = catLabel.textContent.trim();
+        var rippleColor = '149, 165, 166'; // デフォルト：グレー
+
+        if (catText === '渓流釣り') {
+          rippleColor = '0, 150, 255'; // 青
+        } else if (catText === 'キャンプ') {
+          rippleColor = '255, 120, 0'; // オレンジ
+        } else if (catText === '登山') {
+          rippleColor = '0, 210, 100'; // 緑
+        }
+        
+        // カードに色情報をセット
+        card.style.setProperty('--cat-ripple-color', rippleColor);
+      }
+    });
+  }
+
+  // 即時実行と、ページ読み込み完了時の両方で実行
+  yuzanApplyRippleColors();
+  $(window).on('load', yuzanApplyRippleColors);
+	
 });
 
 //このJavaScriptファイルは、親テーマのJavaScriptファイルのあとに呼び出されます。
