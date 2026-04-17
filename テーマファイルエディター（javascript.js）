@@ -1,0 +1,105 @@
+//ここに追加したいJavaScript、jQueryを記入してください。
+//
+//// =============================
+// YUZAN Mobile Menu Customizer
+// =============================
+// Cocoonのスマホスライドインメニューを改造するスクリプト
+// 設置場所: Cocoon Child の javascript.js
+
+jQuery(function($) {
+
+  // --- メニュー改造のメイン処理 ---
+  function yuzanCustomizeMenu() {
+
+    var menuDrawer = document.querySelector('.menu-drawer');
+    if (!menuDrawer) return false; // メニューが見つからなければ中断
+
+    // 既に改造済みなら何もしない（二重実行防止）
+    if (menuDrawer.getAttribute('data-yuzan-customized') === 'true') return true;
+
+    // =====================
+    // 1. 見出しのリンク無効化（<a> → <span> に置換）
+    // =====================
+    var headerTexts = ['CATEGORY', 'TAG', 'SEARCH'];
+    var topLinks = menuDrawer.querySelectorAll(':scope > li > a');
+
+    topLinks.forEach(function(link) {
+      var text = link.textContent.trim();
+      if (headerTexts.indexOf(text) !== -1) {
+        var span = document.createElement('span');
+        span.className = 'yuzan-menu-header';
+        span.textContent = text;
+        link.parentNode.replaceChild(span, link);
+      }
+    });
+
+    // =====================
+    // 2. TAGの下にタグリストを挿入（絶対表示版）
+    // =====================
+    var tagMenuItem = document.querySelector('#menu-item-146');
+    if (tagMenuItem && !tagMenuItem.querySelector('.yuzan-menu-tag-list')) {
+      var tagListDiv = document.createElement('div');
+      tagListDiv.className = 'yuzan-menu-tag-list';
+
+      // 表示したいタグの名前とURLをここに直接書く（これで全ページで確実に出ます！）
+      var myTags = [
+        { name: 'リール', url: '/tag/リール/' },
+        { name: 'ロッド', url: '/tag/ロッド/' },
+        { name: 'トレイルラン', url: '/tag/トレイルラン/' },
+        { name: '登山', url: '/tag/登山/' },
+        { name: 'キャンプ', url: '/tag/キャンプ/' },
+        { name: '渓流釣り', url: '/tag/渓流釣り/' }
+      ];
+
+      myTags.forEach(function(tag) {
+        var clone = document.createElement('a');
+        clone.href = tag.url;
+        clone.className = 'yuzan-cloned-tag';
+        clone.textContent = tag.name;
+        tagListDiv.appendChild(clone);
+      });
+      
+      tagMenuItem.appendChild(tagListDiv);
+    }
+
+    // =====================
+    // 3. SEARCHの下に検索窓を挿入
+    // =====================
+    var searchMenuItem = document.querySelector('#menu-item-147');
+    if (searchMenuItem && !searchMenuItem.querySelector('.yuzan-menu-search-box')) {
+      var searchDiv = document.createElement('div');
+      searchDiv.className = 'yuzan-menu-search-box';
+      searchDiv.innerHTML =
+        '<form role="search" method="get" class="search-form" action="/">' +
+          '<input type="search" class="search-field" placeholder="記事を検索..." value="" name="s">' +
+          '<button type="submit" class="search-submit">' +
+            '<span class="fa fa-search"></span>' +
+          '</button>' +
+        '</form>';
+      searchMenuItem.appendChild(searchDiv);
+    }
+
+    // 改造完了マーカーを設定
+    menuDrawer.setAttribute('data-yuzan-customized', 'true');
+    return true;
+  }
+
+  // --- 実行タイミングの制御 ---
+  // Cocoonのコアスクリプトの後に実行されるため、DOMは確実に存在する
+  // ただし念のため、複数のタイミングで試行する
+
+  // 試行1: 即時実行
+  if (!yuzanCustomizeMenu()) {
+    // 試行2: 少し待ってから実行
+    setTimeout(yuzanCustomizeMenu, 500);
+  }
+
+  // 試行3: ページ完全読み込み後
+  $(window).on('load', function() {
+    yuzanCustomizeMenu();
+  });
+
+});
+
+//このJavaScriptファイルは、親テーマのJavaScriptファイルのあとに呼び出されます。
+//JavaScriptやjQueryで親テーマのjavascript.jsに加えて関数を記入したい時に使用します。
