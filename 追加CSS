@@ -170,7 +170,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
   .mobile-menu-buttons .menu-button .menu-text, .mobile-menu-button .menu-text { display: none !important; }
 
   .yuzan-marquee-wrapper { padding: 0 0 10px 0 !important; }
-  .marquee-text span { font-size: 4rem !important; padding-right: 30px; }
+  .marquee-text span { font-size: 4rem !important; padding-right: 30px !important; }
 
   /* ▼ 修正：画面幅（vw）を基準にしてバーとリストの横幅・配置を完全に一致させる！ ▼ */
   .yuzan-results-bar { 
@@ -180,7 +180,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     padding: 15px 20px !important; 
     margin-top: 60px !important;
     margin-bottom: 0 !important;
-    margin-left: calc(50% - 47.5vw) !important; /* 画面中央に強制配置 */
+    margin-left: calc(50% - 47.5vw) !important;
     margin-right: calc(50% - 47.5vw) !important;
     box-sizing: border-box !important;
   }
@@ -190,9 +190,9 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     padding: 15px !important; 
     width: 95vw !important; 
     max-width: 95vw !important; 
-    margin-top: -2px !important; /* 隙間を埋める */
+    margin-top: -2px !important;
     margin-bottom: 60px !important;
-    margin-left: calc(50% - 47.5vw) !important; /* バーと同じ配置！ */
+    margin-left: calc(50% - 47.5vw) !important;
     margin-right: calc(50% - 47.5vw) !important;
     box-sizing: border-box !important;
   }
@@ -202,11 +202,11 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
 }
 
 /* =============================
-   19. YUZAN Mobile Menu (最終決定版：背景ブラックアウト＆×ボタン完全保護)
+   19. YUZAN Mobile Menu (完成版)
    ============================= */
 @media screen and (max-width: 768px) {
   
-  /* ▼ 親コンテナを確実に真っ黒にする ▼ */
+  /* 親コンテナを確実に真っ黒にする */
   #navi-menu-content, .navi-menu-content, 
   #navi-mobile, .menu-drawer, .slide-in {
     background-color: #1a1a1a !important;
@@ -220,9 +220,9 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     border-color: #333333 !important;
   }
 
-  /* ▼ 閉じるボタン（×）を画面右上に【完全固定】 ▼ */
+  /* 閉じるボタン（×）を画面右上に完全固定 */
   .navi-menu-close-button, .close-button, #navi-menu-close-button {
-    position: fixed !important; /* absoluteからfixedに変更し画面基準で固定 */
+    position: fixed !important;
     top: 15px !important;
     right: 15px !important;
     background-color: rgba(26, 26, 26, 0.8) !important;
@@ -233,7 +233,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    z-index: 999999 !important; /* 最前面へ */
+    z-index: 999999 !important;
     border: none !important;
     font-size: 24px !important;
   }
@@ -252,7 +252,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     border-bottom: 1px solid #2a2a2a !important;
   }
 
-  /* ▼ 1. 置換された見出し（span）のデザイン ▼ */
+  /* 1. 置換された見出し（span）のデザイン */
   span.yuzan-menu-header {
     font-family: 'Arial Black', 'Impact', sans-serif !important;
     font-size: 1.6rem !important;
@@ -265,7 +265,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     cursor: default !important;
   }
 
-  /* ▼ 2. TAGセクション：自動コピーされた黒いボタン ▼ */
+  /* 2. TAGセクション：自動コピーされた黒いボタン */
   .yuzan-menu-tag-list {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -282,6 +282,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     margin: 0 !important;
     border: none !important;
     display: inline-block !important;
+    text-decoration: none !important;
   }
   .yuzan-menu-tag-list a.yuzan-cloned-tag::before {
     content: "\f02b"; 
@@ -298,34 +299,66 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
   }
   .yuzan-menu-search-box .search-form {
     display: flex !important;
-    background-color: #333333 !important;
-    border-radius: 8px !important;
-    padding: 5px 5px 5px 15px !important;
+    position: relative !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
-  .yuzan-menu-search-box input {
+  
+  /* ▼ 入力窓のデザイン ▼ */
+  .yuzan-menu-search-box input.search-field {
     flex-grow: 1 !important;
-    background: transparent !important;
+    background-color: #333333 !important;
     border: none !important;
     color: #ffffff !important;
     font-size: 1rem !important;
+    padding: 0 15px !important;
+    height: 40px !important; /* ボタンと高さをキッチリ合わせる */
+    border-radius: 4px !important;
     outline: none !important;
-    height: 35px !important;
+    margin: 0 10px 0 0 !important; /* 右のボタンとの隙間 */
     box-shadow: none !important;
+    -webkit-appearance: none !important;
+  }
+  .yuzan-menu-search-box input.search-field::-webkit-search-decoration,
+  .yuzan-menu-search-box input.search-field::-webkit-search-cancel-button {
+    display: none !important;
   }
   .yuzan-menu-search-box input::placeholder {
     color: #888888 !important;
   }
-  .yuzan-menu-search-box button {
+
+  /* ▼ 送信ボタン本体 ▼ */
+  .yuzan-menu-search-box button.search-submit {
+    position: relative !important; /* 絶対配置の呪縛を強制解除 */
+    top: auto !important; right: auto !important; bottom: auto !important; left: auto !important;
     background-color: #555555 !important;
     color: #ffffff !important;
     border: none !important;
     width: 45px !important;
-    height: 35px !important;
+    min-width: 45px !important; /* 潰れないように固定 */
+    height: 40px !important; /* 入力窓と高さをキッチリ合わせる */
     border-radius: 4px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1.2rem !important;
     cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important; /* ズレを解除 */
   }
-}
+
+  /* ▼ 暴走するCocoonの虫眼鏡を「透明人間」にして消す！ ▼ */
+  .yuzan-menu-search-box button.search-submit span,
+  .yuzan-menu-search-box button.search-submit i {
+    display: none !important; 
+  }
+
+  /* ▼ 代わりにCSSで安全な「新しい虫眼鏡」を描画する！ ▼ */
+  .yuzan-menu-search-box button.search-submit::after {
+    content: "\f002" !important; /* FontAwesomeの虫眼鏡アイコン */
+    font-family: "FontAwesome" !important;
+    font-size: 1.2rem !important;
+    color: #ffffff !important;
+    display: block !important;
+  }
