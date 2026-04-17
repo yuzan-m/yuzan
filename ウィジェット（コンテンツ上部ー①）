@@ -1,0 +1,38 @@
+<div class="fv-video-wrapper">
+  <video class="video-pc" src="https://yuzan-life.com/wp-content/uploads/2026/04/firstview_yuzan_PC.mp4" autoplay loop muted playsinline></video>
+  <video class="video-sp" src="https://yuzan-life.com/wp-content/uploads/2026/04/firstview_yuzan.mp4" autoplay loop muted playsinline></video>
+</div>
+
+<div class="yuzan-marquee-wrapper">
+  <div class="yuzan-marquee-content">
+    <div class="marquee-text">
+      <span>YUZAN STREAM FISHING CAMP HIKING CHILL</span>
+      <span>YUZAN STREAM FISHING CAMP HIKING CHILL</span>
+    </div>
+    <div class="marquee-text">
+      <span>YUZAN STREAM FISHING CAMP HIKING CHILL</span>
+      <span>YUZAN STREAM FISHING CAMP HIKING CHILL</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="yuzan-content-title">NEW ARTICLE</h2>
+
+<div class="yuzan-latest-post">
+  [new_list count=1]
+</div>
+
+<hr class="yuzan-divider">
+
+<h2 class="yuzan-content-title">CATEGORY</h2>
+
+<div class="category-banners">
+  <a href="/category/fishing/"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/STREAM-FISHING.png" alt="渓流釣り"></a>
+  <a href="/category/camp/"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/CAMP.png" alt="キャンプ"></a>
+  <a href="/category/hiking/"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/HIKING.png" alt="登山"></a>
+  <a href="/category/chill/"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/OTHER（CHILL）.png" alt="その他（山チル系）"></a>
+</div>
+
+<hr class="yuzan-divider">
+
+<h2 class="yuzan-content-title">TAG</h2>
