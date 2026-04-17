@@ -838,3 +838,90 @@ body:not(.home) .yuzan-tag-spacer,
 body:not(.home) .yuzan-results-bar {
   display: none !important;
 }
+
+/* =============================
+   記事ページ（個別投稿）のレイアウト＆デザイン変更
+   ============================= */
+
+/* 1. タイトルとアイキャッチ画像の順番を入れ替える */
+.article-header {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.article-header .eye-catch {
+  order: 1 !important; /* アイキャッチ画像を1番上へ */
+  margin-bottom: 20px !important;
+}
+.article-header .entry-title {
+  order: 2 !important; /* タイトルを2番目へ */
+  margin-top: 10px !important;
+}
+.article-header .date-tags,
+.article-header .post-meta {
+  order: 3 !important; /* 日付やタグを3番目へ */
+}
+
+/* 2. アイキャッチ左上のカテゴリラベルをトップページ風の黒カプセルに */
+.article-header .eye-catch .cat-label {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 4px 16px !important;
+  border-radius: 30px !important;
+  font-size: 0.8rem !important;
+  font-family: 'Courier New', Consolas, monospace !important;
+  font-weight: bold !important;
+  top: 10px !important;
+  left: 10px !important;
+  border: none !important;
+}
+
+/* =============================
+   記事ページのカテゴリ・タグを「黒カプセル」に統一＆中央揃え
+   ============================= */
+
+/* カテゴリとタグのリンク本体 */
+.entry-categories a,
+.entry-tags a,
+.cat-link,
+.tag-link {
+  background-color: #1a1a1a !important; /* 黒背景 */
+  color: #ffffff !important; /* 白文字 */
+  border: none !important;
+  border-radius: 30px !important; /* 綺麗なカプセル型に */
+  
+  /* ▼ ここが文字を完璧に「上下中央」に揃える魔法 ▼ */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important; /* 余計な行高を消す */
+  
+  padding: 6px 14px !important; /* 上下左右の余白バランス */
+  margin: 0 6px 8px 0 !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+/* マウスを乗せた時の動き */
+.entry-categories a:hover,
+.entry-tags a:hover,
+.cat-link:hover,
+.tag-link:hover {
+  opacity: 0.7 !important;
+  color: #ffffff !important;
+}
+
+/* 左側に付いているアイコン（タグマークなど）の調整 */
+.entry-categories a .fa,
+.entry-tags a .fa,
+.cat-link .fa,
+.tag-link .fa,
+.entry-categories a span,
+.entry-tags a span {
+  color: #ffffff !important; /* アイコンも白に統一 */
+  margin-right: 5px !important; /* 文字との間に少しだけ余白を作る */
+  font-size: 0.85rem !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+}
