@@ -1,5 +1,5 @@
 /* =============================
-   YUZAN Urban Outdoor Base Style
+   YUZAN Urban Outdoor Base Style (究極版・ブラッシュアップ)
    ============================= */
 
 /* 1. Remove border-radius globally */
@@ -149,6 +149,13 @@ hr.yuzan-divider {
   max-width: calc(100% - 40px); 
 }
 
+/* ▼ タグとARTICLE LISTの間の余白 ▼ */
+.yuzan-tag-spacer {
+  height: 60px; /* PC版の余白（広げたい時はここを大きくする） */
+  width: 100%;
+  display: block;
+}
+
 /* PC用バー (ARTICLE LIST) */
 .yuzan-results-bar {
   margin-top: 0px !important; 
@@ -177,8 +184,16 @@ hr.yuzan-divider {
 /* =============================
    13. タグクラウド
    ============================= */
-.widget_tag_cloud .widget-title, .widget_tag_cloud h3, .wp-block-tag-cloud h2 { display: none !important; }
-body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-bottom: 0 !important; padding: 0 !important; }
+.widget_tag_cloud .widget-title, .widget_tag_cloud h3, .wp-block-tag-cloud h2 { 
+  display: none !important;
+}
+
+.widget_tag_cloud,
+body .home #content .tagcloud, 
+body .home #content .wp-block-tag-cloud { 
+  margin-bottom: 50px !important; 
+  padding: 0 !important;
+}
 
 /* =============================
    14. カテゴリバナー
@@ -343,8 +358,20 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
   border-bottom: none !important; 
 }
 
+/* ▼ RANKING・NEW ARTICLE内の下余白調整 ▼ */
+.yuzan-ranking-list .widget-entry-cards,
+.yuzan-latest-post .widget-entry-cards {
+  margin-bottom: 0 !important;
+}
+.yuzan-ranking-list .a-wrap:last-child,
+.yuzan-latest-post .a-wrap:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
 /* =============================
-   17. YUZAN Marquee (流れる巨大テキスト)
+   17. YUZAN Marquee 
    ============================= */
 .yuzan-marquee-wrapper { 
   width: 100vw; 
@@ -441,6 +468,11 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
   .yuzan-marquee-wrapper { padding: 0 0 10px 0 !important; }
   .marquee-text span { font-size: 4rem !important; padding-right: 30px !important; }
 
+	/* ▼ スマホ版：タグとARTICLE LISTの間の余白 ▼ */
+  .yuzan-tag-spacer {
+    height: 40px !important; /* スマホ版の余白 */
+  }
+	
   /* 画面幅（vw）を基準にしてバーとリストの横幅を完全に一致させる */
   .yuzan-results-bar { 
     width: 95vw !important; 
@@ -476,6 +508,13 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     margin-left: auto !important;
     margin-right: auto !important;
   }
+	
+	/* ▼ スマホ版：タグクラウドの下の余白 ▼ */
+  body .home #content .tagcloud, 
+  body .home #content .wp-block-tag-cloud {
+    margin-bottom: 40px !important; 
+  }
+	
   .category-banners { gap: 10px; padding: 0 15px; }
 }
 
