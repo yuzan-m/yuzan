@@ -35,4 +35,12 @@
 
 <hr class="yuzan-divider">
 
+<h2 class="yuzan-content-title">RANKING</h2>
+<div class="yuzan-results-bar yuzan-ranking-bar">RANKING TOP 3</div>
+<div class="yuzan-ranking-list">
+  [popular_list count=3]
+</div>
+
+<hr class="yuzan-divider">
+
 <h2 class="yuzan-content-title">TAG</h2>
