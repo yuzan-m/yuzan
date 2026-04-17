@@ -195,6 +195,21 @@ body .home #content .wp-block-tag-cloud {
   padding: 0 !important;
 }
 
+/* --- タグの見た目を黒いカプセル型に固定 --- */
+.tagcloud a, .wp-block-tag-cloud a {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2px 14px !important;
+  margin: 5px !important;
+  font-size: 0.8rem !important;
+  text-decoration: none !important;
+}
+
 /* =============================
    14. カテゴリバナー
    ============================= */
@@ -666,4 +681,37 @@ body .home #content .wp-block-tag-cloud {
     color: #ffffff !important; 
     display: block !important; 
   }
+}
+
+/* =============================
+   ランキング順位（数字）のデザイン
+   ============================= */
+
+/* 数字の箱のデザイン */
+.yuzan-ranking-list .rank-label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: 10px !important;    /* 画像の左上に配置 */
+  left: 10px !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: rgba(26, 26, 26, 0.9) !important; /* 濃い黒 */
+  color: #ffffff !important;
+  font-family: 'Arial Black', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  z-index: 20 !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ランキングの画像と数字が被りすぎないよう調整 */
+.yuzan-ranking-list .popular-entry-card-thumb {
+  position: relative !important;
+}
+
+/* カテゴリラベルと重なる場合はカテゴリを少し右にずらす */
+.yuzan-ranking-list .popular-entry-card-category {
+  left: 40px !important; /* 数字の幅＋余白分ずらす */
 }
