@@ -1,0 +1,627 @@
+/* =============================
+   YUZAN Urban Outdoor Base Style (究極版・ブラッシュアップ)
+   ============================= */
+
+/* 1. Remove border-radius globally */
+* { border-radius: 0 !important; }
+
+/* 2. Base colors */
+body { color: #1A1A1A; background-color: #F9F9F9; }
+
+/* 3. H2 Heading (記事内の見出し) */
+.article h2 { 
+  background: #1A1A1A; 
+  color: #FFFFFF; 
+  padding: 16px 20px; 
+  margin: 50px 0 30px; 
+  border: none; 
+  border-left: 8px solid #556B2F; 
+}
+
+/* 4. H3 Heading (記事内の小見出し) */
+.article h3 { 
+  font-size: 1.2rem; 
+  color: #1A1A1A; 
+  border-top: none; 
+  border-right: none; 
+  border-left: none; 
+  border-bottom: 2px solid #1A1A1A; 
+  padding-bottom: 8px; 
+  margin: 40px 0 20px; 
+  position: relative; 
+}
+.article h3::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -2px; 
+  left: 0; 
+  width: 50px; 
+  height: 2px; 
+  background: #4682B4; 
+}
+
+/* 5. Anchor links */
+a { transition: color 0.3s ease; } 
+a:hover { color: #B05B3B; }
+
+/* 6. Top navigation */
+#navi .navi-in a { font-weight: bold; color: #1A1A1A; } 
+#navi .navi-in a:hover { background-color: #1A1A1A; color: #FFFFFF; }
+
+/* 7 & 8. 固定ページ非表示 */
+.page .date-tags, .page .author-info { display: none !important; }
+
+/* 9. アピールエリア非表示 */
+.appeal-in .appeal-content { display: none !important; }
+
+/* =============================
+   10. YUZAN Video First View
+   ============================= */
+.fv-video-wrapper { 
+  width: 100vw; 
+  margin-left: calc(50% - 50vw); 
+  position: relative; 
+  overflow: hidden; 
+  margin-bottom: 0 !important; 
+  background-color: #1A1A1A; 
+  z-index: 10 !important; 
+}
+.fv-video-wrapper video { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center center; 
+}
+@media screen and (min-width: 769px) { 
+  .fv-video-wrapper { height: auto; aspect-ratio: 16 / 9; } 
+  .video-pc { display: block; } 
+  .video-sp { display: none; } 
+}
+@media screen and (max-width: 768px) { 
+  .fv-video-wrapper { height: auto; aspect-ratio: 1 / 1; } 
+  .video-pc { display: none; } 
+  .video-sp { display: block; } 
+}
+
+/* =============================
+   11. Header Refinement (PC)
+   ============================= */
+.header-container .header-in { 
+  max-width: 100% !important; 
+  width: 100% !important; 
+  padding: 0 20px !important; 
+  display: flex !important; 
+  align-items: center !important; 
+}
+.logo-header { 
+  margin-right: auto !important; 
+  margin-left: 0 !important; 
+  padding: 0 !important; 
+}
+.header-container, .navi, .navi-in, #content, #content-in, .content-top, .widget-area, .widget, .widget_custom_html { 
+  margin-top: 0 !important; 
+  margin-bottom: 0 !important; 
+  padding-top: 0 !important; 
+  padding-bottom: 0 !important; 
+  border: none !important; 
+}
+
+@media screen and (min-width: 769px) {
+  .navi { flex-grow: 1 !important; width: 100% !important; } 
+  .navi-in > ul { display: flex !important; width: 100% !important; } 
+  .navi-in > ul > li { flex: 1 1 0 !important; }
+  .navi-in > ul > li > a { 
+    white-space: nowrap !important; 
+    overflow: visible !important; 
+    text-overflow: clip !important; 
+    border-left: 1px solid rgba(26, 26, 26, 0.2) !important; 
+    padding: 0 !important; 
+    display: flex !important; 
+    justify-content: center !important; 
+    font-weight: bold; 
+  }
+  .navi-in > ul > li:last-child > a { border-right: 1px solid rgba(26, 26, 26, 0.2) !important; }
+}
+
+#navi-mobile, .mobile-menu { z-index: 100000 !important; }
+
+/* =============================
+   12. YUZAN Original Layout Elements 
+   ============================= */
+.view-count, .post-update, .fa-folder, .fa-clock-o, .fa-tags, .entry-card-snippet, .admin-pv, .pv-area, .pt-count { display: none !important; }
+.home #main > .entry-cards > .entry-card-wrap:first-child, .home #main > .list > .entry-card-wrap:first-child { display: none !important; }
+
+/* ▼ 見出しサイズ変更（少し大きく） ▼ */
+h2.yuzan-content-title { 
+  font-size: 2.0rem !important; 
+  font-weight: 900 !important; 
+  font-family: 'Arial Black', 'Impact', sans-serif !important; 
+  color: #1a1a1a !important; 
+  text-transform: uppercase; 
+  letter-spacing: 2px !important; 
+  text-align: center !important; 
+  margin: 60px auto 60px auto !important; 
+}
+hr.yuzan-divider { 
+  border: none !important; 
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important; 
+  margin: 0 auto !important; 
+  max-width: calc(100% - 40px); 
+}
+
+/* PC用バー (ARTICLE LIST) */
+.yuzan-results-bar {
+  margin-top: 0px !important; 
+  background-color: #555555 !important; 
+  color: #ffffff !important; 
+  padding: 12px 30px !important; 
+  font-size: 0.9rem !important; 
+  font-family: 'Courier New', Consolas, monospace !important; 
+  font-weight: bold !important; 
+  text-align: left !important; 
+  border-radius: 8px 8px 0 0 !important; 
+  width: 100% !important; 
+  max-width: calc(100% - 40px) !important; 
+  margin-left: auto !important; 
+  margin-right: auto !important; 
+  margin-bottom: 0 !important; 
+  box-sizing: border-box !important;
+}
+
+/* ▼ 【新設】RANKING用バー (濃い黄色) ▼ */
+.yuzan-ranking-bar {
+  background-color: #B8860B !important; 
+  margin-top: 0px !important;
+}
+
+/* =============================
+   13. タグクラウド
+   ============================= */
+.widget_tag_cloud .widget-title, .widget_tag_cloud h3, .wp-block-tag-cloud h2 { display: none !important; }
+body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-bottom: 0 !important; padding: 0 !important; }
+
+/* =============================
+   14. カテゴリバナー
+   ============================= */
+.category-banners { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px; 
+  max-width: 1200px; 
+  margin: 0 auto 60px auto; 
+  padding: 0 20px; 
+}
+.category-banners a img { 
+  width: 100%; 
+  height: auto; 
+  aspect-ratio: 21 / 9; 
+  object-fit: cover; 
+  border-radius: 4px !important; 
+  transition: opacity 0.3s ease; 
+}
+.category-banners a:hover img { opacity: 0.7; }
+
+/* =============================
+   15. 記事カードデザイン (共通)
+   ============================= */
+.widget { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+
+/* 記事リスト・ランキング共通の背景 (薄いグレー) */
+.home #main > .list, .home #main > .entry-cards, .home #main > .list-main, .home #main > .ect-entry-card, .home #main .entry-cards.cards,
+.yuzan-ranking-list {
+  background-color: #F2F2F2 !important; 
+  padding: 30px !important; 
+  border-radius: 0 0 8px 8px !important; 
+  margin-bottom: 60px !important; 
+  margin-top: -2px !important; 
+  width: 100% !important; 
+  max-width: calc(100% - 40px) !important; 
+  margin-left: auto !important; 
+  margin-right: auto !important; 
+  box-sizing: border-box !important; 
+  position: relative; 
+  z-index: 1;
+}
+
+/* カード本体 */
+.entry-card-wrap.a-wrap {
+  display: flex !important; 
+  flex-direction: column !important; 
+  background: transparent !important; 
+  padding: 30px 0 !important; 
+  border-radius: 0 !important; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; 
+  box-shadow: none !important; 
+  margin-bottom: 0 !important; 
+  width: 100% !important; 
+  transition: transform 0.3s ease !important; 
+}
+.entry-card-wrap.a-wrap:hover { transform: translateY(-2px) !important; }
+.entry-card-content, .entry-card-meta { display: contents !important; }
+
+/* 波紋アニメーション & 日付表示設定 */
+.entry-card-wrap.a-wrap { --cat-ripple-color: 149, 165, 166; } 
+.entry-card-meta .post-date { 
+  order: 1 !important; 
+  font-size: 0.85rem !important; 
+  color: #333 !important; 
+  margin-bottom: 10px !important; 
+  display: flex !important; 
+  align-items: center !important; 
+  width: 100% !important; 
+}
+.entry-card-meta .post-date::before { 
+  content: ''; 
+  display: inline-block; 
+  width: 12px; 
+  height: 12px; 
+  border-radius: 50%; 
+  margin-right: 12px; 
+  background-color: rgb(var(--cat-ripple-color)); 
+  animation: yuzan-ripple 1.5s infinite ease-out; 
+}
+@keyframes yuzan-ripple { 
+  0% { box-shadow: 0 0 0 0 rgba(var(--cat-ripple-color), 0.7); } 
+  70% { box-shadow: 0 0 0 10px rgba(var(--cat-ripple-color), 0); } 
+  100% { box-shadow: 0 0 0 0 rgba(var(--cat-ripple-color), 0); } 
+}
+
+.entry-card-title { 
+  order: 2 !important; 
+  font-size: 1.3rem !important; 
+  font-weight: 900 !important; 
+  line-height: 1.5 !important; 
+  margin-bottom: 0 !important; 
+  text-align: left !important; 
+  color: #1a1a1a !important; 
+  display: -webkit-box !important; 
+  -webkit-box-orient: vertical !important; 
+  -webkit-line-clamp: 2 !important; 
+  overflow: hidden !important; 
+  height: 3.0em !important; 
+}
+
+.entry-card-thumb { 
+  order: 5 !important; 
+  margin-top: 40px !important; 
+  width: 100% !important; 
+  aspect-ratio: 16 / 9 !important; 
+  position: relative; 
+  overflow: visible !important; 
+  border-radius: 4px !important; 
+}
+.entry-card-thumb img { 
+  width: 100% !important; 
+  height: 100% !important; 
+  object-fit: cover !important; 
+  border-radius: 4px !important; 
+  transition: transform 0.4s ease !important; 
+}
+
+.entry-card-thumb .cat-label { 
+  display: inline-flex !important; 
+  align-items: center !important; 
+  justify-content: center !important; 
+  position: absolute !important; 
+  top: -32px !important; 
+  left: 0 !important; 
+  background-color: #1a1a1a !important; 
+  color: #fff !important; 
+  padding: 2px 14px !important; 
+  line-height: 1 !important; 
+  height: 24px !important; 
+  border-radius: 30px !important; 
+  font-size: 0.75rem !important; 
+  font-family: 'Courier New', Consolas, monospace !important; 
+  font-weight: bold !important; 
+  border: none !important; 
+  z-index: 10 !important; 
+}
+
+/* 2カラムレイアウト (PC版) */
+@media screen and (min-width: 769px) {
+  .home #main > .list, .home #main > .entry-cards, .yuzan-ranking-list { 
+    display: grid !important; 
+    grid-template-columns: repeat(2, 1fr) !important; 
+    column-gap: 30px !important; 
+    row-gap: 0 !important; 
+  }
+  .entry-card-wrap.a-wrap:hover .entry-card-thumb img { 
+    transform: scale(1.05) !important; 
+  }
+}
+
+/* =============================
+   16. 最新記事（NEW ARTICLE）用スタイル
+   ============================= */
+.yuzan-latest-post { padding: 0 20px; margin-bottom: 40px; }
+.yuzan-latest-post .entry-card-wrap.a-wrap { 
+  background-color: #F2F2F2 !important; 
+  padding: 30px !important; 
+  border-radius: 8px !important; 
+  margin-bottom: 0 !important; 
+  border-bottom: none !important; 
+}
+
+/* =============================
+   17. YUZAN Marquee (流れる巨大テキスト)
+   ============================= */
+.yuzan-marquee-wrapper { 
+  width: 100vw; 
+  margin-left: calc(50% - 50vw); 
+  overflow: hidden; 
+  background-color: transparent; 
+  padding: 0 0 20px 0 !important; 
+  display: flex; 
+}
+.yuzan-marquee-content { display: flex; width: max-content; }
+.marquee-text { display: flex; white-space: nowrap; animation: marquee-scroll 30s linear infinite; }
+.marquee-text span { 
+  font-size: 6.5rem !important; 
+  font-weight: 900; 
+  color: #1a1a1a; 
+  font-family: 'Arial Black', 'Impact', sans-serif; 
+  text-transform: uppercase; 
+  padding-right: 50px; 
+  line-height: 1; 
+}
+@keyframes marquee-scroll { 
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-100%); } 
+}
+
+/* =============================
+   18. スマホ最適化 ＆ 追従メニュー
+   ============================= */
+@media screen and (max-width: 768px) {
+  
+  html, body, #container, #content, #content-in, #main { padding-top: 0 !important; margin-top: 0 !important; }
+  
+  #header, .header-container { 
+    position: absolute !important; 
+    top: 0 !important; 
+    left: 0 !important; 
+    width: 100% !important; 
+    height: 0 !important; 
+    min-height: 0 !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+    background: transparent !important; 
+    border: none !important; 
+    box-shadow: none !important; 
+    z-index: 9999 !important; 
+  }
+
+  .mobile-menu-buttons .search-menu-button, 
+  .mobile-menu-buttons .logo-menu-button, 
+  .mobile-menu-buttons .home-menu-button, 
+  .mobile-menu-buttons .top-menu-button, 
+  .mobile-menu-buttons .sidebar-menu-button, 
+  .mobile-search-button, 
+  .search-button {
+    display: none !important; 
+    width: 0 !important; 
+    height: 0 !important; 
+    opacity: 0 !important; 
+    pointer-events: none !important;
+  }
+
+  .mobile-menu-buttons .menu-button, .mobile-menu-button {
+    display: block !important; 
+    position: fixed !important; 
+    top: 15px !important; 
+    right: 15px !important; 
+    left: auto !important; 
+    width: 50px !important; 
+    height: 50px !important; 
+    background-color: rgba(26, 26, 26, 0.8) !important; 
+    border-radius: 50% !important; 
+    z-index: 99999 !important; 
+    margin: 0 !important; 
+    padding: 0 !important; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important; 
+    font-size: 0 !important; 
+    color: transparent !important;
+  }
+  
+  .mobile-menu-buttons .menu-button span.fa, 
+  .mobile-menu-buttons .menu-button i, 
+  .mobile-menu-button span.fa, 
+  .mobile-menu-button i { 
+    color: #fff !important; 
+    font-size: 24px !important; 
+    position: absolute !important; 
+    top: 50% !important; 
+    left: 50% !important; 
+    transform: translate(-50%, -50%) !important; 
+    margin: 0 !important; 
+    padding: 0 !important; 
+  }
+  
+  .yuzan-marquee-wrapper { padding: 0 0 10px 0 !important; }
+  .marquee-text span { font-size: 4rem !important; padding-right: 30px !important; }
+
+  /* 画面幅（vw）を基準にしてバーとリストの横幅を完全に一致させる */
+  .yuzan-results-bar { 
+    width: 95vw !important; 
+    max-width: 95vw !important; 
+    font-size: 1.1rem !important; 
+    padding: 15px 20px !important; 
+    margin-top: 0px !important; 
+    margin-bottom: 0 !important; 
+    margin-left: calc(50% - 47.5vw) !important; 
+    margin-right: calc(50% - 47.5vw) !important; 
+    box-sizing: border-box !important;
+  }
+
+  /* 記事リスト・ランキングのスマホ幅調整 */
+  .home #main > .list, .home #main > .entry-cards, .yuzan-ranking-list {
+    display: flex !important; 
+    flex-direction: column !important; 
+    padding: 15px !important; 
+    width: 95vw !important; 
+    max-width: 95vw !important; 
+    margin-top: -2px !important; 
+    margin-bottom: 60px !important; 
+    margin-left: calc(50% - 47.5vw) !important; 
+    margin-right: calc(50% - 47.5vw) !important; 
+    box-sizing: border-box !important;
+  }
+  
+  /* スマホ版H2サイズ */
+  h2.yuzan-content-title { 
+    font-size: 1.5rem !important; 
+    margin: 50px auto !important; 
+  }
+  .category-banners { gap: 10px; padding: 0 15px; }
+}
+
+/* =============================
+   19. YUZAN Mobile Menu デザイン
+   ============================= */
+@media screen and (max-width: 768px) {
+  
+  /* 親コンテナを確実に真っ黒にする */
+  #navi-menu-content, .navi-menu-content, 
+  #navi-mobile, .menu-drawer, .slide-in { 
+    background-color: #1a1a1a !important; 
+    background-image: none !important; 
+  }
+  
+  /* メニュー内のリストの背景をリセット */
+  .navi-menu-content ul, .navi-menu-content li, 
+  #navi-mobile ul, #navi-mobile li { 
+    background-color: transparent !important; 
+    border-color: #333333 !important; 
+  }
+  
+  /* 閉じるボタン（×）を画面右上に完全固定 */
+  .navi-menu-close-button, .close-button, #navi-menu-close-button { 
+    position: fixed !important; 
+    top: 15px !important; 
+    right: 15px !important; 
+    background-color: rgba(26, 26, 26, 0.8) !important; 
+    color: #ffffff !important; 
+    border-radius: 50% !important; 
+    width: 50px !important; 
+    height: 50px !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    z-index: 999999 !important; 
+    border: none !important; 
+    font-size: 24px !important; 
+  }
+  
+  /* 一般リンクの文字色 */
+  .navi-menu-content a, #navi-mobile a { 
+    color: #ffffff !important; 
+  }
+  
+  /* 子メニュー（渓流釣り等）のデザイン */
+  .navi-menu-content ul.sub-menu a, #navi-mobile ul.sub-menu a { 
+    color: #cccccc !important; 
+    font-weight: bold !important; 
+    padding: 15px 20px 15px 30px !important; 
+    font-size: 1rem !important; 
+    border-bottom: 1px solid #2a2a2a !important; 
+  }
+  
+  /* 置換された見出し（span）のデザイン */
+  span.yuzan-menu-header { 
+    font-family: 'Arial Black', 'Impact', sans-serif !important; 
+    font-size: 1.6rem !important; 
+    font-weight: 900 !important; 
+    color: #ffffff !important; 
+    letter-spacing: 2px !important; 
+    padding: 40px 20px 10px 20px !important; 
+    border-bottom: 2px solid #333333 !important; 
+    display: block !important; 
+    cursor: default !important; 
+  }
+  
+  /* TAGセクション：自動コピーされた黒いボタン */
+  .yuzan-menu-tag-list { 
+    display: flex !important; 
+    flex-wrap: wrap !important; 
+    padding: 20px 20px !important; 
+    gap: 10px !important; 
+    background-color: #1a1a1a !important; 
+  }
+  .yuzan-menu-tag-list a.yuzan-cloned-tag { 
+    background-color: #333333 !important; 
+    color: #ffffff !important; 
+    padding: 8px 18px !important; 
+    border-radius: 30px !important; 
+    font-size: 0.85rem !important; 
+    margin: 0 !important; 
+    border: none !important; 
+    display: inline-block !important; 
+    text-decoration: none !important; 
+  }
+  .yuzan-menu-tag-list a.yuzan-cloned-tag::before { 
+    content: "\f02b"; 
+    font-family: "FontAwesome"; 
+    margin-right: 6px; 
+    font-size: 0.8rem; 
+    opacity: 0.7; 
+  }
+  
+  /* SEARCHセクション：検索ボックス */
+  .yuzan-menu-search-box { 
+    padding: 20px 20px 40px 20px !important; 
+    background-color: #1a1a1a !important; 
+  }
+  .yuzan-menu-search-box .search-form { 
+    display: flex !important; 
+    position: relative !important; 
+    background-color: transparent !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+  }
+  
+  /* 検索窓入力フィールド */
+  .yuzan-menu-search-box input.search-field { 
+    flex-grow: 1 !important; 
+    background-color: #333333 !important; 
+    border: none !important; 
+    color: #ffffff !important; 
+    font-size: 1rem !important; 
+    padding: 0 15px !important; 
+    height: 40px !important; 
+    border-radius: 4px !important; 
+    outline: none !important; 
+    margin: 0 10px 0 0 !important; 
+    box-shadow: none !important; 
+    -webkit-appearance: none !important; 
+  }
+  .yuzan-menu-search-box button.search-submit { 
+    position: relative !important; 
+    top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; 
+    background-color: #555555 !important; 
+    color: #ffffff !important; 
+    border: none !important; 
+    width: 45px !important; 
+    min-width: 45px !important; 
+    height: 40px !important; 
+    border-radius: 4px !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    cursor: pointer !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+    transform: none !important; 
+  }
+  .yuzan-menu-search-box button.search-submit span, 
+  .yuzan-menu-search-box button.search-submit i { 
+    display: none !important; 
+  }
+  .yuzan-menu-search-box button.search-submit::after { 
+    content: "\f002" !important; 
+    font-family: "FontAwesome" !important; 
+    font-size: 1.2rem !important; 
+    color: #ffffff !important; 
+    display: block !important; 
+  }
+}
