@@ -815,3 +815,11 @@ body .home #content .wp-block-tag-cloud {
     padding-top: 20px !important;
   }
 }
+
+/* =============================
+   トップページ以外のページでの非表示設定
+   ============================= */
+body:not(.home) .yuzan-tag-spacer,
+body:not(.home) .yuzan-results-bar {
+  display: none !important;
+}
