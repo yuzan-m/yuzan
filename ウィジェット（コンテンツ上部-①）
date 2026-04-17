@@ -19,7 +19,7 @@
 <h2 class="yuzan-content-title">NEW ARTICLE</h2>
 
 <div class="yuzan-latest-post">
-  [new_list count=1]
+  [new_list count=1 snippet=0]
 </div>
 
 <hr class="yuzan-divider">
@@ -38,7 +38,7 @@
 <h2 class="yuzan-content-title">RANKING</h2>
 <div class="yuzan-results-bar yuzan-ranking-bar">RANKING TOP 3</div>
 <div class="yuzan-ranking-list">
-  [popular_list count=3]
+  [popular_list count=3 snippet=0 rank=1]
 </div>
 
 <hr class="yuzan-divider">
