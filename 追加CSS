@@ -1,5 +1,5 @@
 /* =============================
-   YUZAN Urban Outdoor Base Style (究極版・ブラッシュアップ)
+   YUZAN Urban Outdoor Base Style 
    ============================= */
 
 /* 1. Remove border-radius globally */
@@ -175,7 +175,7 @@ hr.yuzan-divider {
   box-sizing: border-box !important;
 }
 
-/* ▼ 【新設】RANKING用バー (濃い黄色) ▼ */
+/* ▼ RANKING用バー (濃い黄色) ▼ */
 .yuzan-ranking-bar {
   background-color: #B8860B !important; 
   margin-top: 0px !important;
