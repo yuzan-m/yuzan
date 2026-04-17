@@ -140,7 +140,7 @@ h2.yuzan-content-title {
   text-transform: uppercase; 
   letter-spacing: 2px !important; 
   text-align: center !important; 
-  margin: 40px auto 20px auto !important; 
+  margin: 60px auto 60px auto !important; 
 }
 hr.yuzan-divider { 
   border: none !important; 
@@ -151,7 +151,7 @@ hr.yuzan-divider {
 
 /* PC用バー (ARTICLE LIST) */
 .yuzan-results-bar {
-  margin-top: 20px !important; 
+  margin-top: 0px !important; 
   background-color: #555555 !important; 
   color: #ffffff !important; 
   padding: 12px 30px !important; 
@@ -171,7 +171,7 @@ hr.yuzan-divider {
 /* ▼ 【新設】RANKING用バー (濃い黄色) ▼ */
 .yuzan-ranking-bar {
   background-color: #B8860B !important; 
-  margin-top: 20px !important;
+  margin-top: 0px !important;
 }
 
 /* =============================
@@ -447,7 +447,7 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
     max-width: 95vw !important; 
     font-size: 1.1rem !important; 
     padding: 15px 20px !important; 
-    margin-top: 20px !important; 
+    margin-top: 0px !important; 
     margin-bottom: 0 !important; 
     margin-left: calc(50% - 47.5vw) !important; 
     margin-right: calc(50% - 47.5vw) !important; 
@@ -470,8 +470,11 @@ body .home #content .tagcloud, body .home #content .wp-block-tag-cloud { margin-
   
   /* スマホ版H2サイズ */
   h2.yuzan-content-title { 
-    font-size: 1.5rem !important; 
-    margin: 25px auto 15px auto !important; 
+    font-size: 1.8rem !important;
+    margin-top: 30px !important;    
+    margin-bottom: 30px !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .category-banners { gap: 10px; padding: 0 15px; }
 }
