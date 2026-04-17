@@ -715,3 +715,103 @@ body .home #content .wp-block-tag-cloud {
 .yuzan-ranking-list .popular-entry-card-category {
   left: 40px !important; /* 数字の幅＋余白分ずらす */
 }
+
+/* =============================
+   フッターのカスタマイズ
+   ============================= */
+
+/* 1. 全体の背景と基本設定 */
+#footer {
+  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/footer-design.png") !important;
+  background-color: #ffffff !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
+  border-top: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. コンテナ自体をコンテンツ幅に合わせ、中身を左寄せに制御 */
+.navi-footer-in {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* すべての要素を強制的に左寄せ */
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  /* ▼ ロゴ上の余白を 80px から 30px に大幅カット！ ▼ */
+  padding: 30px 20px 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. 左寄せの正方形ロゴ */
+.navi-footer-in::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 0 40px 0 !important;
+  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/cropped-yuazzn-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* 4. メニューを2行・左揃え・等幅フォントに */
+.navi-footer-in ul {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 15px !important;
+  margin: 0 0 40px 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.navi-footer-in ul li a {
+  font-family: 'Courier New', Consolas, monospace !important;
+  font-size: 0.95rem !important;
+  font-weight: bold !important;
+  color: #1a1a1a !important;
+  letter-spacing: 1px !important;
+  text-decoration: none !important;
+  border: none !important;
+  padding: 0 !important;
+  transition: opacity 0.3s ease !important;
+  /* ▼ 不自然な改行を絶対に防ぐ魔法を追加！ ▼ */
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+}
+
+.navi-footer-in ul li a:hover {
+  opacity: 0.5 !important;
+}
+
+/* 5. コピーライトも確実な左揃え */
+.credit {
+  font-family: 'Courier New', Consolas, monospace !important;
+  color: #1a1a1a !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  padding: 0 !important;
+  background: transparent !important;
+  /* ▼ 確実に左に寄せるための強制設定 ▼ */
+  text-align: left !important;
+  width: 100% !important;
+  letter-spacing: 1px !important;
+}
+
+/* 6. レスポンシブ調整 */
+@media screen and (min-width: 769px) {
+  #footer { padding-bottom: 350px !important; }
+}
+
+@media screen and (max-width: 768px) {
+  #footer {
+    background-size: 100% auto !important;
+    padding-bottom: 220px !important;
+  }
+  .navi-footer-in {
+    /* ▼ スマホ時のロゴ上の余白も 20px まで極限カット！ ▼ */
+    padding-top: 20px !important;
+  }
+}
