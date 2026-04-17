@@ -1,25 +1,17 @@
-//ここに追加したいJavaScript、jQueryを記入してください。
-//
-//// =============================
-// YUZAN Mobile Menu Customizer
-// =============================
-// Cocoonのスマホスライドインメニューを改造するスクリプト
-// 設置場所: Cocoon Child の javascript.js
+// ここに追加したいJavaScript、jQueryを記入してください。
 
 jQuery(function($) {
 
-  // --- メニュー改造のメイン処理 ---
+  // =============================
+  // 1. スマホメニューのカスタマイズ
+  // =============================
   function yuzanCustomizeMenu() {
-
     var menuDrawer = document.querySelector('.menu-drawer');
-    if (!menuDrawer) return false; // メニューが見つからなければ中断
+    if (!menuDrawer) return false;
 
-    // 既に改造済みなら何もしない（二重実行防止）
     if (menuDrawer.getAttribute('data-yuzan-customized') === 'true') return true;
 
-    // =====================
-    // 1. 見出しのリンク無効化（<a> → <span> に置換）
-    // =====================
+    // 見出しのリンク無効化（CATEGORY, TAG, SEARCH）
     var headerTexts = ['CATEGORY', 'TAG', 'SEARCH'];
     var topLinks = menuDrawer.querySelectorAll(':scope > li > a');
 
@@ -33,15 +25,11 @@ jQuery(function($) {
       }
     });
 
-    // =====================
-    // 2. TAGの下にタグリストを挿入（絶対表示版）
-    // =====================
+    // TAGの下にタグリストを挿入
     var tagMenuItem = document.querySelector('#menu-item-146');
     if (tagMenuItem && !tagMenuItem.querySelector('.yuzan-menu-tag-list')) {
       var tagListDiv = document.createElement('div');
       tagListDiv.className = 'yuzan-menu-tag-list';
-
-      // 表示したいタグの名前とURLをここに直接書く（これで全ページで確実に出ます！）
       var myTags = [
         { name: 'リール', url: '/tag/リール/' },
         { name: 'ロッド', url: '/tag/ロッド/' },
@@ -50,7 +38,6 @@ jQuery(function($) {
         { name: 'キャンプ', url: '/tag/キャンプ/' },
         { name: '渓流釣り', url: '/tag/渓流釣り/' }
       ];
-
       myTags.forEach(function(tag) {
         var clone = document.createElement('a');
         clone.href = tag.url;
@@ -58,13 +45,10 @@ jQuery(function($) {
         clone.textContent = tag.name;
         tagListDiv.appendChild(clone);
       });
-      
       tagMenuItem.appendChild(tagListDiv);
     }
 
-    // =====================
-    // 3. SEARCHの下に検索窓を挿入
-    // =====================
+    // SEARCHの下に検索窓を挿入
     var searchMenuItem = document.querySelector('#menu-item-147');
     if (searchMenuItem && !searchMenuItem.querySelector('.yuzan-menu-search-box')) {
       var searchDiv = document.createElement('div');
@@ -79,58 +63,57 @@ jQuery(function($) {
       searchMenuItem.appendChild(searchDiv);
     }
 
-    // 改造完了マーカーを設定
     menuDrawer.setAttribute('data-yuzan-customized', 'true');
     return true;
   }
 
-  // --- 実行タイミングの制御 ---
-  // Cocoonのコアスクリプトの後に実行されるため、DOMは確実に存在する
-  // ただし念のため、複数のタイミングで試行する
-
-  // 試行1: 即時実行
-  if (!yuzanCustomizeMenu()) {
-    // 試行2: 少し待ってから実行
-    setTimeout(yuzanCustomizeMenu, 500);
-  }
-
-  // 試行3: ページ完全読み込み後
-  $(window).on('load', function() {
-    yuzanCustomizeMenu();
-  });
-
-	// --- 波紋の色をカテゴリに合わせて設定する処理 ---
+  // =============================
+  // 2. 波紋の色をカテゴリ別に設定
+  // =============================
   function yuzanApplyRippleColors() {
-    // 通常のカード、最新記事、ランキングのすべてを対象にする
     var cards = document.querySelectorAll('.entry-card-wrap, .new-entry-card-link, .popular-entry-card-link');
-    
     cards.forEach(function(card) {
-      // カテゴリラベルを探索（通常、最新、ランキングそれぞれのクラス名に対応）
       var catLabel = card.querySelector('.cat-label, .new-entry-card-category, .popular-entry-card-category');
-      
       if (catLabel) {
         var catText = catLabel.textContent.trim();
-        var rippleColor = '149, 165, 166'; // デフォルト：グレー
+        var rippleColor = '149, 165, 166'; // デフォルト
 
         if (catText === '渓流釣り') {
-          rippleColor = '0, 150, 255'; // 青
+          rippleColor = '0, 150, 255';
         } else if (catText === 'キャンプ') {
-          rippleColor = '255, 120, 0'; // オレンジ
+          rippleColor = '255, 120, 0';
         } else if (catText === '登山') {
-          rippleColor = '0, 210, 100'; // 緑
+          rippleColor = '0, 210, 100';
         }
-        
-        // カードに色情報をセット
         card.style.setProperty('--cat-ripple-color', rippleColor);
       }
     });
   }
 
-  // 即時実行と、ページ読み込み完了時の両方で実行
-  yuzanApplyRippleColors();
-  $(window).on('load', yuzanApplyRippleColors);
-	
-});
+  // =============================
+  // 3. フッターロゴにリンクを挿入
+  // =============================
+  function yuzanInsertFooterLogo() {
+    if ($('.navi-footer-in').length && !$('.yuzan-footer-logo-link').length) {
+      var logoHtml = '<a href="/" class="yuzan-footer-logo-link"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/cropped-yuazzn-icon.png" alt="HOME"></a>';
+      $('.navi-footer-in').prepend(logoHtml);
+    }
+  }
 
-//このJavaScriptファイルは、親テーマのJavaScriptファイルのあとに呼び出されます。
-//JavaScriptやjQueryで親テーマのjavascript.jsに加えて関数を記入したい時に使用します。
+  // 実行制御（ページ読み込み時など）
+  yuzanApplyRippleColors();
+  
+  $(window).on('load', function() {
+    yuzanCustomizeMenu();
+    yuzanApplyRippleColors();
+    yuzanInsertFooterLogo();
+  });
+
+  // メニュー用予備実行
+  if (!yuzanCustomizeMenu()) {
+    setTimeout(yuzanCustomizeMenu, 500);
+  }
+
+}); 
+
+// このJavaScriptファイルは、親テーマのJavaScriptファイルのあとに呼び出されます。
