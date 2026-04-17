@@ -1,0 +1,45 @@
+<div class="yuzan-results-bar">ARTICLE LIST</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tagContainers = document.querySelectorAll('.tagcloud, .wp-block-tag-cloud');
+  tagContainers.forEach(container => {
+    container.style.setProperty('display', 'flex', 'important');
+    container.style.setProperty('flex-wrap', 'wrap', 'important');
+    container.style.setProperty('justify-content', 'center', 'important');
+    container.style.setProperty('width', '100%', 'important'); 
+  });
+
+  const tags = document.querySelectorAll('.tagcloud a, .wp-block-tag-cloud a');
+  tags.forEach(tag => {
+    tag.style.setProperty('background', '#1a1a1a', 'important');
+    tag.style.setProperty('color', '#ffffff', 'important');
+    tag.style.setProperty('border', 'none', 'important');
+    tag.style.setProperty('border-radius', '30px', 'important'); 
+    tag.style.setProperty('width', 'fit-content', 'important');
+    tag.style.setProperty('min-width', '0', 'important');
+    tag.style.setProperty('flex', '0 0 auto', 'important');
+    tag.style.setProperty('display', 'inline-flex', 'important');
+    tag.style.setProperty('align-items', 'center', 'important');
+    tag.style.setProperty('justify-content', 'center', 'important');
+    tag.style.setProperty('padding', '2px 14px', 'important');
+  });
+
+  const cards = document.querySelectorAll('.entry-card-wrap');
+  cards.forEach(card => {
+    const catLabel = card.querySelector('.cat-label');
+    if(catLabel) {
+      const catText = catLabel.textContent.trim();
+      if(catText === '渓流釣り') {
+        card.style.setProperty('--cat-ripple-color', '0, 150, 255'); 
+      } else if(catText === 'キャンプ') {
+        card.style.setProperty('--cat-ripple-color', '255, 120, 0'); 
+      } else if(catText === '登山') {
+        card.style.setProperty('--cat-ripple-color', '0, 210, 100'); 
+      } else {
+        card.style.setProperty('--cat-ripple-color', '149, 165, 166'); 
+      }
+    }
+  });
+});
+</script>
