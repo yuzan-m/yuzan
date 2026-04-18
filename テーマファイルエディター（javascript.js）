@@ -100,6 +100,17 @@ jQuery(function($) {
     }
   }
 
+　// =============================
+  // 4. パンくずリストの「ホーム」を「HOME」に強制置換
+  // =============================
+  function yuzanChangeBreadcrumb() {
+    /* ▼ ターゲットをスマホ・PC両対応の正しい名前に修正 ▼ */
+    var bcrumbSpans = document.querySelectorAll('.breadcrumb span[itemprop="name"], .bcrumb span[itemprop="name"]');
+    if (bcrumbSpans.length > 0 && bcrumbSpans[0].textContent.trim() === 'ホーム') {
+      bcrumbSpans[0].textContent = 'HOME';
+    }
+  }
+
   // 実行制御（ページ読み込み時など）
   yuzanApplyRippleColors();
   
@@ -107,6 +118,7 @@ jQuery(function($) {
     yuzanCustomizeMenu();
     yuzanApplyRippleColors();
     yuzanInsertFooterLogo();
+    yuzanChangeBreadcrumb(); // ←★パンくずリストの置換を実行
   });
 
   // メニュー用予備実行
