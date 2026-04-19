@@ -196,11 +196,16 @@ hr.yuzan-divider {
   display: none !important;
 }
 
+/* ▼ タグを包む箱をフレックスボックスにして中央配置 ▼ */
 .widget_tag_cloud,
-body .home #content .tagcloud, 
-body .home #content .wp-block-tag-cloud { 
-  margin-bottom: 50px !important; 
+.tagcloud, 
+.wp-block-tag-cloud { 
+  margin-bottom: 25px !important; 
   padding: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important; /* ★ここで中央に集める */
+  width: 100% !important;
 }
 
 /* --- タグの見た目を黒いカプセル型に固定 --- */
@@ -212,10 +217,18 @@ body .home #content .wp-block-tag-cloud {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 2px 14px !important;
+  padding: 4px 16px !important;
   margin: 5px !important;
   font-size: 0.8rem !important;
   text-decoration: none !important;
+  
+  /* ▼ ここが最大のポイント！Cocoonの左寄せ(float)を強制解除 ▼ */
+  float: none !important; 
+  
+  /* テキストの長さに合わせてカプセル幅をピッタリ止める */
+  flex-grow: 0 !important;
+  width: auto !important;
+  max-width: max-content !important;
 }
 
 /* =============================
@@ -971,10 +984,10 @@ body.home .bcrumb {
 }
 
 /* =============================
-   下層ページのヘッダー（グレー完全根絶・最終版）
+   下層ページのヘッダー（ハンバーガー復活＆左右白化の完全版）
    ============================= */
 
-/* 1. 一番上のグレーの隙間（WordPressやCocoonの見えない余白）を完全に消去 */
+/* 1. 一番上のグレーの隙間を消去 */
 html, body {
   margin-top: 0 !important;
   padding-top: 0 !important;
@@ -984,7 +997,7 @@ body:not(.home) #container {
   padding-top: 0 !important;
 }
 
-/* 2. 上のグレー帯の原因となる親枠を空中に飛ばしてゼロにする */
+/* 2. モバイルメニュー枠（★z-indexを最強にしてハンバーガーを救出！） */
 body:not(.home) .mobile-menu-buttons {
   position: absolute !important;
   top: 0 !important;
@@ -996,9 +1009,11 @@ body:not(.home) .mobile-menu-buttons {
   padding: 0 !important;
   border: none !important;
   background: transparent !important;
+  overflow: visible !important;
+  z-index: 100000 !important; /* ★ヘッダー(9999)より上に指定！ */
 }
 
-/* 3. ナビゲーション等の不要な箱（下のグレー帯の原因）を完全に消去 */
+/* 3. 不要な箱を消去 */
 body:not(.home) #navi,
 body:not(.home) .navi,
 body:not(.home) .notice,
@@ -1006,7 +1021,7 @@ body:not(.home) .content-top {
   display: none !important;
 }
 
-/* 4. ヘッダーの大枠：白背景と黒下線 */
+/* 4. ヘッダーの大枠 */
 body:not(.home) #header {
   position: relative !important;
   display: block !important;
@@ -1016,9 +1031,10 @@ body:not(.home) #header {
   border-bottom: 2px solid #1a1a1a !important;
   margin: 0 !important;
   padding: 0 !important;
+  z-index: 9999 !important;
 }
 
-/* 5. 内側のコンテナの無力化 */
+/* 5. 内側のコンテナ */
 body:not(.home) .header-container,
 body:not(.home) .header-in {
   position: relative !important;
@@ -1030,18 +1046,18 @@ body:not(.home) .header-in {
   padding: 0 !important;
 }
 
-/* 6. ロゴエリア：高さ70pxに固定し、中身を縦横のド真ん中に寄せる */
+/* 6. ロゴエリア */
 body:not(.home) .logo-header {
   display: flex !important;
-  align-items: center !important;      
-  justify-content: center !important;  
+  align-items: center !important;
+  justify-content: center !important;
   height: 70px !important;
   padding: 0 !important;
   margin: 0 !important;
   border: none !important;
 }
 
-/* 7. ロゴ画像：背景として中央に綺麗にはめ込む */
+/* 7. ロゴ画像 */
 body:not(.home) .logo-header a {
   display: block !important;
   width: 200px !important;
@@ -1055,23 +1071,39 @@ body:not(.home) .logo-header a {
   border: none !important;
 }
 
-/* 8. 元の画像・テキストを非表示 */
+/* 8. 元画像を非表示 */
 body:not(.home) .logo-header img,
 body:not(.home) .tagline {
   display: none !important;
 }
 
-/* 9. コンテンツ領域の隙間をゼロにして、黒いラインに密着させる */
-body:not(.home) #content {
-  background-color: transparent !important; 
+/* 9. コンテンツ領域 */
+body:not(.home) #content,
+body:not(.home) #content-in,
+body:not(.home) #main,
+body:not(.home) .main {
+  position: relative !important;
+  z-index: 1 !important;
+  background-color: transparent !important;
   margin-top: 0 !important;
-  padding-top: 0 !important; /* ★ここを0にしてグレーの透けを完全消去！ */
+  padding-top: 0 !important;
 }
 
-/* パンくずリストの背景を白にし、黒線の下にシームレスに繋げる */
+/* ★ 10. パンくずリスト（左右のグレーを消し、画面幅いっぱいに白を広げる） */
 body:not(.home) .breadcrumb-wrap {
-  background-color: #ffffff !important; /* 白で塗りつぶす */
-  margin-top: 0 !important;
-  padding-top: 20px !important; /* ここで黒線と文字の間の余白を綺麗に確保 */
-  padding-bottom: 5px !important;
+  background-color: #ffffff !important;
+  margin-top: -20px !important; /* 黒線の下に潜り込ませる */
+  padding-top: 40px !important; 
+  padding-bottom: 10px !important;
+  position: relative !important;
+  
+  /* ▼ 画面の横幅いっぱいまで背景色（白）を強制的にぶち抜く魔法 ▼ */
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  
+  /* テキストが画面端に張り付かないように余白を整える */
+  padding-left: calc(50vw - 50% + 20px) !important; 
+  padding-right: calc(50vw - 50% + 20px) !important;
+  box-sizing: border-box !important;
 }
