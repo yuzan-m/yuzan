@@ -971,48 +971,107 @@ body.home .bcrumb {
 }
 
 /* =============================
-   下層ページ（トップ以外）のヘッダーロゴ領域をシャープに
+   下層ページのヘッダー（グレー完全根絶・最終版）
    ============================= */
 
-/* 1. ヘッダー全体の余白を完全にゼロにする */
+/* 1. 一番上のグレーの隙間（WordPressやCocoonの見えない余白）を完全に消去 */
+html, body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body:not(.home) #container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 2. 上のグレー帯の原因となる親枠を空中に飛ばしてゼロにする */
+body:not(.home) .mobile-menu-buttons {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* 3. ナビゲーション等の不要な箱（下のグレー帯の原因）を完全に消去 */
+body:not(.home) #navi,
+body:not(.home) .navi,
+body:not(.home) .notice,
+body:not(.home) .content-top {
+  display: none !important;
+}
+
+/* 4. ヘッダーの大枠：白背景と黒下線 */
+body:not(.home) #header {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-bottom: 2px solid #1a1a1a !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 5. 内側のコンテナの無力化 */
 body:not(.home) .header-container,
-body:not(.home) .header-in,
+body:not(.home) .header-in {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 6. ロゴエリア：高さ70pxに固定し、中身を縦横のド真ん中に寄せる */
 body:not(.home) .logo-header {
+  display: flex !important;
+  align-items: center !important;      
+  justify-content: center !important;  
+  height: 70px !important;
   padding: 0 !important;
   margin: 0 !important;
-  min-height: auto !important;
+  border: none !important;
 }
 
-/* 2. ヘッダーの背景白化と、シャープな下線（CAMP HACK風） */
-body:not(.home) #header {
-  background-color: #ffffff !important;
-  /* ▼ ここで黒い極細ラインを引き、パンくずリストとの境界をシャープにします ▼ */
-  border-bottom: 2px solid #1a1a1a !important; 
-}
-
-/* 3. ロゴの配置（ハンバーガーメニューとの被りを防ぐ） */
+/* 7. ロゴ画像：背景として中央に綺麗にはめ込む */
 body:not(.home) .logo-header a {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important; /* 左寄せ */
-  
-  /* 右側のハンバーガーメニューを避けるための右余白と、上下のわずかなクッション */
-  padding: 10px 80px 10px 20px !important; 
-  height: 70px !important; /* ヘッダー全体の高さを70pxに固定 */
-  box-sizing: border-box !important;
-}
-
-/* 4. ロゴ画像（600x120）を比率を保ったまま綺麗にはめる */
-body:not(.home) .logo-header img {
-  max-height: 100% !important; /* 枠の高さにぴったり合わせる */
-  width: auto !important;
-  object-fit: contain !important;
   display: block !important;
+  width: 200px !important;
+  height: 40px !important;
+  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/yuzan-logo-yoko.png") !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  border: none !important;
 }
 
-/* 5. コンテンツエリア上の余白調整（詰まりすぎ防止） */
-@media screen and (max-width: 768px) {
-  body:not(.home) #content {
-    padding-top: 15px !important; /* パンくずリスト上の余白を少し整える */
-  }
+/* 8. 元の画像・テキストを非表示 */
+body:not(.home) .logo-header img,
+body:not(.home) .tagline {
+  display: none !important;
+}
+
+/* 9. コンテンツ領域の隙間をゼロにして、黒いラインに密着させる */
+body:not(.home) #content {
+  background-color: transparent !important; 
+  margin-top: 0 !important;
+  padding-top: 0 !important; /* ★ここを0にしてグレーの透けを完全消去！ */
+}
+
+/* パンくずリストの背景を白にし、黒線の下にシームレスに繋げる */
+body:not(.home) .breadcrumb-wrap {
+  background-color: #ffffff !important; /* 白で塗りつぶす */
+  margin-top: 0 !important;
+  padding-top: 20px !important; /* ここで黒線と文字の間の余白を綺麗に確保 */
+  padding-bottom: 5px !important;
 }
