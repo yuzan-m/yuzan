@@ -294,19 +294,19 @@ hr.yuzan-divider {
 /* デフォルト（OTHER等）はグレー */
 .entry-card-wrap.a-wrap { --cat-ripple-color: 149, 165, 166; } 
 
-/* ▼ カテゴリーごとの波紋カラー上書き（絶対効く魔法の指定版） ▼ */
-/* CAMP（オレンジ） */
-.category-camp { 
+/* ▼ カテゴリーごとの波紋カラー上書き（絶対に効く最強のID指定版） ▼ */
+/* CAMP（ID: 4）→ オレンジ */
+.entry-card-wrap.a-wrap:has(.cat-label-4) { 
   --cat-ripple-color: 243, 122, 36 !important; 
 }
 
-/* STREAM FISHING（ブルー ※スラッグに合わせてfishingに修正！） */
-.category-fishing { 
+/* STREAM FISHING（ID: 2）→ ブルー */
+.entry-card-wrap.a-wrap:has(.cat-label-2) { 
   --cat-ripple-color: 34, 142, 204 !important; 
 }
 
-/* HIKING（グリーン） */
-.category-hiking { 
+/* HIKING（ID: 3）→ グリーン */
+.entry-card-wrap.a-wrap:has(.cat-label-3) { 
   --cat-ripple-color: 46, 184, 114 !important; 
 }
 /* ▲ ここまで追加 ▲ */
