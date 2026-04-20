@@ -291,7 +291,26 @@ hr.yuzan-divider {
 .entry-card-content, .entry-card-meta { display: contents !important; }
 
 /* 波紋アニメーション & 日付表示設定 */
+/* デフォルト（OTHER等）はグレー */
 .entry-card-wrap.a-wrap { --cat-ripple-color: 149, 165, 166; } 
+
+/* ▼ カテゴリーごとの波紋カラー上書き（絶対効く魔法の指定版） ▼ */
+/* CAMP（オレンジ） */
+.category-camp { 
+  --cat-ripple-color: 243, 122, 36 !important; 
+}
+
+/* STREAM FISHING（ブルー ※スラッグに合わせてfishingに修正！） */
+.category-fishing { 
+  --cat-ripple-color: 34, 142, 204 !important; 
+}
+
+/* HIKING（グリーン） */
+.category-hiking { 
+  --cat-ripple-color: 46, 184, 114 !important; 
+}
+/* ▲ ここまで追加 ▲ */
+
 .entry-card-meta .post-date { 
   order: 1 !important; 
   font-size: 0.85rem !important; 
@@ -1106,4 +1125,130 @@ body:not(.home) .breadcrumb-wrap {
   padding-left: calc(50vw - 50% + 20px) !important; 
   padding-right: calc(50vw - 50% + 20px) !important;
   box-sizing: border-box !important;
+}
+
+/* =============================
+   著者プロフィール（この記事を書いた人）の調整
+   ============================= */
+
+/* 1. プロフィールカード全体（余白を削って縦に短くコンパクトに！） */
+.author-widget,
+.author-box {
+  background-color: #ffffff !important; 
+  padding: 20px 20px !important; /* 上下左右の余白を少し詰める */
+  border: 1px solid rgba(0, 0, 0, 0.05) !important; 
+  margin-bottom: 40px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+}
+
+/* 2. タイトル（この記事を書いた人） */
+.author-widget .author-title,
+.author-box .author-widget-name {
+  width: 100% !important; 
+  font-family: 'Courier New', Consolas, 'Noto Sans JP', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  color: #888888 !important;
+  margin-bottom: 12px !important; /* 少し詰める */
+  text-align: left !important;
+  display: block !important;
+}
+
+/* 3. 画像エリア（少し小さくしてスタイリッシュに） */
+.author-widget .author-thumb,
+.author-box .author-thumb {
+  margin: 0 15px 0 0 !important; /* 右側に15pxの余白だけを取る */
+  padding: 0 !important;
+  width: 70px !important; /* 80pxから70pxへ縮小 */
+  height: 70px !important;
+  flex-shrink: 0 !important;
+  float: none !important; /* Cocoonの左寄せを無効化 */
+}
+
+/* 画像の円形化 */
+.author-widget .author-thumb img,
+.author-box .author-thumb img {
+  border-radius: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* 4. テキストエリア（★画像のすぐ右隣に密着させる！） */
+.author-widget .author-content,
+.author-box .author-content {
+  flex: 1 !important; 
+  min-width: 0 !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important; 
+  margin: 0 !important; /* ★Cocoonの見えない巨大余白を強制リセット！ */
+  padding: 0 !important;
+  float: none !important;
+  text-align: left !important;
+}
+
+/* 著者名 */
+.author-widget .author-name,
+.author-box .author-name {
+  font-size: 1.1rem !important;
+  font-weight: 900 !important;
+  color: #1a1a1a !important;
+  margin: 0 0 6px 0 !important; /* 下の余白を詰める */
+  line-height: 1.2 !important;
+}
+.author-widget .author-name a,
+.author-box .author-name a {
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+}
+
+/* プロフィール文章 */
+.author-widget .author-description,
+.author-box .author-description {
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+  color: #333333 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 5. 不要なアイコンを完全に消し去る */
+.author-widget .author-follows,
+.author-box .author-follows,
+.author-widget .sns-follow-buttons,
+.author-box .sns-follow-buttons {
+  display: none !important;
+}
+
+/* =============================
+   SNSシェアメッセージのカスタマイズ
+   ============================= */
+
+/* 1. 元の日本語を消し、箱を横幅いっぱいに広げて中央揃えにする */
+.sns-share-message {
+  font-size: 0 !important; 
+  background-color: transparent !important; 
+  display: block !important; 
+  width: 100% !important; /* ★横幅を100%確保して潰れを防止！ */
+  text-align: center !important; /* ★中身を中央に寄せる */
+  margin: 0 0 20px 0 !important; 
+  padding: 0 !important; 
+  border: none !important;
+}
+
+/* 2. 代わりの「SHARE」文字を出現させる */
+.sns-share-message::before {
+  content: "SHARE" !important;
+  font-family: 'Courier New', Consolas, monospace !important; 
+  font-size: 1.4rem !important; 
+  font-weight: 900 !important; 
+  letter-spacing: 3px !important; 
+  color: #1a1a1a !important; 
+  display: inline-block !important; /* ★文字として中央に配置する */
+  line-height: 1.2 !important; 
 }
