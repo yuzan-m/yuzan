@@ -13,36 +13,62 @@ body {
   background-color: #F9F9F9; 
 }
 
-/* 3. Heading: H2 */
+/* 3. Headings (H2, H3, H4) */
 .article h2 { 
-  background: #1A1A1A; 
-  color: #FFFFFF; 
-  padding: 16px 20px; 
-  margin: 50px 0 30px; 
-  border: none; 
-  border-left: 8px solid #556B2F; 
+  background: #1a1a1a !important; 
+  color: #ffffff !important; 
+  padding: 10px 20px !important; /* 上下余白を微調整 */
+  margin: 30px 0 10px 0 !important; /* 上下の外側余白をさらに削減 */
+  border: none !important; 
+  font-size: 1.25rem !important; /* ★サイズを少し小さく調整 */
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  line-height: 1.4 !important; /* ★固定を解除し、複数行に対応 */
+  height: auto !important; /* ★高さを自動（可変）に変更 */
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  display: block !important;
 }
 
-/* 4. Heading: H3 */
-.article h3 { 
-  font-size: 1.2rem; 
-  color: #1A1A1A; 
-  border-top: none; 
-  border-right: none; 
-  border-left: none; 
-  border-bottom: 2px solid #1A1A1A; 
-  padding-bottom: 8px; 
-  margin: 40px 0 20px; 
-  position: relative; 
+/* 見出しが連続した場合の上の余白をさらにタイトに */
+.article h2 + h2,
+.article h3 + h3,
+.article h4 + h4 {
+  margin-top: 5px !important;
 }
-.article h3::after { 
-  content: ''; 
-  position: absolute; 
-  bottom: -2px; 
-  left: 0; 
-  width: 50px; 
-  height: 2px; 
-  background: #4682B4; 
+
+.article h3 { 
+  font-size: 1.2rem !important; /* H2に合わせて少し縮小 */
+  font-weight: 900 !important;
+  color: #1a1a1a !important; 
+  border-top: none !important; 
+  border-right: none !important; 
+  border-left: none !important; 
+  border-bottom: 3px solid #1a1a1a !important; 
+  padding: 0 0 8px 0 !important; 
+  margin: 30px 0 10px 0 !important; /* 上下の外側余白を削減 */
+}
+
+.article h4 {
+  font-size: 1.05rem !important; /* H2に合わせて少し縮小 */
+  font-weight: bold !important;
+  color: #1a1a1a !important;
+  background: #f2f2f2 !important; 
+  padding: 8px 16px !important;
+  margin: 30px 0 10px 0 !important; /* 上下の外側余白を削減 */
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: 6px solid #1a1a1a !important; 
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
+}
+
+/* Reset Top Margin for Elements Following Headings */
+.article h2 + *,
+.article h3 + *,
+.article h4 + * {
+  margin-top: 0 !important;
 }
 
 /* 5. Anchor Links */
@@ -1325,4 +1351,204 @@ body.home .bcrumb {
   color: #1a1a1a !important; 
   display: inline-block !important; 
   line-height: 1.2 !important; 
+}
+
+/* =========================================================
+   26. Table of Contents
+   ========================================================= */
+
+/* TOC Container */
+.toc {
+  background-color: #f2f2f2 !important;
+  border: none !important;
+  padding: 15px 25px 10px 25px !important; /* 下部余白を凝縮 */
+  margin: 0 !important;
+}
+
+/* TOC Title Area */
+.toc-title {
+  font-family: 'Arial Black', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.1rem !important;
+  color: #1a1a1a !important;
+  text-align: center !important;
+  margin-bottom: 8px !important; /* ライン下の余白をカット */
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid #1a1a1a !important;
+}
+
+/* TOC List Wrapper (Center Alignment) */
+.toc-content .toc-list {
+  display: table !important; /* コンテンツ幅に合わせる */
+  margin: 0 auto !important; /* 中央揃えを実現 */
+  padding: 0 !important;
+  text-align: left !important; /* 文字自体は左揃え（リストの体裁を維持） */
+}
+
+/* TOC List Items */
+.toc-content li {
+  list-style: none !important;
+  background: none !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 2px 0 !important; /* 項目間の最小余白 */
+}
+
+/* TOC List Items (Links) */
+.toc-content a {
+  font-weight: bold !important;
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important; /* 行間を詰めてシャープに */
+}
+
+/* TOC Link Hover State */
+.toc-content a:hover {
+  opacity: 0.6 !important;
+  text-decoration: underline !important;
+}
+
+/* TOC List Numbers */
+.toc-list .toc-list-number {
+  color: #1a1a1a !important;
+  font-weight: 900 !important;
+  margin-right: 0.5em;
+}
+
+/* =========================================================
+   27. List Design (UL, OL) with Gray Background
+   ========================================================= */
+.article ul, .article ol {
+  padding: 0 !important;
+  margin: 30px 0 !important;
+}
+
+/* Base style for both list types */
+.article ul li, .article ol li {
+  padding: 10px 15px !important; /* 内側の余白 */
+  margin: 0 !important; /* 隙間をなくしてくっつける */
+  line-height: 1.6;
+  position: relative;
+  /* グレーの背景（ストライプではなく均一なグレー） */
+  background-color: #f2f2f2 !important; 
+  /* リスト同士の境界線 */
+  border-bottom: 1px solid #e0e0e0 !important; 
+}
+
+/* 最後のアイテムの境界線を消す */
+.article ul li:last-child, .article ol li:last-child {
+  border-bottom: none !important;
+}
+
+/* Bullet list (UL) */
+.article ul li {
+  list-style: none !important;
+  padding-left: 1.8em !important; /* ドット用の左余白 */
+}
+
+.article ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.6em; /* 左端から少し離す */
+  top: 50%; /* 上下中央 */
+  transform: translateY(-50%); /* ビシッと中央に */
+  width: 6px;
+  height: 6px;
+  background: #1a1a1a; /* 四角いドットでシャープに */
+}
+
+/* Number list (OL) */
+.article ol li {
+  list-style-position: inside !important; /* 番号を内側に */
+  font-weight: bold;
+}
+
+/* =========================================================
+   28. Blockquote (引用) with Solid Design
+   ========================================================= */
+.article blockquote {
+  background: #f2f2f2 !important; /* 全体をグレー背景に */
+  border-left: 4px solid #1a1a1a !important; /* 左側の黒線 */
+  margin: 30px 0 !important;
+  padding: 20px 30px !important;
+  color: #1a1a1a !important;
+  font-style: italic;
+  font-family: inherit !important;
+  border-radius: 0 !important; /* 角丸を排除 */
+}
+
+/* アイコンフォントのエラーを避けるため、引用アイコン（before）を非表示に */
+.article blockquote::before, .article blockquote::after {
+  content: none !important;
+}
+
+/* =========================================================
+   29. Information Box (案内ボックス)
+   ========================================================= */
+/* Cocoonの「白抜き」「案内」等のボックスを上書き */
+.blank-box, .common-box {
+  border: 1px solid #1a1a1a !important;
+  background-color: #fff !important;
+  border-radius: 0 !important; /* 角丸を排除 */
+  padding: 20px !important;
+  margin: 30px 0 !important;
+}
+
+/* グレー背景のシンプルボックス */
+.gray-box {
+  background-color: #f2f2f2 !important;
+  border: none !important;
+  padding: 20px !important;
+  margin: 30px 0 !important;
+}
+
+/* =========================================================
+   30. Speech Bubble (吹き出し)
+   ========================================================= */
+.speech-balloon {
+  margin-bottom: 30px !important;
+}
+
+/* ★画像を丸くする★ */
+.speech-person img {
+  border-radius: 50% !important; /* 強制的に丸く */
+  border: none !important;
+  width: 60px !important; /* サイズを少し大きく */
+  height: 60px !important;
+}
+
+.speech-content {
+  background-color: #f2f2f2 !important; /* グレー背景 */
+  border: none !important;
+  border-radius: 0 !important; /* 角丸を排除 */
+  color: #1a1a1a !important;
+}
+
+/* 吹き出しの三角部分をグレーに */
+.speech-balloon-left .speech-content::before {
+  border-right-color: #f2f2f2 !important;
+}
+.speech-balloon-right .speech-content::before {
+  border-left-color: #f2f2f2 !important;
+}
+
+/* =========================================================
+   31. Internal Blog Card (関連記事)
+   ========================================================= */
+.blogcard {
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 0 !important;
+  padding: 10px !important;
+  transition: all 0.3s ease;
+}
+
+.blogcard:hover {
+  background-color: #f9f9f9 !important;
+  border-color: #1a1a1a !important;
+}
+
+.blogcard-title {
+  font-weight: 900 !important;
+  line-height: 1.4 !important;
 }
