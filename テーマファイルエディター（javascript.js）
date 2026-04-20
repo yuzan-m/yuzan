@@ -1,17 +1,18 @@
-// ここに追加したいJavaScript、jQueryを記入してください。
+// =========================================================
+// YUZAN Custom JavaScript
+// =========================================================
 
 jQuery(function($) {
 
-  // =============================
-  // 1. スマホメニューのカスタマイズ
-  // =============================
+  // 1. Mobile Menu Customization
   function yuzanCustomizeMenu() {
     var menuDrawer = document.querySelector('.menu-drawer');
     if (!menuDrawer) return false;
 
+    // Prevent duplicate execution
     if (menuDrawer.getAttribute('data-yuzan-customized') === 'true') return true;
 
-    // 見出しのリンク無効化（CATEGORY, TAG, SEARCH）
+    // Replace specific links with span elements
     var headerTexts = ['CATEGORY', 'TAG', 'SEARCH'];
     var topLinks = menuDrawer.querySelectorAll(':scope > li > a');
 
@@ -25,11 +26,12 @@ jQuery(function($) {
       }
     });
 
-    // TAGの下にタグリストを挿入
+    // Insert tag list into menu
     var tagMenuItem = document.querySelector('#menu-item-146');
     if (tagMenuItem && !tagMenuItem.querySelector('.yuzan-menu-tag-list')) {
       var tagListDiv = document.createElement('div');
       tagListDiv.className = 'yuzan-menu-tag-list';
+      
       var myTags = [
         { name: 'リール', url: '/tag/リール/' },
         { name: 'ロッド', url: '/tag/ロッド/' },
@@ -38,6 +40,7 @@ jQuery(function($) {
         { name: 'キャンプ', url: '/tag/キャンプ/' },
         { name: '渓流釣り', url: '/tag/渓流釣り/' }
       ];
+      
       myTags.forEach(function(tag) {
         var clone = document.createElement('a');
         clone.href = tag.url;
@@ -48,7 +51,7 @@ jQuery(function($) {
       tagMenuItem.appendChild(tagListDiv);
     }
 
-    // SEARCHの下に検索窓を挿入
+    // Insert search box into menu
     var searchMenuItem = document.querySelector('#menu-item-147');
     if (searchMenuItem && !searchMenuItem.querySelector('.yuzan-menu-search-box')) {
       var searchDiv = document.createElement('div');
@@ -63,20 +66,20 @@ jQuery(function($) {
       searchMenuItem.appendChild(searchDiv);
     }
 
+    // Mark as customized
     menuDrawer.setAttribute('data-yuzan-customized', 'true');
     return true;
   }
 
-  // =============================
-  // 2. 波紋の色をカテゴリ別に設定
-  // =============================
+  // 2. Category Ripple Color Adjustment
   function yuzanApplyRippleColors() {
     var cards = document.querySelectorAll('.entry-card-wrap, .new-entry-card-link, .popular-entry-card-link');
+    
     cards.forEach(function(card) {
       var catLabel = card.querySelector('.cat-label, .new-entry-card-category, .popular-entry-card-category');
       if (catLabel) {
         var catText = catLabel.textContent.trim();
-        var rippleColor = '149, 165, 166'; // デフォルト
+        var rippleColor = '149, 165, 166'; // Default
 
         if (catText === '渓流釣り') {
           rippleColor = '0, 150, 255';
@@ -85,14 +88,13 @@ jQuery(function($) {
         } else if (catText === '登山') {
           rippleColor = '0, 210, 100';
         }
+        
         card.style.setProperty('--cat-ripple-color', rippleColor);
       }
     });
   }
 
-  // =============================
-  // 3. フッターロゴにリンクを挿入
-  // =============================
+  // 3. Footer Logo Insertion
   function yuzanInsertFooterLogo() {
     if ($('.navi-footer-in').length && !$('.yuzan-footer-logo-link').length) {
       var logoHtml = '<a href="/" class="yuzan-footer-logo-link"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/cropped-yuazzn-icon.png" alt="HOME"></a>';
@@ -100,32 +102,30 @@ jQuery(function($) {
     }
   }
 
-　// =============================
-  // 4. パンくずリストの「ホーム」を「HOME」に強制置換
-  // =============================
+  // 4. Breadcrumb Text Replacement
   function yuzanChangeBreadcrumb() {
-    /* ▼ ターゲットをスマホ・PC両対応の正しい名前に修正 ▼ */
     var bcrumbSpans = document.querySelectorAll('.breadcrumb span[itemprop="name"], .bcrumb span[itemprop="name"]');
     if (bcrumbSpans.length > 0 && bcrumbSpans[0].textContent.trim() === 'ホーム') {
       bcrumbSpans[0].textContent = 'HOME';
     }
   }
 
-  // 実行制御（ページ読み込み時など）
+  // =========================================================
+  // Initialization
+  // =========================================================
+  
   yuzanApplyRippleColors();
   
   $(window).on('load', function() {
     yuzanCustomizeMenu();
     yuzanApplyRippleColors();
     yuzanInsertFooterLogo();
-    yuzanChangeBreadcrumb(); // ←★パンくずリストの置換を実行
+    yuzanChangeBreadcrumb();
   });
 
-  // メニュー用予備実行
+  // Fallback for menu customization
   if (!yuzanCustomizeMenu()) {
     setTimeout(yuzanCustomizeMenu, 500);
   }
 
-}); 
-
-// このJavaScriptファイルは、親テーマのJavaScriptファイルのあとに呼び出されます。
+});
