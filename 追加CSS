@@ -1,14 +1,19 @@
-/* =============================
-   YUZAN Urban Outdoor Base Style (究極版・ブラッシュアップ)
-   ============================= */
+/* ===========================================
+   YUZAN Urban Outdoor Base Style
+   ===========================================*/
 
-/* 1. Remove border-radius globally */
-* { border-radius: 0 !important; }
+/* 1. Global Reset */
+* { 
+  border-radius: 0 !important; 
+}
 
-/* 2. Base colors */
-body { color: #1A1A1A; background-color: #F9F9F9; }
+/* 2. Base Colors */
+body { 
+  color: #1A1A1A; 
+  background-color: #F9F9F9; 
+}
 
-/* 3. H2 Heading (記事内の見出し) */
+/* 3. Heading: H2 */
 .article h2 { 
   background: #1A1A1A; 
   color: #FFFFFF; 
@@ -18,7 +23,7 @@ body { color: #1A1A1A; background-color: #F9F9F9; }
   border-left: 8px solid #556B2F; 
 }
 
-/* 4. H3 Heading (記事内の小見出し) */
+/* 4. Heading: H3 */
 .article h3 { 
   font-size: 1.2rem; 
   color: #1A1A1A; 
@@ -40,23 +45,38 @@ body { color: #1A1A1A; background-color: #F9F9F9; }
   background: #4682B4; 
 }
 
-/* 5. Anchor links */
-a { transition: color 0.3s ease; } 
-a:hover { color: #B05B3B; }
+/* 5. Anchor Links */
+a { 
+  transition: color 0.3s ease; 
+} 
+a:hover { 
+  color: #B05B3B; 
+}
 
-/* 6. Top navigation */
-#navi .navi-in a { font-weight: bold; color: #1A1A1A; } 
-#navi .navi-in a:hover { background-color: #1A1A1A; color: #FFFFFF; }
+/* 6. Top Navigation */
+#navi .navi-in a { 
+  font-weight: bold; 
+  color: #1A1A1A; 
+} 
+#navi .navi-in a:hover { 
+  background-color: #1A1A1A; 
+  color: #FFFFFF; 
+}
 
-/* 7 & 8. 固定ページ非表示 */
-.page .date-tags, .page .author-info { display: none !important; }
+/* 7. Hide Elements on Page */
+.page .date-tags, 
+.page .author-info { 
+  display: none !important; 
+}
 
-/* 9. アピールエリア非表示 */
-.appeal-in .appeal-content { display: none !important; }
+/* 8. Hide Appeal Area */
+.appeal-in .appeal-content { 
+  display: none !important; 
+}
 
-/* =============================
-   10. YUZAN Video First View
-   ============================= */
+/* ===========================================
+   9. Video First View
+   ===========================================*/
 .fv-video-wrapper { 
   width: 100vw; 
   margin-left: calc(50% - 50vw); 
@@ -72,20 +92,30 @@ a:hover { color: #B05B3B; }
   object-fit: cover; 
   object-position: center center; 
 }
+
+/* Video: PC Layout */
 @media screen and (min-width: 769px) { 
-  .fv-video-wrapper { height: auto; aspect-ratio: 16 / 9; } 
+  .fv-video-wrapper { 
+    height: auto; 
+    aspect-ratio: 16 / 9; 
+  } 
   .video-pc { display: block; } 
   .video-sp { display: none; } 
 }
+
+/* Video: SP Layout */
 @media screen and (max-width: 768px) { 
-  .fv-video-wrapper { height: auto; aspect-ratio: 1 / 1; } 
+  .fv-video-wrapper { 
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+  } 
   .video-pc { display: none; } 
   .video-sp { display: block; } 
 }
 
-/* =============================
-   11. Header Refinement (PC)
-   ============================= */
+/* ===========================================
+   10. Header Layout (PC)
+   ===========================================*/
 .header-container .header-in { 
   max-width: 100% !important; 
   width: 100% !important; 
@@ -98,6 +128,8 @@ a:hover { color: #B05B3B; }
   margin-left: 0 !important; 
   padding: 0 !important; 
 }
+
+/* Home Page Reset */
 body.home .header-container, 
 body.home .navi, 
 body.home .navi-in, 
@@ -107,17 +139,26 @@ body.home .content-top,
 body.home .widget-area, 
 body.home .widget, 
 body.home .widget_custom_html { 
-  margin-top: 0 !important;
+  margin-top: 0 !important; 
   margin-bottom: 0 !important; 
   padding-top: 0 !important; 
   padding-bottom: 0 !important; 
-  border: none !important;
+  border: none !important; 
 }
 
+/* Navigation PC Layout */
 @media screen and (min-width: 769px) {
-  .navi { flex-grow: 1 !important; width: 100% !important; } 
-  .navi-in > ul { display: flex !important; width: 100% !important; } 
-  .navi-in > ul > li { flex: 1 1 0 !important; }
+  .navi { 
+    flex-grow: 1 !important; 
+    width: 100% !important; 
+  } 
+  .navi-in > ul { 
+    display: flex !important; 
+    width: 100% !important; 
+  } 
+  .navi-in > ul > li { 
+    flex: 1 1 0 !important; 
+  }
   .navi-in > ul > li > a { 
     white-space: nowrap !important; 
     overflow: visible !important; 
@@ -128,18 +169,33 @@ body.home .widget_custom_html {
     justify-content: center !important; 
     font-weight: bold; 
   }
-  .navi-in > ul > li:last-child > a { border-right: 1px solid rgba(26, 26, 26, 0.2) !important; }
+  .navi-in > ul > li:last-child > a { 
+    border-right: 1px solid rgba(26, 26, 26, 0.2) !important; 
+  }
 }
 
-#navi-mobile, .mobile-menu { z-index: 100000 !important; }
+/* Navigation Z-index */
+#navi-mobile, .mobile-menu { 
+  z-index: 100000 !important; 
+}
 
-/* =============================
-   12. YUZAN Original Layout Elements 
-   ============================= */
-.view-count, .post-update, .fa-folder, .fa-clock-o, .fa-tags, .entry-card-snippet, .admin-pv, .pv-area, .pt-count { display: none !important; }
-.home #main > .entry-cards > .entry-card-wrap:first-child, .home #main > .list > .entry-card-wrap:first-child { display: none !important; }
+/* ===========================================
+   11. Original Layout Elements
+   ===========================================*/
 
-/* ▼ 見出しサイズ変更（少し大きく） ▼ */
+/* Hide Default Meta */
+.view-count, .post-update, .fa-folder, .fa-clock-o, .fa-tags, 
+.entry-card-snippet, .admin-pv, .pv-area, .pt-count { 
+  display: none !important; 
+}
+
+/* Hide First Post in List */
+.home #main > .entry-cards > .entry-card-wrap:first-child, 
+.home #main > .list > .entry-card-wrap:first-child { 
+  display: none !important; 
+}
+
+/* Content Title */
 h2.yuzan-content-title { 
   font-size: 2.0rem !important; 
   font-weight: 900 !important; 
@@ -148,8 +204,10 @@ h2.yuzan-content-title {
   text-transform: uppercase; 
   letter-spacing: 2px !important; 
   text-align: center !important; 
-  margin: 60px auto 60px auto !important; 
+  margin: 60px auto 60px auto !important; 
 }
+
+/* Divider */
 hr.yuzan-divider { 
   border: none !important; 
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important; 
@@ -157,16 +215,16 @@ hr.yuzan-divider {
   max-width: calc(100% - 40px); 
 }
 
-/* ▼ タグとARTICLE LISTの間の余白 ▼ */
+/* Tag Spacer */
 .yuzan-tag-spacer {
-  height: 60px; /* PC版の余白（広げたい時はここを大きくする） */
-  width: 100%;
+  height: 60px; 
+  width: 100%; 
   display: block;
 }
 
-/* PC用バー (ARTICLE LIST) */
+/* Results Bar (Article List) */
 .yuzan-results-bar {
-  margin-top: 0px !important; 
+  margin-top: 0px !important; 
   background-color: #555555 !important; 
   color: #ffffff !important; 
   padding: 12px 30px !important; 
@@ -183,33 +241,38 @@ hr.yuzan-divider {
   box-sizing: border-box !important;
 }
 
-/* ▼ 【新設】RANKING用バー (濃い黄色) ▼ */
+/* Ranking Bar */
 .yuzan-ranking-bar {
   background-color: #B8860B !important; 
-  margin-top: 0px !important;
+  margin-top: 0px !important; 
 }
 
-/* =============================
-   13. タグクラウド
-   ============================= */
-.widget_tag_cloud .widget-title, .widget_tag_cloud h3, .wp-block-tag-cloud h2 { 
-  display: none !important;
+/* ===========================================
+   12. Tag Cloud
+   ===========================================*/
+
+/* Hide Titles */
+.widget_tag_cloud .widget-title, 
+.widget_tag_cloud h3, 
+.wp-block-tag-cloud h2 { 
+  display: none !important; 
 }
 
-/* ▼ タグを包む箱をフレックスボックスにして中央配置 ▼ */
+/* Tag Cloud Container */
 .widget_tag_cloud,
 .tagcloud, 
 .wp-block-tag-cloud { 
-  margin-bottom: 25px !important; 
+  margin-bottom: 25px !important; 
   padding: 0 !important;
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: center !important; /* ★ここで中央に集める */
+  justify-content: center !important; 
   width: 100% !important;
 }
 
-/* --- タグの見た目を黒いカプセル型に固定 --- */
-.tagcloud a, .wp-block-tag-cloud a {
+/* Tag Items */
+.tagcloud a, 
+.wp-block-tag-cloud a {
   background: #1a1a1a !important;
   color: #ffffff !important;
   border: none !important;
@@ -221,19 +284,15 @@ hr.yuzan-divider {
   margin: 5px !important;
   font-size: 0.8rem !important;
   text-decoration: none !important;
-  
-  /* ▼ ここが最大のポイント！Cocoonの左寄せ(float)を強制解除 ▼ */
-  float: none !important; 
-  
-  /* テキストの長さに合わせてカプセル幅をピッタリ止める */
+  float: none !important;
   flex-grow: 0 !important;
   width: auto !important;
   max-width: max-content !important;
 }
 
-/* =============================
-   14. カテゴリバナー
-   ============================= */
+/* ===========================================
+   13. Category Banners
+   ===========================================*/
 .category-banners { 
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
@@ -250,15 +309,24 @@ hr.yuzan-divider {
   border-radius: 4px !important; 
   transition: opacity 0.3s ease; 
 }
-.category-banners a:hover img { opacity: 0.7; }
+.category-banners a:hover img { 
+  opacity: 0.7; 
+}
 
-/* =============================
-   15. 記事カードデザイン (共通)
-   ============================= */
-.widget { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+/* ===========================================
+   14. Entry Card Design
+   ===========================================*/
+.widget { 
+  margin-bottom: 0 !important; 
+  padding-bottom: 0 !important; 
+}
 
-/* 記事リスト・ランキング共通の背景 (薄いグレー) */
-.home #main > .list, .home #main > .entry-cards, .home #main > .list-main, .home #main > .ect-entry-card, .home #main .entry-cards.cards,
+/* Entry List Container */
+.home #main > .list, 
+.home #main > .entry-cards, 
+.home #main > .list-main, 
+.home #main > .ect-entry-card, 
+.home #main .entry-cards.cards,
 .yuzan-ranking-list {
   background-color: #F2F2F2 !important; 
   padding: 30px !important; 
@@ -274,7 +342,7 @@ hr.yuzan-divider {
   z-index: 1;
 }
 
-/* カード本体 */
+/* Entry Card Item */
 .entry-card-wrap.a-wrap {
   display: flex !important; 
   flex-direction: column !important; 
@@ -287,29 +355,29 @@ hr.yuzan-divider {
   width: 100% !important; 
   transition: transform 0.3s ease !important; 
 }
-.entry-card-wrap.a-wrap:hover { transform: translateY(-2px) !important; }
-.entry-card-content, .entry-card-meta { display: contents !important; }
+.entry-card-wrap.a-wrap:hover { 
+  transform: translateY(-2px) !important; 
+}
+.entry-card-content, 
+.entry-card-meta { 
+  display: contents !important; 
+}
 
-/* 波紋アニメーション & 日付表示設定 */
-/* デフォルト（OTHER等）はグレー */
-.entry-card-wrap.a-wrap { --cat-ripple-color: 149, 165, 166; } 
+/* Post Date & Ripple Animation */
+.entry-card-wrap.a-wrap { 
+  --cat-ripple-color: 149, 165, 166; 
+} 
 
-/* ▼ カテゴリーごとの波紋カラー上書き（絶対に効く最強のID指定版） ▼ */
-/* CAMP（ID: 4）→ オレンジ */
-.entry-card-wrap.a-wrap:has(.cat-label-4) { 
+/* Category Ripple Colors */
+.entry-card-wrap.a-wrap:has(.cat-label-4) { /* CAMP */
   --cat-ripple-color: 243, 122, 36 !important; 
 }
-
-/* STREAM FISHING（ID: 2）→ ブルー */
-.entry-card-wrap.a-wrap:has(.cat-label-2) { 
+.entry-card-wrap.a-wrap:has(.cat-label-2) { /* STREAM FISHING */
   --cat-ripple-color: 34, 142, 204 !important; 
 }
-
-/* HIKING（ID: 3）→ グリーン */
-.entry-card-wrap.a-wrap:has(.cat-label-3) { 
+.entry-card-wrap.a-wrap:has(.cat-label-3) { /* HIKING */
   --cat-ripple-color: 46, 184, 114 !important; 
 }
-/* ▲ ここまで追加 ▲ */
 
 .entry-card-meta .post-date { 
   order: 1 !important; 
@@ -330,12 +398,14 @@ hr.yuzan-divider {
   background-color: rgb(var(--cat-ripple-color)); 
   animation: yuzan-ripple 1.5s infinite ease-out; 
 }
+
 @keyframes yuzan-ripple { 
   0% { box-shadow: 0 0 0 0 rgba(var(--cat-ripple-color), 0.7); } 
   70% { box-shadow: 0 0 0 10px rgba(var(--cat-ripple-color), 0); } 
   100% { box-shadow: 0 0 0 0 rgba(var(--cat-ripple-color), 0); } 
 }
 
+/* Entry Card Title */
 .entry-card-title { 
   order: 2 !important; 
   font-size: 1.3rem !important; 
@@ -351,6 +421,7 @@ hr.yuzan-divider {
   height: 3.0em !important; 
 }
 
+/* Entry Card Thumbnail */
 .entry-card-thumb { 
   order: 5 !important; 
   margin-top: 40px !important; 
@@ -368,6 +439,7 @@ hr.yuzan-divider {
   transition: transform 0.4s ease !important; 
 }
 
+/* Category Label */
 .entry-card-thumb .cat-label { 
   display: inline-flex !important; 
   align-items: center !important; 
@@ -388,9 +460,11 @@ hr.yuzan-divider {
   z-index: 10 !important; 
 }
 
-/* 2カラムレイアウト (PC版) */
+/* 2-Column Layout (PC) */
 @media screen and (min-width: 769px) {
-  .home #main > .list, .home #main > .entry-cards, .yuzan-ranking-list { 
+  .home #main > .list, 
+  .home #main > .entry-cards, 
+  .yuzan-ranking-list { 
     display: grid !important; 
     grid-template-columns: repeat(2, 1fr) !important; 
     column-gap: 30px !important; 
@@ -401,10 +475,13 @@ hr.yuzan-divider {
   }
 }
 
-/* =============================
-   16. 最新記事（NEW ARTICLE）用スタイル
-   ============================= */
-.yuzan-latest-post { padding: 0 20px; margin-bottom: 40px; }
+/* ===========================================
+   15. Latest Post Layout
+   ===========================================*/
+.yuzan-latest-post { 
+  padding: 0 20px; 
+  margin-bottom: 40px; 
+}
 .yuzan-latest-post .entry-card-wrap.a-wrap { 
   background-color: #F2F2F2 !important; 
   padding: 30px !important; 
@@ -413,10 +490,10 @@ hr.yuzan-divider {
   border-bottom: none !important; 
 }
 
-/* ▼ RANKING・NEW ARTICLE内の下余白調整 ▼ */
+/* Bottom Margin Adjustments */
 .yuzan-ranking-list .widget-entry-cards,
 .yuzan-latest-post .widget-entry-cards {
-  margin-bottom: 0 !important;
+  margin-bottom: 0 !important; 
 }
 .yuzan-ranking-list .a-wrap:last-child,
 .yuzan-latest-post .a-wrap:last-child {
@@ -425,9 +502,9 @@ hr.yuzan-divider {
   border-bottom: none !important;
 }
 
-/* =============================
-   17. YUZAN Marquee 
-   ============================= */
+/* ===========================================
+   16. Marquee Animation
+   ===========================================*/
 .yuzan-marquee-wrapper { 
   width: 100vw; 
   margin-left: calc(50% - 50vw); 
@@ -436,8 +513,15 @@ hr.yuzan-divider {
   padding: 0 0 20px 0 !important; 
   display: flex; 
 }
-.yuzan-marquee-content { display: flex; width: max-content; }
-.marquee-text { display: flex; white-space: nowrap; animation: marquee-scroll 30s linear infinite; }
+.yuzan-marquee-content { 
+  display: flex; 
+  width: max-content; 
+}
+.marquee-text { 
+  display: flex; 
+  white-space: nowrap; 
+  animation: marquee-scroll 30s linear infinite; 
+}
 .marquee-text span { 
   font-size: 6.5rem !important; 
   font-weight: 900; 
@@ -452,17 +536,24 @@ hr.yuzan-divider {
   100% { transform: translateX(-100%); } 
 }
 
-/* =============================
-   18. スマホ最適化 ＆ 追従メニュー
-   ============================= */
+/* ===========================================
+   17. Responsive Layout (SP)
+   ===========================================*/
 @media screen and (max-width: 768px) {
   
-  body.home, body.home #container, body.home #content, body.home #content-in, body.home #main { 
-    padding-top: 0 !important;
+  /* Reset Margins */
+  body.home, 
+  body.home #container, 
+  body.home #content, 
+  body.home #content-in, 
+  body.home #main { 
+    padding-top: 0 !important; 
     margin-top: 0 !important; 
   }
   
-  body.home #header, body.home .header-container { 
+  /* Header Container */
+  body.home #header, 
+  body.home .header-container { 
     position: absolute !important; 
     top: 0 !important;
     left: 0 !important; 
@@ -474,9 +565,10 @@ hr.yuzan-divider {
     background: transparent !important; 
     border: none !important; 
     box-shadow: none !important; 
-    z-index: 9999 !important;
+    z-index: 9999 !important; 
   }
 
+  /* Hide Unused Menu Buttons */
   .mobile-menu-buttons .search-menu-button, 
   .mobile-menu-buttons .logo-menu-button, 
   .mobile-menu-buttons .home-menu-button, 
@@ -488,10 +580,12 @@ hr.yuzan-divider {
     width: 0 !important; 
     height: 0 !important; 
     opacity: 0 !important; 
-    pointer-events: none !important;
+    pointer-events: none !important; 
   }
 
-  .mobile-menu-buttons .menu-button, .mobile-menu-button {
+  /* Hamburger Menu Button */
+  .mobile-menu-buttons .menu-button, 
+  .mobile-menu-button {
     display: block !important; 
     position: fixed !important; 
     top: 15px !important; 
@@ -509,6 +603,7 @@ hr.yuzan-divider {
     color: transparent !important;
   }
   
+  /* Hamburger Menu Icon */
   .mobile-menu-buttons .menu-button span.fa, 
   .mobile-menu-buttons .menu-button i, 
   .mobile-menu-button span.fa, 
@@ -523,29 +618,37 @@ hr.yuzan-divider {
     padding: 0 !important; 
   }
   
-  .yuzan-marquee-wrapper { padding: 0 0 10px 0 !important; }
-  .marquee-text span { font-size: 4rem !important; padding-right: 30px !important; }
+  /* Marquee (SP) */
+  .yuzan-marquee-wrapper { 
+    padding: 0 0 10px 0 !important; 
+  }
+  .marquee-text span { 
+    font-size: 4rem !important; 
+    padding-right: 30px !important; 
+  }
 
-	/* ▼ スマホ版：タグとARTICLE LISTの間の余白 ▼ */
+  /* Tag Spacer (SP) */
   .yuzan-tag-spacer {
-    height: 40px !important; /* スマホ版の余白 */
+    height: 40px !important; 
   }
 	
-  /* 画面幅（vw）を基準にしてバーとリストの横幅を完全に一致させる */
+  /* Results Bar (SP) */
   .yuzan-results-bar { 
     width: 95vw !important; 
     max-width: 95vw !important; 
     font-size: 1.1rem !important; 
     padding: 15px 20px !important; 
-    margin-top: 0px !important; 
+    margin-top: 0px !important; 
     margin-bottom: 0 !important; 
     margin-left: calc(50% - 47.5vw) !important; 
     margin-right: calc(50% - 47.5vw) !important; 
-    box-sizing: border-box !important;
+    box-sizing: border-box !important; 
   }
 
-  /* 記事リスト・ランキングのスマホ幅調整 */
-  .home #main > .list, .home #main > .entry-cards, .yuzan-ranking-list {
+  /* Entry List (SP) */
+  .home #main > .list, 
+  .home #main > .entry-cards, 
+  .yuzan-ranking-list {
     display: flex !important; 
     flex-direction: column !important; 
     padding: 15px !important; 
@@ -555,47 +658,51 @@ hr.yuzan-divider {
     margin-bottom: 60px !important; 
     margin-left: calc(50% - 47.5vw) !important; 
     margin-right: calc(50% - 47.5vw) !important; 
-    box-sizing: border-box !important;
+    box-sizing: border-box !important; 
   }
   
-  /* スマホ版H2サイズ */
+  /* Heading Title (SP) */
   h2.yuzan-content-title { 
     font-size: 1.8rem !important;
-    margin-top: 30px !important;    
+    margin-top: 30px !important; 
     margin-bottom: 30px !important; 
     margin-left: auto !important;
     margin-right: auto !important;
   }
 	
-	/* ▼ スマホ版：タグクラウドの下の余白 ▼ */
+  /* Tag Cloud Margin (SP) */
   body .home #content .tagcloud, 
   body .home #content .wp-block-tag-cloud {
     margin-bottom: 40px !important; 
   }
 	
-  .category-banners { gap: 10px; padding: 0 15px; }
+  /* Category Banners (SP) */
+  .category-banners { 
+    gap: 10px; 
+    padding: 0 15px; 
+  }
 }
 
-/* =============================
-   19. YUZAN Mobile Menu デザイン
-   ============================= */
+/* ===========================================
+   18. Mobile Menu Drawer Design
+   ===========================================*/
 @media screen and (max-width: 768px) {
   
-  /* 親コンテナを確実に真っ黒にする */
+  /* Menu Container */
   #navi-menu-content, .navi-menu-content, 
   #navi-mobile, .menu-drawer, .slide-in { 
     background-color: #1a1a1a !important; 
     background-image: none !important; 
   }
   
-  /* メニュー内のリストの背景をリセット */
+  /* Menu List Background */
   .navi-menu-content ul, .navi-menu-content li, 
   #navi-mobile ul, #navi-mobile li { 
     background-color: transparent !important; 
     border-color: #333333 !important; 
   }
   
-  /* 閉じるボタン（×）を画面右上に完全固定 */
+  /* Close Button */
   .navi-menu-close-button, .close-button, #navi-menu-close-button { 
     position: fixed !important; 
     top: 15px !important; 
@@ -613,12 +720,12 @@ hr.yuzan-divider {
     font-size: 24px !important; 
   }
   
-  /* 一般リンクの文字色 */
+  /* Link Text Color */
   .navi-menu-content a, #navi-mobile a { 
     color: #ffffff !important; 
   }
   
-  /* 子メニュー（渓流釣り等）のデザイン */
+  /* Sub-menu Design */
   .navi-menu-content ul.sub-menu a, #navi-mobile ul.sub-menu a { 
     color: #cccccc !important; 
     font-weight: bold !important; 
@@ -627,7 +734,7 @@ hr.yuzan-divider {
     border-bottom: 1px solid #2a2a2a !important; 
   }
   
-  /* 置換された見出し（span）のデザイン */
+  /* Menu Headers */
   span.yuzan-menu-header { 
     font-family: 'Arial Black', 'Impact', sans-serif !important; 
     font-size: 1.6rem !important; 
@@ -640,7 +747,7 @@ hr.yuzan-divider {
     cursor: default !important; 
   }
   
-  /* TAGセクション：自動コピーされた黒いボタン */
+  /* Tag List Container */
   .yuzan-menu-tag-list { 
     display: flex !important; 
     flex-wrap: wrap !important; 
@@ -648,6 +755,8 @@ hr.yuzan-divider {
     gap: 10px !important; 
     background-color: #1a1a1a !important; 
   }
+
+  /* Tag Items */
   .yuzan-menu-tag-list a.yuzan-cloned-tag { 
     background-color: #333333 !important; 
     color: #ffffff !important; 
@@ -667,7 +776,7 @@ hr.yuzan-divider {
     opacity: 0.7; 
   }
   
-  /* SEARCHセクション：検索ボックス */
+  /* Search Box Container */
   .yuzan-menu-search-box { 
     padding: 20px 20px 40px 20px !important; 
     background-color: #1a1a1a !important; 
@@ -680,7 +789,7 @@ hr.yuzan-divider {
     margin: 0 !important; 
   }
   
-  /* 検索窓入力フィールド */
+  /* Search Input Field */
   .yuzan-menu-search-box input.search-field { 
     flex-grow: 1 !important; 
     background-color: #333333 !important; 
@@ -695,9 +804,12 @@ hr.yuzan-divider {
     box-shadow: none !important; 
     -webkit-appearance: none !important; 
   }
+
+  /* Search Submit Button */
   .yuzan-menu-search-box button.search-submit { 
     position: relative !important; 
-    top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; 
+    top: auto !important; right: auto !important; 
+    bottom: auto !important; left: auto !important; 
     background-color: #555555 !important; 
     color: #ffffff !important; 
     border: none !important; 
@@ -726,21 +838,19 @@ hr.yuzan-divider {
   }
 }
 
-/* =============================
-   ランキング順位（数字）のデザイン
-   ============================= */
-
-/* 数字の箱のデザイン */
+/* ===========================================
+   19. Ranking Label Design
+   ===========================================*/
 .yuzan-ranking-list .rank-label {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   position: absolute !important;
-  top: 10px !important;    /* 画像の左上に配置 */
+  top: 10px !important;
   left: 10px !important;
   width: 24px !important;
   height: 24px !important;
-  background-color: rgba(26, 26, 26, 0.9) !important; /* 濃い黒 */
+  background-color: rgba(26, 26, 26, 0.9) !important;
   color: #ffffff !important;
   font-family: 'Arial Black', sans-serif !important;
   font-size: 12px !important;
@@ -749,21 +859,21 @@ hr.yuzan-divider {
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
-/* ランキングの画像と数字が被りすぎないよう調整 */
+/* Thumbnail Positioning Adjustment */
 .yuzan-ranking-list .popular-entry-card-thumb {
   position: relative !important;
 }
 
-/* カテゴリラベルと重なる場合はカテゴリを少し右にずらす */
+/* Category Label Offset */
 .yuzan-ranking-list .popular-entry-card-category {
-  left: 40px !important; /* 数字の幅＋余白分ずらす */
+  left: 40px !important; 
 }
 
-/* =============================
-   フッターのカスタマイズ
-   ============================= */
+/* ===========================================
+   20. Footer Customization
+   ===========================================*/
 
-/* 1. 全体の背景と基本設定 */
+/* Footer Background */
 #footer {
   background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/footer-design.png") !important;
   background-color: #ffffff !important;
@@ -774,19 +884,18 @@ hr.yuzan-divider {
   z-index: 1;
 }
 
-/* 2. コンテナ自体をコンテンツ幅に合わせ、中身を左寄せに制御 */
+/* Footer Container */
 .navi-footer-in {
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important; /* すべての要素を強制的に左寄せ */
+  align-items: flex-start !important;
   max-width: 1200px !important;
   margin: 0 auto !important;
-  /* ▼ ロゴ上の余白を 80px から 30px に大幅カット！ ▼ */
   padding: 30px 20px 0 20px !important;
   box-sizing: border-box !important;
 }
 
-/* 3. 左寄せの正方形ロゴ（クリック可能版） */
+/* Footer Logo */
 .yuzan-footer-logo-link {
   display: inline-block !important;
   width: 80px !important;
@@ -803,7 +912,7 @@ hr.yuzan-divider {
   opacity: 0.7 !important;
 }
 
-/* 4. メニューを2行・左揃え・等幅フォントに */
+/* Footer Menu */
 .navi-footer-in ul {
   display: flex !important;
   flex-direction: column !important;
@@ -824,7 +933,6 @@ hr.yuzan-divider {
   border: none !important;
   padding: 0 !important;
   transition: opacity 0.3s ease !important;
-  /* ▼ 不自然な改行を絶対に防ぐ魔法を追加！ ▼ */
   white-space: nowrap !important;
   word-break: keep-all !important;
 }
@@ -833,7 +941,7 @@ hr.yuzan-divider {
   opacity: 0.5 !important;
 }
 
-/* 5. コピーライトも確実な左揃え */
+/* Footer Copyright */
 .credit {
   font-family: 'Courier New', Consolas, monospace !important;
   color: #1a1a1a !important;
@@ -841,59 +949,171 @@ hr.yuzan-divider {
   font-weight: bold !important;
   padding: 0 !important;
   background: transparent !important;
-  /* ▼ 確実に左に寄せるための強制設定 ▼ */
   text-align: left !important;
   width: 100% !important;
   letter-spacing: 1px !important;
 }
 
-/* 6. レスポンシブ調整 */
+/* Responsive Footer Padding */
 @media screen and (min-width: 769px) {
-  #footer { padding-bottom: 350px !important; }
+  #footer { 
+    padding-bottom: 350px !important; 
+  }
 }
-
 @media screen and (max-width: 768px) {
   #footer {
     background-size: 100% auto !important;
     padding-bottom: 220px !important;
   }
   .navi-footer-in {
-    /* ▼ スマホ時のロゴ上の余白も 20px まで極限カット！ ▼ */
     padding-top: 20px !important;
   }
 }
 
-/* =============================
-   トップページ以外のページでの非表示設定
-   ============================= */
+/* ===========================================
+   21. Subpage Layout Adjustments
+   ===========================================*/
+
+/* Hide Elements on Subpages */
 body:not(.home) .yuzan-tag-spacer,
 body:not(.home) .yuzan-results-bar {
   display: none !important;
 }
 
-/* =============================
-   記事ページ（個別投稿）のレイアウト＆デザイン変更
-   ============================= */
+/* Subpage Header Display */
+html, body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body:not(.home) #container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 
-/* 1. タイトルとアイキャッチ画像の順番を入れ替える */
+/* Subpage Mobile Menu Wrap */
+body:not(.home) .mobile-menu-buttons {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  z-index: 100000 !important; 
+}
+
+/* Hide Unused Elements on Subpages */
+body:not(.home) #navi,
+body:not(.home) .navi,
+body:not(.home) .notice,
+body:not(.home) .content-top {
+  display: none !important;
+}
+
+/* Subpage Header Layout */
+body:not(.home) #header {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-bottom: 2px solid #1a1a1a !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 9999 !important;
+}
+body:not(.home) .header-container,
+body:not(.home) .header-in {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Subpage Logo */
+body:not(.home) .logo-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 70px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+body:not(.home) .logo-header a {
+  display: block !important;
+  width: 200px !important;
+  height: 40px !important;
+  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/yuzan-logo-yoko.png") !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  border: none !important;
+}
+body:not(.home) .logo-header img,
+body:not(.home) .tagline {
+  display: none !important;
+}
+
+/* Subpage Content Area */
+body:not(.home) #content,
+body:not(.home) #content-in,
+body:not(.home) #main,
+body:not(.home) .main {
+  position: relative !important;
+  z-index: 1 !important;
+  background-color: transparent !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Breadcrumb Wrapper Full Width */
+body:not(.home) .breadcrumb-wrap {
+  background-color: #ffffff !important;
+  margin-top: -20px !important;
+  padding-top: 40px !important; 
+  padding-bottom: 10px !important;
+  position: relative !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  padding-left: calc(50vw - 50% + 20px) !important; 
+  padding-right: calc(50vw - 50% + 20px) !important;
+  box-sizing: border-box !important;
+}
+
+/* ===========================================
+   22. Article Page Design
+   ===========================================*/
+
+/* Header Display Order */
 .article-header {
   display: flex !important;
   flex-direction: column !important;
 }
 .article-header .eye-catch {
-  order: 1 !important; /* アイキャッチ画像を1番上へ */
+  order: 1 !important; 
   margin-bottom: 20px !important;
 }
 .article-header .entry-title {
-  order: 2 !important; /* タイトルを2番目へ */
+  order: 2 !important; 
   margin-top: 10px !important;
 }
 .article-header .date-tags,
 .article-header .post-meta {
-  order: 3 !important; /* 日付やタグを3番目へ */
+  order: 3 !important; 
 }
 
-/* 2. アイキャッチ左上のカテゴリラベルをトップページ風の黒カプセルに */
+/* Article Eye-catch Category Label */
 .article-header .eye-catch .cat-label {
   background-color: #1a1a1a !important;
   color: #ffffff !important;
@@ -907,35 +1127,26 @@ body:not(.home) .yuzan-results-bar {
   border: none !important;
 }
 
-/* =============================
-   記事ページのカテゴリ・タグを「黒カプセル」に統一＆中央揃え
-   ============================= */
-
-/* カテゴリとタグのリンク本体 */
+/* Article Categories and Tags */
 .entry-categories a,
 .entry-tags a,
 .cat-link,
 .tag-link {
-  background-color: #1a1a1a !important; /* 黒背景 */
-  color: #ffffff !important; /* 白文字 */
+  background-color: #1a1a1a !important;
+  color: #ffffff !important; 
   border: none !important;
-  border-radius: 30px !important; /* 綺麗なカプセル型に */
-  
-  /* ▼ ここが文字を完璧に「上下中央」に揃える魔法 ▼ */
+  border-radius: 30px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  line-height: 1 !important; /* 余計な行高を消す */
-  
-  padding: 6px 14px !important; /* 上下左右の余白バランス */
+  line-height: 1 !important; 
+  padding: 6px 14px !important;
   margin: 0 6px 8px 0 !important;
   font-size: 0.8rem !important;
   font-weight: bold !important;
   text-decoration: none !important;
   box-sizing: border-box !important;
 }
-
-/* マウスを乗せた時の動き */
 .entry-categories a:hover,
 .entry-tags a:hover,
 .cat-link:hover,
@@ -943,52 +1154,42 @@ body:not(.home) .yuzan-results-bar {
   opacity: 0.7 !important;
   color: #ffffff !important;
 }
-
-/* 左側に付いているアイコン（タグマークなど）の調整 */
 .entry-categories a .fa,
 .entry-tags a .fa,
 .cat-link .fa,
 .tag-link .fa,
 .entry-categories a span,
 .entry-tags a span {
-  color: #ffffff !important; /* アイコンも白に統一 */
-  margin-right: 5px !important; /* 文字との間に少しだけ余白を作る */
+  color: #ffffff !important;
+  margin-right: 5px !important; 
   font-size: 0.85rem !important;
   display: inline-block !important;
   line-height: 1 !important;
 }
 
-/* =============================
-   パンくずリストのデザイン（ARTICLE LIST風・完全版）
-   ============================= */
-/* PCとスマホの両方のパンくずリスト枠をターゲットに */
+/* ===========================================
+   23. Breadcrumbs
+ ===========================================*/
 .breadcrumb, .bcrumb {
   margin-bottom: 20px !important;
   background: transparent !important;
   padding: 0 !important;
 }
-
-/* ▼ 文字部分のフォントを強力に上書き！ ▼ */
 .breadcrumb span[itemprop="name"], 
 .bcrumb span[itemprop="name"],
 .breadcrumb a,
 .bcrumb a {
-  /* 英数字はCourier New、日本語はゴシック体になるよう指定 */
   font-family: 'Courier New', Consolas, 'Arial Black', 'Noto Sans JP', sans-serif !important;
   font-size: 0.85rem !important;
-  font-weight: 900 !important; /* maxまで太くする */
+  font-weight: 900 !important; 
   color: #1a1a1a !important; 
-  letter-spacing: 2px !important; /* ★ここが重要！文字間隔を広げて雑誌っぽくする */
-  text-transform: uppercase !important; /* 英語はすべて大文字化 */
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important; 
 }
-
-/* リンクにマウスを乗せた時の動き */
 .breadcrumb a:hover span, 
 .bcrumb a:hover span {
   opacity: 0.5 !important;
 }
-
-/* アイコン（家マークや矢印）の調整 */
 .breadcrumb .fa, 
 .bcrumb .fa {
   color: #888888 !important;
@@ -996,146 +1197,21 @@ body:not(.home) .yuzan-results-bar {
   margin: 0 6px !important;
 }
 
-/* トップページでは念のため非表示を強制 */
+/* Hide on Top Page */
 body.home .breadcrumb, 
 body.home .bcrumb {
   display: none !important;
 }
 
-/* =============================
-   下層ページのヘッダー（ハンバーガー復活＆左右白化の完全版）
-   ============================= */
+/* ===========================================
+   24. Author Profile Card
+   =========================================== */
 
-/* 1. 一番上のグレーの隙間を消去 */
-html, body {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-body:not(.home) #container {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 2. モバイルメニュー枠（★z-indexを最強にしてハンバーガーを救出！） */
-body:not(.home) .mobile-menu-buttons {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  overflow: visible !important;
-  z-index: 100000 !important; /* ★ヘッダー(9999)より上に指定！ */
-}
-
-/* 3. 不要な箱を消去 */
-body:not(.home) #navi,
-body:not(.home) .navi,
-body:not(.home) .notice,
-body:not(.home) .content-top {
-  display: none !important;
-}
-
-/* 4. ヘッダーの大枠 */
-body:not(.home) #header {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  background-color: #ffffff !important;
-  border: none !important;
-  border-bottom: 2px solid #1a1a1a !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  z-index: 9999 !important;
-}
-
-/* 5. 内側のコンテナ */
-body:not(.home) .header-container,
-body:not(.home) .header-in {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  background: transparent !important;
-  border: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 6. ロゴエリア */
-body:not(.home) .logo-header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 70px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-}
-
-/* 7. ロゴ画像 */
-body:not(.home) .logo-header a {
-  display: block !important;
-  width: 200px !important;
-  height: 40px !important;
-  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/yuzan-logo-yoko.png") !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  color: transparent !important;
-  font-size: 0 !important;
-  border: none !important;
-}
-
-/* 8. 元画像を非表示 */
-body:not(.home) .logo-header img,
-body:not(.home) .tagline {
-  display: none !important;
-}
-
-/* 9. コンテンツ領域 */
-body:not(.home) #content,
-body:not(.home) #content-in,
-body:not(.home) #main,
-body:not(.home) .main {
-  position: relative !important;
-  z-index: 1 !important;
-  background-color: transparent !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* ★ 10. パンくずリスト（左右のグレーを消し、画面幅いっぱいに白を広げる） */
-body:not(.home) .breadcrumb-wrap {
-  background-color: #ffffff !important;
-  margin-top: -20px !important; /* 黒線の下に潜り込ませる */
-  padding-top: 40px !important; 
-  padding-bottom: 10px !important;
-  position: relative !important;
-  
-  /* ▼ 画面の横幅いっぱいまで背景色（白）を強制的にぶち抜く魔法 ▼ */
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  
-  /* テキストが画面端に張り付かないように余白を整える */
-  padding-left: calc(50vw - 50% + 20px) !important; 
-  padding-right: calc(50vw - 50% + 20px) !important;
-  box-sizing: border-box !important;
-}
-
-/* =============================
-   著者プロフィール（この記事を書いた人）の調整
-   ============================= */
-
-/* 1. プロフィールカード全体（余白を削って縦に短くコンパクトに！） */
+/* Profile Container */
 .author-widget,
 .author-box {
-  background-color: #ffffff !important; 
-  padding: 20px 20px !important; /* 上下左右の余白を少し詰める */
+  background-color: #ffffff !important;
+  padding: 20px 20px !important; 
   border: 1px solid rgba(0, 0, 0, 0.05) !important; 
   margin-bottom: 40px !important;
   display: flex !important;
@@ -1143,31 +1219,29 @@ body:not(.home) .breadcrumb-wrap {
   align-items: flex-start !important;
 }
 
-/* 2. タイトル（この記事を書いた人） */
+/* Title */
 .author-widget .author-title,
 .author-box .author-widget-name {
-  width: 100% !important; 
+  width: 100% !important;
   font-family: 'Courier New', Consolas, 'Noto Sans JP', sans-serif !important;
   font-size: 0.8rem !important;
   font-weight: bold !important;
   color: #888888 !important;
-  margin-bottom: 12px !important; /* 少し詰める */
+  margin-bottom: 12px !important; 
   text-align: left !important;
   display: block !important;
 }
 
-/* 3. 画像エリア（少し小さくしてスタイリッシュに） */
+/* Author Thumbnail */
 .author-widget .author-thumb,
 .author-box .author-thumb {
-  margin: 0 15px 0 0 !important; /* 右側に15pxの余白だけを取る */
+  margin: 0 15px 0 0 !important;
   padding: 0 !important;
-  width: 70px !important; /* 80pxから70pxへ縮小 */
+  width: 70px !important; 
   height: 70px !important;
   flex-shrink: 0 !important;
-  float: none !important; /* Cocoonの左寄せを無効化 */
+  float: none !important; 
 }
-
-/* 画像の円形化 */
 .author-widget .author-thumb img,
 .author-box .author-thumb img {
   border-radius: 50% !important;
@@ -1178,7 +1252,7 @@ body:not(.home) .breadcrumb-wrap {
   display: block !important;
 }
 
-/* 4. テキストエリア（★画像のすぐ右隣に密着させる！） */
+/* Author Content */
 .author-widget .author-content,
 .author-box .author-content {
   flex: 1 !important; 
@@ -1186,19 +1260,19 @@ body:not(.home) .breadcrumb-wrap {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important; 
-  margin: 0 !important; /* ★Cocoonの見えない巨大余白を強制リセット！ */
+  margin: 0 !important; 
   padding: 0 !important;
   float: none !important;
   text-align: left !important;
 }
 
-/* 著者名 */
+/* Author Name */
 .author-widget .author-name,
 .author-box .author-name {
   font-size: 1.1rem !important;
   font-weight: 900 !important;
   color: #1a1a1a !important;
-  margin: 0 0 6px 0 !important; /* 下の余白を詰める */
+  margin: 0 0 6px 0 !important; 
   line-height: 1.2 !important;
 }
 .author-widget .author-name a,
@@ -1207,7 +1281,7 @@ body:not(.home) .breadcrumb-wrap {
   text-decoration: none !important;
 }
 
-/* プロフィール文章 */
+/* Author Description */
 .author-widget .author-description,
 .author-box .author-description {
   font-size: 0.85rem !important;
@@ -1217,7 +1291,7 @@ body:not(.home) .breadcrumb-wrap {
   padding: 0 !important;
 }
 
-/* 5. 不要なアイコンを完全に消し去る */
+/* Hide Default Social Icons */
 .author-widget .author-follows,
 .author-box .author-follows,
 .author-widget .sns-follow-buttons,
@@ -1225,30 +1299,30 @@ body:not(.home) .breadcrumb-wrap {
   display: none !important;
 }
 
-/* =============================
-   SNSシェアメッセージのカスタマイズ
-   ============================= */
+/* ===========================================
+   25. SNS Share Customization
+   ===========================================*/
 
-/* 1. 元の日本語を消し、箱を横幅いっぱいに広げて中央揃えにする */
+/* Share Message Container */
 .sns-share-message {
   font-size: 0 !important; 
-  background-color: transparent !important; 
+  background-color: transparent !important;
   display: block !important; 
-  width: 100% !important; /* ★横幅を100%確保して潰れを防止！ */
-  text-align: center !important; /* ★中身を中央に寄せる */
+  width: 100% !important; 
+  text-align: center !important;
   margin: 0 0 20px 0 !important; 
   padding: 0 !important; 
   border: none !important;
 }
 
-/* 2. 代わりの「SHARE」文字を出現させる */
+/* Custom Share Text */
 .sns-share-message::before {
   content: "SHARE" !important;
   font-family: 'Courier New', Consolas, monospace !important; 
-  font-size: 1.4rem !important; 
+  font-size: 1.4rem !important;
   font-weight: 900 !important; 
   letter-spacing: 3px !important; 
   color: #1a1a1a !important; 
-  display: inline-block !important; /* ★文字として中央に配置する */
+  display: inline-block !important; 
   line-height: 1.2 !important; 
 }
