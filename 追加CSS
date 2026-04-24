@@ -1535,47 +1535,79 @@ body.home .bcrumb {
 }
 
 /* =========================================================
-   30. Speech Bubble (吹き出し)
+   30. Speech Bubble (吹き出し - 全幅＆拡大版)
    ========================================================= */
 .speech-balloon {
   margin-bottom: 30px !important;
-  border: none !important; /* 謎のグレー枠線を完全に削除 */
+  border: none !important;
   box-shadow: none !important;
   box-sizing: border-box !important;
-  display: flex !important; /* 横並びレイアウトを強制 */
+  display: flex !important;
   align-items: flex-start !important;
+  width: 100% !important; /* 全幅を強制 */
+  max-width: 100% !important;
 }
 
-/* アイコン部分 */
+/* 右向き・左向きのレイアウト制御 */
+.speech-balloon-left { flex-direction: row !important; }
+.speech-balloon-right { flex-direction: row-reverse !important; }
+
+/* 三角の残骸を完全に消去 */
+.speech-balloon::before, .speech-balloon::after,
+.speech-content::before, .speech-content::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* アイコンコンテナ（サイズを100pxで絶対に固定） */
 .speech-person {
-  flex-shrink: 0 !important; /* アイコンが潰れないように保護 */
+  flex: 0 0 100px !important; /* 横幅が潰れないようロック */
+  width: 100px !important;
+  text-align: center !important;
 }
-.speech-person img {
-  border-radius: 50% !important;
-  border: none !important;
-  width: 60px !important;
-  height: 60px !important;
-  box-shadow: none !important;
+.speech-balloon-left .speech-person {
+  margin-right: 20px !important;
+  margin-left: 0 !important;
+}
+.speech-balloon-right .speech-person {
+  margin-left: 20px !important;
+  margin-right: 0 !important;
 }
 
-/* テキストエリアの横幅最大化（担当者様ご指定のflexコード） */
+/* アイコン画像（強制的に100pxに拡大） */
+.speech-person img {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* メンバー名 */
+.speech-name {
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  color: #1a1a1a !important;
+  margin-top: 8px !important;
+  line-height: 1.2 !important;
+}
+
+/* テキストエリア（残りの画面幅を100%使い切る） */
 .speech-content {
   background-color: #f2f2f2 !important;
   border: none !important;
   border-radius: 0 !important;
   color: #1a1a1a !important;
-  flex: 1 !important; /* 余った横幅をすべてテキスト領域に */
-  min-width: 0 !important; /* flexbox内でテキストがはみ出さない魔法のコード */
-  box-sizing: border-box !important;
+  flex: 1 1 auto !important; /* 余白をすべて吸収 */
+  min-width: 0 !important;
   width: 100% !important;
-  box-shadow: none !important;
-}
-
-.speech-balloon-left .speech-content::before {
-  border-right-color: #f2f2f2 !important;
-}
-.speech-balloon-right .speech-content::before {
-  border-left-color: #f2f2f2 !important;
+  max-width: none !important; /* Cocoonデフォルトの幅制限を完全解除 */
+  padding: 20px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 /* =========================================================
@@ -1609,23 +1641,31 @@ body.home .bcrumb {
     margin: 25px 0 10px 0 !important;
   }
 
-  /* ② 吹き出しの全幅化・極限まで余白削減 */
+  /* ② 吹き出しの全幅化・親要素の余白を突破・アイコン拡大維持 */
   .speech-balloon {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    margin-bottom: 25px !important;
+    /* ★ 親要素の左右の余白（約15px〜20px）を無視して画面端まで広げる裏技 */
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    padding-left: 15px !important;  /* アイコンが画面端に張り付かないように内側へ戻す */
+    padding-right: 15px !important; /* テキストが画面端に張り付かないように内側へ戻す */
+    width: calc(100% + 30px) !important; /* マイナスした分だけ全体の幅を広げる */
+    max-width: none !important;
   }
+  
   .speech-person {
-    margin-right: 10px !important; /* アイコンとテキストの距離を縮める */
+    flex: 0 0 75px !important; /* スマホは75pxでロック（維持） */
+    width: 75px !important;
   }
+  .speech-balloon-left .speech-person { margin-right: 15px !important; }
+  .speech-balloon-right .speech-person { margin-left: 15px !important; }
+
   .speech-person img {
-    width: 45px !important; /* アイコンをスマホ用サイズに縮小 */
-    height: 45px !important;
+    width: 75px !important;
+    height: 75px !important;
   }
+  
   .speech-content {
-    padding: 10px 12px !important; /* テキスト周りの無駄な余白をカット */
-    font-size: 0.9rem !important; /* スマホで読みやすいサイズに */
+    padding: 15px !important;
+    font-size: 0.95rem !important;
   }
-}
