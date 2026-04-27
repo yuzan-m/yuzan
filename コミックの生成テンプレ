@@ -69,6 +69,7 @@ Visual style:
 Cover page rules:
 - Title: "遊山"
 - Subtitle / catchphrase: "山を全力で楽しむ"
+- Episode title should be based on the current episode theme
 - The cover page must visually reflect the theme of the episode
 - The cover art should include a main visual directly related to the current comic title or central incident
 - For example, if the story is about getting a lure stuck in a tree, the cover should clearly show that situation in an attractive way
@@ -77,6 +78,56 @@ Cover page rules:
 - No character profile boxes
 - The 4 characters must be visually distinguishable at a glance
 - The cover should feel strong enough to be used as a WordPress featured image / comic cover
+
+Fixed cover design system:
+- The cover must use a consistent series template so every episode looks like part of the same "遊山" comic series
+- The top area is the fixed brand header area
+- Place the main title "遊山" in the upper area every time
+- Place the catchphrase "山を全力で楽しむ" directly under or near the title "遊山"
+- Keep the position, size balance, brush style, and visual treatment of "遊山" and "山を全力で楽しむ" consistent across all episodes
+- These two elements should function like a fixed series logo and brand tagline
+- Do not move them randomly between episodes
+- Do not redesign them into a completely different style each time
+
+Episode title placement:
+- The episode title must always be placed in the lower area of the cover
+- Use a fixed bottom title band / brush-stroke title plate for the episode title
+- The bottom title area should be highly readable and should not overlap with busy background details
+- Use strong contrast for the episode title, such as black brush-style Japanese text on a white or light brush-stroke plate
+- The episode title should be large, clear, and readable even when displayed as a small WordPress featured image
+- Add a small label such as "今回のテーマ" above the episode title if it fits the design
+- The episode title for this episode is:
+[ここに日本語でエピソードタイトルを入力]
+
+Cover composition structure:
+- Top fixed area:
+  - "遊山"
+  - "山を全力で楽しむ"
+- Middle main visual area:
+  - The central scene or incident of the episode
+  - Show the key moment of the story clearly
+  - The visual should immediately tell the reader what this episode is about
+- Bottom fixed episode title area:
+  - "今回のテーマ"
+  - Episode title in large readable Japanese text
+
+WordPress featured image readability:
+- The cover must work well as a WordPress featured image
+- Keep important text inside safe margins
+- Do not place the episode title over complex trees, water, rocks, or character details
+- Avoid low-contrast text
+- Avoid placing the episode title in the middle of the illustration where it competes with the characters
+- The bottom title band should make the episode title easy to read at a glance
+- The cover should be visually attractive both at full size and thumbnail size
+
+Series consistency:
+- All future covers should follow the same structure:
+  1. fixed "遊山" logo area at the top
+  2. fixed catchphrase "山を全力で楽しむ"
+  3. episode-specific main illustration in the center
+  4. fixed bottom title band with the episode title
+- The cover should not feel like a one-off illustration
+- It should feel like one episode in an ongoing branded comic series
 
 Main characters:
 1. ユウ
