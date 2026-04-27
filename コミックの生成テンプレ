@@ -1,93 +1,143 @@
-Create a full-color original comic for the outdoor magazine "遊山" in a clean, readable Japanese manga style.
+Use the attached ideal "遊山" comic image(s) as the master visual reference for the entire comic.
+All pages must match the same comic series style as the attached image(s).
+Keep the artwork, character rendering, line quality, coloring, shading, facial design, clothing design logic, typography feeling, background detail, atmosphere, and page design language highly consistent with the attached reference.
+Do not change the art style between pages or between episodes.
+The result must look like a new episode from the same "遊山" comic series, not a different manga style.
+Maintain strong visual consistency so that even the second or third comic episode does not drift in style.
+
+Create a full-color original comic for the outdoor magazine "遊山" in a clean, polished, highly readable Japanese manga style.
 
 Overall concept:
 - This is an original "遊山" comic about outdoor activities such as mountain stream fishing, camping, hiking, and relaxing in nature.
-- The comic should be fun to read, easy to understand, and leave the reader with a practical lesson at the end.
-- The story should combine "relatable beginner mistakes", "character interaction", and "useful learning".
-- Prioritize clarity of storytelling over panel count. Use as many panels as needed so the story is easy to follow.
-- Do not omit important cause-and-effect steps. Show actions and reactions clearly.
+- The target audience is beginners to intermediate outdoor enthusiasts.
+- The comic should be fun to read, easy to understand, visually engaging, and leave the reader with a practical lesson at the end.
+- The story should combine relatable beginner mistakes, enjoyable character interaction, natural humor, and useful learning.
+- Prioritize storytelling clarity over panel count.
+- Use as many panels as needed so the reader can clearly understand what is happening.
+- Do not skip important cause-and-effect moments.
+- Show actions, reactions, mistakes, advice, and learning clearly.
 
 Format and layout:
 - Vertical manga page layout
 - A5 comic page format
 - Include:
   1. a cover page
-  2. the main comic story
-  3. a final "今回の学び" page or learning panel
+  2. main comic story pages
+  3. a final "今回の学び" page or learning section
+- All text inside the comic must be in Japanese
+- Use a handwritten-style Japanese font feeling for speech bubbles, sound effects, titles, and learning notes
 - Do not show panel numbers
 - Do not include character introduction boxes
 - Do not show any ages in the comic
 - Keep the reading flow natural and easy to follow
-- All text inside the comic must be in Japanese
-- Use a handwritten-style Japanese font for speech bubbles, sound effects, and learning notes
-- Maintain a clean, visually unified design across all pages
+- The comic must feel like a polished, commercially designed Japanese manga episode
+
+Japanese manga readability rules:
+- Reading flow must follow standard Japanese manga conventions:
+  - from right to left
+  - from top to bottom
+  - from the upper right toward the lower left
+- Panel arrangement on both odd pages (right pages) and even pages (left pages) should guide the eye naturally from right to left
+- Around 5 to 7 panels per page is a good readability guideline, but adjust when necessary for clarity
+- Vertical spacing between panels should be relatively narrow
+- Horizontal spacing between panels should be relatively wider so the eye does not get confused
+- Diagonal panels may be used effectively for tension, unease, or action scenes, but should not be overused
+- Bleed panels / tachikiri panels may be used to create impact, scale, or immersion
+- Use character gazes, body movement, object motion, and composition flow to guide the reader’s eye smoothly into the next panel
+- The paneling should be readable first, stylish second
 
 Visual style:
-- Bright, appealing, clean manga illustration style
-- Outdoor atmosphere should be vivid and attractive
-- Show mountain streams, trees, rocks, sky, and nature clearly
-- Expressions must be easy to read
-- Action scenes must be easy to understand
-- The comic should feel polished, friendly, and highly readable
-- Make the characters visually distinct from each other
-- Only 4 characters should appear in the comic. Do not accidentally create a 5th character or duplicate-looking figure.
+- Bright, appealing, polished Japanese comic illustration style
+- Full color
+- Clean but rich linework
+- Easy-to-read expressions
+- Slightly realistic but manga-friendly proportions
+- Friendly, commercial-quality manga finish
+- Outdoor atmosphere should feel fresh, vivid, and attractive
+- Show mountain streams, forests, rocks, sky, fishing spots, campsites, or nature clearly when relevant
+- Important actions must be shown carefully, not skipped
+- If the story involves fishing, clearly show motions like:
+  - preparing to cast
+  - casting
+  - lure trajectory
+  - snagging in a tree
+  - pulling the line and making it worse
+  - trying to fix the problem
+  - re-casting
+- The story must allow the reader to imagine the scene easily
 
-Cover page:
+Cover page rules:
 - Title: "遊山"
 - Subtitle / catchphrase: "山を全力で楽しむ"
-- Show only the 4 main characters
+- The cover page must visually reflect the theme of the episode
+- The cover art should include a main visual directly related to the current comic title or central incident
+- For example, if the story is about getting a lure stuck in a tree, the cover should clearly show that situation in an attractive way
+- The cover should show only the 4 main characters
 - No age labels
 - No character profile boxes
-- The 4 characters must be visually easy to distinguish at a glance
+- The 4 characters must be visually distinguishable at a glance
+- The cover should feel strong enough to be used as a WordPress featured image / comic cover
 
 Main characters:
 1. ユウ
 - Main protagonist
 - Cheerful, action-oriented, often smiling
+- The type who says "Let’s go here next" or "Let’s try this next"
 - Normal build
 - Black hair
 - Short-to-medium natural hairstyle
-- Hair part is 6:4, with the left side heavier
-- No wax or heavy styling, clean and natural appearance
+- Hair part is 6:4, left side heavier
+- Clean, natural look
+- No wax or heavy styling
 - Wears Patagonia-style outdoor clothing
-- Must always include a clear accent color in his outfit so he stands out
-- Friendly and approachable
+- His outfit must always include a clear accent color so he stands out visually
+- Friendly, approachable, natural protagonist vibe
 
 2. オガ
-- Clumsy, playful, often makes mistakes
+- Clumsy and playful
+- Often makes mistakes
+- Slightly overconfident or gets carried away easily
 - Slim build
 - Slightly long face
 - Center-parted hair, 5:5
 - Wears simple UNIQLO-style casual clothing
 - Not Patagonia
-- Slightly cocky or overconfident vibe, but still likable
-- More minimal, simple, city-casual appearance than the others
+- Minimal, simple, slightly city-casual appearance
+- Should feel a little cocky but still likable
 
 3. ナオ
 - Fishing knowledge expert
-- Calm and reliable
+- Calm, reliable, and knowledgeable
 - Slightly chubby and larger build
 - Brown hair
 - Slightly short perm hairstyle
 - Does NOT wear glasses
 - Wears sporty, functional, outdoorsy clothing
-- Strong outdoor and fishing vibe
+- Strong outdoor / fishing expert vibe
 - Should look like the knowledgeable one at a glance
 
 4. フジ
 - Oldest member
 - Mature but playful
+- Looks composed and experienced
 - Normal build
 - Slightly brown skin tone
 - Wears clear-framed glasses
 - Hair is straight
-- Sides are all clipped short / undercut
-- Top is longer, styled with gel for shine and separated texture
+- Sides are clipped short / undercut
+- Top is longer and styled with gel for shine and separated texture
 - Wears simple but refined clothing with a sense of taste
-- Looks experienced and composed, but also ends up making mistakes himself sometimes
+- Often says something like "That’s the kind of thing people do at the beginning," but ends up making the same mistake himself later
+
+Character rules:
+- Exactly 4 main characters only
+- Do not accidentally create a 5th person
+- Do not duplicate a character by giving someone the same clothes or same visual identity
+- Each character must remain visually distinct in hairstyle, silhouette, outfit, and overall vibe
+- Keep their visual identities consistent from page to page and from episode to episode
 
 Dialogue rules:
-- All characters speak standard Japanese
+- All characters speak standard Japanese only
 - No Kansai dialect
 
 Speech relationship rules:
@@ -96,45 +146,57 @@ Speech relationship rules:
 - ナオ speaks politely to フジ, and casually to ユウ and オガ
 - オガ speaks politely to フジ, and casually to ユウ and ナオ
 
-Storytelling rules:
-- テーマ： [ここに日本語でテーマを入力]
-- ストーリー概要： [ここに日本語でストーリー概要を入力]
-- Make sure the sequence of events is very clear and easy to understand
-- Do not rush through important story beats
-- If needed, add extra panels to show actions clearly
-- Carefully show:
-  - setup
-  - who is doing what
-  - the result of each action
-  - reactions from the others
-  - explanation or correction
-  - a final takeaway
-- Use facial expressions, pauses, body language, and action panels effectively
-- Make the humor feel natural and character-driven
-- Make the story feel like a relatable outdoor beginner mistake with a useful lesson
+Dialogue style:
+- Dialogue should feel natural and readable in Japanese
+- Keep speech concise and expressive
+- Let expressions, pauses, and actions also carry meaning
+- The comic should be easy to understand even for beginners
 
-Important scene clarity rule:
-- If a character causes a problem, clearly show that character taking the action first
-- Never skip the action that causes the result
-- For example, if someone gets a lure stuck in a tree, first clearly show that person casting, then show the lure path, then the snag
-- Make sure the reader can always tell exactly who acted and why the result happened
+Story input:
+- テーマ：
+[ここに日本語でテーマを入力]
 
-Character distinction rule:
-- Make each character’s clothing, silhouette, hairstyle, and vibe clearly different
-- ユウ must have an accent color and Patagonia-style look
-- オガ must look simple and UNIQLO-like
-- ナオ must look sporty and outdoorsy
-- フジ must look simple but refined, with clear glasses and styled hair
+- ストーリー概要：
+[ここに日本語でストーリー概要を入力]
 
-Final learning section:
-- At the end, include a "今回の学び" section
-- Summarize the key lesson in Japanese
-- Keep it practical, clear, and beginner-friendly
 - 今回の学び：
 [ここに日本語で学びを入力]
 
+Storytelling execution rules:
+- Build the comic faithfully based on the Japanese theme and story summary above
+- Make the sequence of events extremely clear
+- Never skip the action that causes the result
+- If a character causes a problem, clearly show that character doing the action first, then show the result
+- Carefully show:
+  - setup
+  - location/context
+  - who is acting
+  - what they do
+  - what happens as a result
+  - reactions from others
+  - explanation or correction
+  - final takeaway
+- If necessary, add extra panels to improve understanding
+- Show enough detail so the reader can naturally imagine the scene
+- The humor should feel natural and come from the characters and situation
+- The story should feel like a relatable outdoor beginner mistake with a useful lesson
+
+Character distinction rule:
+- ユウ must have an accent color and Patagonia-style outdoor look
+- オガ must look simple, minimal, and UNIQLO-like
+- ナオ must look sporty, outdoorsy, and experienced
+- フジ must look simple but refined, with clear glasses and styled hair
+- Keep these visual differences obvious in every page
+
+Final learning section:
+- At the end, include a "今回の学び" section
+- Summarize the lesson in Japanese
+- Keep it practical, clear, and beginner-friendly
+- The learning section should visually fit the same comic design language
+
 Output requirements:
-- Produce the full comic pages in consistent style
-- Keep all pages visually unified
-- Ensure the story is easy to follow without extra explanation outside the comic
-- The final result should feel like a polished original "遊山" comic episode
+- Produce the full comic pages in a visually unified style
+- Keep all pages highly consistent with the attached master visual reference
+- Ensure the comic is readable without any external explanation
+- The result should feel like a polished original "遊山" comic episode
+- The design must remain stable enough that future episodes can be generated with the same identity
