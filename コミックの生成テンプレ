@@ -1,3 +1,15 @@
+以下の条件で、今すぐ漫画画像を生成してください。
+これは設定共有ではなく、画像生成の実行依頼です。
+
+生成対象：
+[ここに「表紙」「本編1ページ目」「本編2ページ目」「今回の学びページ」などを入力]
+
+今回は以下のページのみを生成してください。
+他のページは生成しないでください。
+
+添付した理想の「遊山」コミック画像を、今回のマスタービジュアル参考として使用してください。
+もし完成済みの表紙画像が添付されている場合は、その表紙画像をこのエピソードの正式な衣装・配色・髪型・キャラクターデザインの基準として使用してください。
+
 Use the attached ideal "遊山" comic image(s) as the master visual reference for the entire comic.
 All pages must match the same comic series style as the attached image(s).
 Keep the artwork, character rendering, line quality, coloring, shading, facial design, clothing design logic, typography feeling, background detail, atmosphere, and page design language highly consistent with the attached reference.
@@ -5,7 +17,7 @@ Do not change the art style between pages or between episodes.
 The result must look like a new episode from the same "遊山" comic series, not a different manga style.
 Maintain strong visual consistency so that even the second or third comic episode does not drift in style.
 
-Create a full-color original comic for the outdoor magazine "遊山" in a clean, polished, highly readable Japanese manga style.
+Create a full-color original comic page or cover for the outdoor magazine "遊山" in a clean, polished, highly readable Japanese manga style.
 
 Overall concept:
 - This is an original "遊山" comic about outdoor activities such as mountain stream fishing, camping, hiking, and relaxing in nature.
@@ -16,43 +28,50 @@ Overall concept:
 - Use as many panels as needed so the reader can clearly understand what is happening.
 - Do not skip important cause-and-effect moments.
 - Show actions, reactions, mistakes, advice, and learning clearly.
+- The comic should feel like a polished original "遊山" comic episode.
 
 Format and layout:
 - Vertical manga page layout
 - A5 comic page format
-- Include:
-  1. a cover page
-  2. main comic story pages
-  3. a final "今回の学び" page or learning section
+- Full color
+- Japanese manga page style
 - All text inside the comic must be in Japanese
-- Use a handwritten-style Japanese font feeling for speech bubbles, sound effects, titles, and learning notes
 - Do not show panel numbers
 - Do not include character introduction boxes
 - Do not show any ages in the comic
 - Keep the reading flow natural and easy to follow
 - The comic must feel like a polished, commercially designed Japanese manga episode
+- Show exactly the requested page only
+- Do not generate pages before or after the requested page
 
-Font rules:
-- All dialogue text inside speech bubbles must use a clear, standard, easy-to-read Japanese manga font
-- Do NOT use rough handwritten-style text for normal dialogue
-- Prioritize readability over decorative style
-- Use clean, standard Japanese comic typography for all speech bubbles
-- Make the text large enough and clear enough to read easily
-- Sound effects may be slightly stylized, but dialogue must remain highly readable
+Text and font rules:
+- For main story pages, all dialogue text inside speech bubbles must use a clear, standard, easy-to-read Japanese manga font.
+- Do NOT use rough handwritten-style text for normal dialogue.
+- Prioritize readability over decorative style.
+- Use clean, standard Japanese comic typography for all speech bubbles.
+- Make the text large enough and clear enough to read easily.
+- Sound effects may be slightly stylized.
+- Cover title design, logo-style elements, and sound effects may use stylized handwritten or brush-style typography.
+- Normal dialogue must remain highly readable.
+- Learning notes should also prioritize readability over decoration.
 
 Japanese manga readability rules:
-- Reading flow must follow standard Japanese manga conventions:
+- Reading flow must strictly follow standard Japanese manga conventions:
   - from right to left
   - from top to bottom
   - from the upper right toward the lower left
-- Panel arrangement on both odd pages (right pages) and even pages (left pages) should guide the eye naturally from right to left
-- Around 5 to 7 panels per page is a good readability guideline, but adjust when necessary for clarity
-- Vertical spacing between panels should be relatively narrow
-- Horizontal spacing between panels should be relatively wider so the eye does not get confused
-- Diagonal panels may be used effectively for tension, unease, or action scenes, but should not be overused
-- Bleed panels / tachikiri panels may be used to create impact, scale, or immersion
-- Use character gazes, body movement, object motion, and composition flow to guide the reader’s eye smoothly into the next panel
-- The paneling should be readable first, stylish second
+- Panel arrangement on both odd pages and even pages should guide the eye naturally from right to left.
+- If two or more panels are placed side by side horizontally, the panel on the RIGHT must be read first, and the panel on the LEFT must be read second.
+- The right-side panel must make sense as the first panel in that row.
+- The left-side panel must naturally continue from the right-side panel.
+- Do not create a layout where the left panel must be read first to understand the page.
+- Around 5 to 7 panels per page is a good readability guideline, but adjust when necessary for clarity.
+- Vertical spacing between panels should be relatively narrow.
+- Horizontal spacing between panels should be relatively wider so the eye does not get confused.
+- Diagonal panels may be used effectively for tension, unease, or action scenes, but should not be overused.
+- Bleed panels / tachikiri panels may be used to create impact, scale, or immersion.
+- Use character gazes, body movement, object motion, and composition flow to guide the reader’s eye smoothly into the next panel.
+- The paneling should be readable first, stylish second.
 
 Visual style:
 - Bright, appealing, polished Japanese comic illustration style
@@ -64,15 +83,29 @@ Visual style:
 - Outdoor atmosphere should feel fresh, vivid, and attractive
 - Show mountain streams, forests, rocks, sky, fishing spots, campsites, or nature clearly when relevant
 - Important actions must be shown carefully, not skipped
-- If the story involves fishing, clearly show motions like:
-  - preparing to cast
-  - casting
-  - lure trajectory
-  - snagging in a tree
-  - pulling the line and making it worse
-  - trying to fix the problem
-  - re-casting
 - The story must allow the reader to imagine the scene easily
+
+If the story involves fishing, clearly show motions like:
+- preparing to cast
+- checking overhead space
+- casting
+- lure trajectory
+- lure landing point
+- snagging in a tree
+- pulling the line and making it worse
+- trying to fix the problem
+- re-casting
+
+Important costume consistency rule:
+- If a cover image is attached, use it as the official costume, color, hairstyle, and character design reference for that episode.
+- Keep all 4 characters’ outfits, clothing colors, hairstyles, face designs, and visual identities consistent with the attached cover image.
+- Do not redesign or recolor the characters’ clothing between pages.
+- Only change poses, facial expressions, camera angles, and actions.
+- The main story pages must look like direct continuations of the attached cover and previous pages.
+
+添付した表紙画像がある場合は、その表紙画像を、この話の正式なキャラクター衣装・配色・髪型・見た目の基準にしてください。
+本編ページでは、4人の服装・色・髪型・キャラクターデザインを表紙から変更しないでください。
+変更してよいのは、ポーズ・表情・動き・カメラアングルだけです。
 
 Cover page rules:
 - Title: "遊山"
@@ -99,11 +132,11 @@ Fixed cover design system:
 
 Episode title placement:
 - The episode title must always be placed in the lower area of the cover
+- Do NOT include the text "今回のテーマ" on the cover
 - Use a fixed bottom title band / brush-stroke title plate for the episode title
 - The bottom title area should be highly readable and should not overlap with busy background details
 - Use strong contrast for the episode title, such as black brush-style Japanese text on a white or light brush-stroke plate
 - The episode title should be large, clear, and readable even when displayed as a small WordPress featured image
-- Add a small label such as "今回のテーマ" above the episode title if it fits the design
 - The episode title for this episode must use the Japanese text entered in:
 - エピソードタイトル：[ここに日本語で表紙下部に表示するタイトルを入力]
 
@@ -116,8 +149,8 @@ Cover composition structure:
   - Show the key moment of the story clearly
   - The visual should immediately tell the reader what this episode is about
 - Bottom fixed episode title area:
-  - "今回のテーマ"
-  - Episode title in large readable Japanese text
+  - Episode title only, in large readable Japanese text
+  - Do not include "今回のテーマ"
 
 WordPress featured image readability:
 - The cover must work well as a WordPress featured image
@@ -194,6 +227,14 @@ Character rules:
 - Do not duplicate a character by giving someone the same clothes or same visual identity
 - Each character must remain visually distinct in hairstyle, silhouette, outfit, and overall vibe
 - Keep their visual identities consistent from page to page and from episode to episode
+- If a cover reference is attached, prioritize the cover reference for clothing colors and outfit details
+
+Character distinction rule:
+- ユウ must have an accent color and Patagonia-style outdoor look
+- オガ must look simple, minimal, and UNIQLO-like
+- ナオ must look sporty, outdoorsy, and experienced
+- フジ must look simple but refined, with clear glasses and styled hair
+- Keep these visual differences obvious in every page
 
 Dialogue rules:
 - All characters speak standard Japanese only
@@ -224,11 +265,36 @@ Story input:
 - 今回の学び：
 [ここに日本語で学びを入力]
 
+Page-specific input:
+- 生成対象ページ：
+[ここに「表紙」「本編1ページ目」「本編2ページ目」「今回の学びページ」などを入力]
+
+- このページの役割：
+[このページで読者に伝えたいことを日本語で入力]
+
+- このページに含める内容：
+[このページに描く内容を日本語で入力]
+
+- このページに含めてはいけない内容：
+[次ページ以降の内容、まだ起きていない事件、入れてはいけない描写を日本語で入力]
+
+- セリフ：
+[このページで使うセリフを日本語で入力]
+
+Very important page boundary rule:
+- This request is only for the specified page.
+- Do not include events from the next page.
+- Do not include events that happen later in the story.
+- End the page exactly at the specified story beat.
+- If the request says this is page 1, do not include page 2 events.
+- If the request says this is a cover page, do not include comic panels from the main story.
+- If the request says this is a learning page, focus only on the final learning section.
+
 Storytelling execution rules:
-- Build the comic faithfully based on the Japanese theme and story summary above
-- Make the sequence of events extremely clear
-- Never skip the action that causes the result
-- If a character causes a problem, clearly show that character doing the action first, then show the result
+- Build the comic faithfully based on the Japanese theme, story summary, and page-specific input above.
+- Make the sequence of events extremely clear.
+- Never skip the action that causes the result.
+- If a character causes a problem, clearly show that character doing the action first, then show the result.
 - Carefully show:
   - setup
   - location/context
@@ -238,27 +304,23 @@ Storytelling execution rules:
   - reactions from others
   - explanation or correction
   - final takeaway
-- If necessary, add extra panels to improve understanding
-- Show enough detail so the reader can naturally imagine the scene
-- The humor should feel natural and come from the characters and situation
-- The story should feel like a relatable outdoor beginner mistake with a useful lesson
-
-Character distinction rule:
-- ユウ must have an accent color and Patagonia-style outdoor look
-- オガ must look simple, minimal, and UNIQLO-like
-- ナオ must look sporty, outdoorsy, and experienced
-- フジ must look simple but refined, with clear glasses and styled hair
-- Keep these visual differences obvious in every page
+- If necessary, add extra panels to improve understanding.
+- Show enough detail so the reader can naturally imagine the scene.
+- The humor should feel natural and come from the characters and situation.
+- The story should feel like a relatable outdoor beginner mistake with a useful lesson.
 
 Final learning section:
-- At the end, include a "今回の学び" section
-- Summarize the lesson in Japanese
-- Keep it practical, clear, and beginner-friendly
-- The learning section should visually fit the same comic design language
+- At the end of the episode, include a "今回の学び" section.
+- Summarize the lesson in Japanese.
+- Keep it practical, clear, and beginner-friendly.
+- The learning section should visually fit the same comic design language.
+- For normal story pages, do not include the final learning section unless the page-specific input says this is the learning page.
 
 Output requirements:
-- Produce the full comic pages in a visually unified style
-- Keep all pages highly consistent with the attached master visual reference
-- Ensure the comic is readable without any external explanation
-- The result should feel like a polished original "遊山" comic episode
-- The design must remain stable enough that future episodes can be generated with the same identity
+- Produce only the requested comic page or cover.
+- Keep the page visually unified.
+- Keep all pages highly consistent with the attached master visual reference.
+- Ensure the comic is readable without any external explanation.
+- The result should feel like a polished original "遊山" comic episode.
+- The design must remain stable enough that future episodes can be generated with the same identity.
+- Generate the image now.
