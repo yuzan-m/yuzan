@@ -49,8 +49,23 @@
 document.addEventListener("DOMContentLoaded", function() {
   var carousel = document.querySelector(".carousel");
   var container = document.getElementById("comic-carousel-container");
+
   if (carousel && container) {
-    container.appendChild(carousel); // カルーセルを指定位置に移動
+    // 1. カルーセルを指定位置に移動
+    container.appendChild(carousel); 
+
+    // 2. ★強制カットされた画像を「オリジナル画像（フルサイズ）」に復元する魔法★
+    var imgs = carousel.querySelectorAll("img");
+    imgs.forEach(function(img) {
+      var src = img.getAttribute("src");
+      if (src) {
+        // WordPressが勝手に付けた「-320x180」などの切り抜きサイズ指定をURLから消去する
+        var originalSrc = src.replace(/-\d+x\d+(?=\.[a-zA-Z]+$)/, "");
+        img.setAttribute("src", originalSrc);
+        img.removeAttribute("srcset"); // 古い低画質データを破棄
+        img.removeAttribute("sizes");
+      }
+    });
   }
 });
 </script>
