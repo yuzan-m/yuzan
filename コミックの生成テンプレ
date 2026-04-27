@@ -1,38 +1,140 @@
-遊山コミック生成テンプレ
+Create a full-color original comic for the outdoor magazine "遊山" in a clean, readable Japanese manga style.
 
-アウトドアマガジン「遊山」のオリジナルカラーコミックを作成する
-テーマは初心者向けアウトドアあるある＋学び
-読んで楽しく、わかりやすく、最後に学びが残る構成にする
-レイアウトは縦長A5サイズの漫画形式
-表紙あり、本編あり、最後に「今回の学び」ページあり
-コマ番号なし
-年齢表示なし
-登場人物紹介なし
-登場人物は4人のみ
-コマ数は制限せず、内容が自然に伝わるよう必要な分だけ描く
-因果関係を省略せず、細かな描写を丁寧に入れる
+Overall concept:
+- This is an original "遊山" comic about outdoor activities such as mountain stream fishing, camping, hiking, and relaxing in nature.
+- The comic should be fun to read, easy to understand, and leave the reader with a practical lesson at the end.
+- The story should combine "relatable beginner mistakes", "character interaction", and "useful learning".
+- Prioritize clarity of storytelling over panel count. Use as many panels as needed so the story is easy to follow.
+- Do not omit important cause-and-effect steps. Show actions and reactions clearly.
 
-キャラクター
-ユウ：主人公。行動派。よく笑う。体型普通。黒髪、短髪寄り、左6:右4の分け目、ノーワックス、清潔感。パタゴニア系＋アクセントカラー必須
-オガ：おっちょこちょい。細身。やや面長。センターパート5:5。ユニクロ系のシンプルな服装。少し調子に乗った感じ
-ナオ：釣り知識担当。ややふっくら＋体格大きめ。茶色の短めパーマ。メガネなし。アウトドア感・スポーティー・機能性ある服装
-フジ：年上。普通体型。ややブラウン肌。横は刈り上げ、トップはストレート、ジェルでツヤ感・束感あり。クリアカラーのメガネ。シンプルながらこだわりのある服装
+Format and layout:
+- Vertical manga page layout
+- A5 comic page format
+- Include:
+  1. a cover page
+  2. the main comic story
+  3. a final "今回の学び" page or learning panel
+- Do not show panel numbers
+- Do not include character introduction boxes
+- Do not show any ages in the comic
+- Keep the reading flow natural and easy to follow
+- All text inside the comic must be in Japanese
+- Use a handwritten-style Japanese font for speech bubbles, sound effects, and learning notes
+- Maintain a clean, visually unified design across all pages
 
-口調
-全員標準語
-ユウ：フジには敬語、ナオ・オガにはタメ口
-フジ：全員にタメ口
-ナオ：フジには敬語、ユウ・オガにはタメ口
-オガ：フジには敬語、ユウ・ナオにはタメ口
+Visual style:
+- Bright, appealing, clean manga illustration style
+- Outdoor atmosphere should be vivid and attractive
+- Show mountain streams, trees, rocks, sky, and nature clearly
+- Expressions must be easy to read
+- Action scenes must be easy to understand
+- The comic should feel polished, friendly, and highly readable
+- Make the characters visually distinct from each other
+- Only 4 characters should appear in the comic. Do not accidentally create a 5th character or duplicate-looking figure.
 
-表紙
-タイトルは「遊山」
-コピーは**「山を全力で楽しむ」**
+Cover page:
+- Title: "遊山"
+- Subtitle / catchphrase: "山を全力で楽しむ"
+- Show only the 4 main characters
+- No age labels
+- No character profile boxes
+- The 4 characters must be visually easy to distinguish at a glance
 
-今回のテーマ例
-「渓流釣り初心者、木に引っかける」
-ユウが先にうまくキャスト
-その後オガがキャストして木に引っかける
-ナオが解説
-フジが「最初にやるやつだな」と言ったあと、自分も投げて引っかける
-最後に「今回の学び」で締める
+Main characters:
+1. ユウ
+- Main protagonist
+- Cheerful, action-oriented, often smiling
+- Normal build
+- Black hair
+- Short-to-medium natural hairstyle
+- Hair part is 6:4, with the left side heavier
+- No wax or heavy styling, clean and natural appearance
+- Wears Patagonia-style outdoor clothing
+- Must always include a clear accent color in his outfit so he stands out
+- Friendly and approachable
+
+2. オガ
+- Clumsy, playful, often makes mistakes
+- Slim build
+- Slightly long face
+- Center-parted hair, 5:5
+- Wears simple UNIQLO-style casual clothing
+- Not Patagonia
+- Slightly cocky or overconfident vibe, but still likable
+- More minimal, simple, city-casual appearance than the others
+
+3. ナオ
+- Fishing knowledge expert
+- Calm and reliable
+- Slightly chubby and larger build
+- Brown hair
+- Slightly short perm hairstyle
+- Does NOT wear glasses
+- Wears sporty, functional, outdoorsy clothing
+- Strong outdoor and fishing vibe
+- Should look like the knowledgeable one at a glance
+
+4. フジ
+- Oldest member
+- Mature but playful
+- Normal build
+- Slightly brown skin tone
+- Wears clear-framed glasses
+- Hair is straight
+- Sides are all clipped short / undercut
+- Top is longer, styled with gel for shine and separated texture
+- Wears simple but refined clothing with a sense of taste
+- Looks experienced and composed, but also ends up making mistakes himself sometimes
+
+Dialogue rules:
+- All characters speak standard Japanese
+- No Kansai dialect
+
+Speech relationship rules:
+- ユウ speaks politely to フジ, and casually to ナオ and オガ
+- フジ speaks casually to everyone
+- ナオ speaks politely to フジ, and casually to ユウ and オガ
+- オガ speaks politely to フジ, and casually to ユウ and ナオ
+
+Storytelling rules:
+- テーマ： [ここに日本語でテーマを入力]
+- ストーリー概要： [ここに日本語でストーリー概要を入力]
+- Make sure the sequence of events is very clear and easy to understand
+- Do not rush through important story beats
+- If needed, add extra panels to show actions clearly
+- Carefully show:
+  - setup
+  - who is doing what
+  - the result of each action
+  - reactions from the others
+  - explanation or correction
+  - a final takeaway
+- Use facial expressions, pauses, body language, and action panels effectively
+- Make the humor feel natural and character-driven
+- Make the story feel like a relatable outdoor beginner mistake with a useful lesson
+
+Important scene clarity rule:
+- If a character causes a problem, clearly show that character taking the action first
+- Never skip the action that causes the result
+- For example, if someone gets a lure stuck in a tree, first clearly show that person casting, then show the lure path, then the snag
+- Make sure the reader can always tell exactly who acted and why the result happened
+
+Character distinction rule:
+- Make each character’s clothing, silhouette, hairstyle, and vibe clearly different
+- ユウ must have an accent color and Patagonia-style look
+- オガ must look simple and UNIQLO-like
+- ナオ must look sporty and outdoorsy
+- フジ must look simple but refined, with clear glasses and styled hair
+
+Final learning section:
+- At the end, include a "今回の学び" section
+- Summarize the key lesson in Japanese
+- Keep it practical, clear, and beginner-friendly
+- 今回の学び：
+[ここに日本語で学びを入力]
+
+Output requirements:
+- Produce the full comic pages in consistent style
+- Keep all pages visually unified
+- Ensure the story is easy to follow without extra explanation outside the comic
+- The final result should feel like a polished original "遊山" comic episode
