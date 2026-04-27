@@ -19,7 +19,7 @@
 <h2 class="yuzan-content-title">NEW ARTICLE</h2>
 
 <div class="yuzan-latest-post">
-  [new_list count=1 snippet=0]
+  [new_list count=1 snippet=0 exclude_category="comic"]
 </div>
 
 <hr class="yuzan-divider">
@@ -38,9 +38,21 @@
 <h2 class="yuzan-content-title">RANKING</h2>
 <div class="yuzan-results-bar yuzan-ranking-bar">RANKING TOP 3</div>
 <div class="yuzan-ranking-list">
-  [popular_list count=3 snippet=0 rank=1]
+  [popular_list count=3 snippet=0 rank=1 exclude_category="comic"]
 </div>
 
 <hr class="yuzan-divider">
 
+<h2 class="yuzan-content-title">COMIC</h2>
+<div id="comic-carousel-container"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var carousel = document.querySelector(".carousel");
+  var container = document.getElementById("comic-carousel-container");
+  if (carousel && container) {
+    container.appendChild(carousel); // カルーセルを指定位置に移動
+  }
+});
+</script>
+<hr class="yuzan-divider">
 <h2 class="yuzan-content-title">TAG</h2>
