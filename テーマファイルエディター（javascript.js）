@@ -97,7 +97,7 @@ jQuery(function($) {
   // 3. Footer Logo Insertion
   function yuzanInsertFooterLogo() {
     if ($('.navi-footer-in').length && !$('.yuzan-footer-logo-link').length) {
-      var logoHtml = '<a href="/" class="yuzan-footer-logo-link"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/cropped-yuazzn-icon.png" alt="HOME"></a>';
+      var logoHtml = '<a href="/" class="yuzan-footer-logo-link"><img src="https://yuzan-life.com/wp-content/uploads/2026/04/cropped-yuzan-logo.png" alt="HOME"></a>';
       $('.navi-footer-in').prepend(logoHtml);
     }
   }
