@@ -1700,3 +1700,107 @@ body.home .bcrumb {
     padding: 15px !important;
     font-size: 0.95rem !important;
   }
+	
+/* ===========================================
+   33. Manga Carousel (縦型漫画スライダー - 完全版)
+   ===========================================*/
+
+/* カルーセルエリア全体の背景・余白 */
+.carousel {
+  background-color: transparent !important; 
+  padding: 20px 0 40px 0 !important;
+  margin-bottom: 40px !important;
+}
+
+/* カルーセルカード全体 */
+.carousel-entry-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 10px !important; 
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ★ 1. 画像の「枠」をご指定の比率（1055:1491）に絶対固定 ★ */
+.carousel-entry-card-thumb {
+  padding-top: 141.32% !important; /* 1055:1491の比率 */
+  padding-bottom: 0 !important; 
+  height: 0 !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  order: 1 !important; 
+  background: transparent !important;
+  position: relative !important; 
+}
+
+/* ★ 2. 復元されたオリジナル画像が枠をピッタリ埋め尽くす ★ */
+.carousel-entry-card-thumb img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* オリジナル画像が来るので綺麗に埋まります！ */
+  transition: transform 0.3s ease !important;
+}
+
+/* ホバー時のズームアクション */
+.carousel-entry-card:hover .carousel-entry-card-thumb img {
+  transform: scale(1.05) !important;
+}
+
+/* カテゴリーラベルを完全に消す */
+.carousel-entry-card-thumb .cat-label,
+.carousel-entry-card-thumb .ribbon {
+  display: none !important;
+}
+
+/* テキストエリア全体の調整 */
+.carousel-entry-card-content {
+  order: 2 !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 12px 0 0 0 !important; 
+  background: transparent !important;
+}
+
+/* 日付とタイトルのデザイン */
+.carousel-entry-card-meta {
+  order: 1 !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+.carousel-entry-card-meta .post-date {
+  font-size: 0.8rem !important; 
+  color: #888888 !important; 
+  font-family: 'Courier New', Consolas, monospace !important;
+  font-weight: bold !important;
+}
+.carousel-entry-card-meta .post-date::before {
+  display: none !important;
+}
+
+.carousel-entry-card-title {
+  order: 2 !important;
+  font-size: 1.05rem !important; 
+  font-weight: 900 !important;
+  color: #1a1a1a !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important; 
+  overflow: hidden !important;
+  text-align: center !important; 
+}
+
+/* スマホ用の余白調整 */
+@media screen and (max-width: 768px) {
+  .carousel {
+    padding: 10px 0 30px 0 !important;
+    margin-bottom: 30px !important;
+  }
+}
