@@ -151,7 +151,7 @@ body.home .breadcrumb,body.home .bcrumb{display:none !important}
 .carousel-entry-card-meta{order:1 !important;margin-bottom:4px !important;display:block !important}
 .carousel-entry-card-meta .post-date{font-size:.8rem !important;color:#888 !important;font-family:'Courier New',Consolas,monospace !important;font-weight:bold !important}
 .carousel-entry-card-meta .post-date::before{display:none !important}
-.carousel-entry-card-title{order:2 !important;font-size:1.05rem !important;font-weight:900 !important;color:#1a1a1a !important;line-height:1.4 !important;margin:0 !important;display:-webkit-box !important;-webkit-box-orient:vertical !important;-webkit-line-clamp:2 !important;overflow:hidden !important;text-align:center !important}
+.carousel-entry-card-title{order:2 !important;font-size:0.9rem !important;font-weight:900 !important;color:#1a1a1a !important;line-height:1.4 !important;margin:0 !important;display:-webkit-box !important;-webkit-box-orient:vertical !important;-webkit-line-clamp:4 !important;overflow:hidden !important;text-align:center !important}
 @keyframes yuzan-ripple{0%{box-shadow:0 0 0 0 rgba(var(--cat-ripple-color),.7)}70%{box-shadow:0 0 0 10px rgba(var(--cat-ripple-color),0)}100%{box-shadow:0 0 0 0 rgba(var(--cat-ripple-color),0)}}
 @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 @media screen and (min-width: 769px){
@@ -202,7 +202,7 @@ span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;
 #footer{background-size:100% auto !important;padding-bottom:220px !important}
 .navi-footer-in{padding-top:20px !important}
 .article h2{font-size:1.15rem !important;padding:8px 12px !important;margin:25px 0 10px 0 !important}
-.speech-balloon{margin-bottom:25px !important;margin-left:-15px !important;margin-right:-15px !important;padding-left:15px !important;padding-right:15px !important;width:calc(100% + 30px) !important;max-width:none !important}
+.speech-balloon{margin-bottom:30px !important;margin-left:-15px !important;margin-right:-15px !important;padding-left:15px !important;padding-right:15px !important;width:calc(100% + 30px) !important;max-width:none !important}
 .speech-person{flex:0 0 75px !important;width:75px !important}
 .speech-balloon-left .speech-person{margin-right:15px !important}
 .speech-balloon-right .speech-person{margin-left:15px !important}
