@@ -151,7 +151,7 @@ body.home .breadcrumb,body.home .bcrumb{display:none !important}
 .carousel-entry-card-meta{order:1 !important;margin-bottom:4px !important;display:block !important}
 .carousel-entry-card-meta .post-date{font-size:.8rem !important;color:#888 !important;font-family:'Courier New',Consolas,monospace !important;font-weight:bold !important}
 .carousel-entry-card-meta .post-date::before{display:none !important}
-.carousel-entry-card-title{order:2 !important;font-size:0.9rem !important;font-weight:900 !important;color:#1a1a1a !important;line-height:1.4 !important;margin:0 !important;display:-webkit-box !important;-webkit-box-orient:vertical !important;-webkit-line-clamp:4 !important;overflow:hidden !important;text-align:center !important}
+.carousel-entry-card-title{order:2 !important;font-size:0.9rem !important;font-weight:900 !important;color:#1a1a1a !important;line-height:1.4 !important;height:auto !important;max-height:4.2em !important;margin:0 !important;display:-webkit-box !important;-webkit-box-orient:vertical !important;-webkit-line-clamp:3 !important;overflow:hidden !important;text-align:center !important}
 @keyframes yuzan-ripple{0%{box-shadow:0 0 0 0 rgba(var(--cat-ripple-color),.7)}70%{box-shadow:0 0 0 10px rgba(var(--cat-ripple-color),0)}100%{box-shadow:0 0 0 0 rgba(var(--cat-ripple-color),0)}}
 @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 @media screen and (min-width: 769px){
@@ -209,4 +209,37 @@ span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;
 .speech-person img{width:75px !important;height:75px !important}
 .speech-content{padding:15px !important;font-size:.95rem !important}
 .carousel{padding:10px 0 30px 0 !important;margin-bottom:30px !important}
+}
+/* =========================================================
+   34. Table Design (表のデザイン)
+   ========================================================= */
+.article table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  border: 1px solid #1a1a1a !important; /* 外枠を少し強調 */
+  margin: 0 !important;
+}
+
+.article table th {
+  background-color: #333333 !important; /* 項目の背景色（濃いグレー） */
+  color: #ffffff !important; /* 項目の文字色（白） */
+  font-weight: bold !important;
+  padding: 12px 15px !important;
+  border: 1px solid #cccccc !important; /* 内側の仕切り線 */
+  text-align: center !important;
+  white-space: nowrap !important; /* 項目名だけは改行させない */
+}
+
+.article table td {
+  padding: 12px 15px !important;
+  border: 1px solid #cccccc !important; /* 内側の仕切り線 */
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  line-height: 1.6 !important;
+}
+
+/* スマホで表がはみ出す場合のスクロール用ラッパー */
+.yuzan-table-wrapper {
+  overflow-x: auto;
+  margin: 2em 0 !important;
 }
