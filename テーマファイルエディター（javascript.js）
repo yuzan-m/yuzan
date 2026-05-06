@@ -33,12 +33,12 @@ jQuery(function($) {
       tagListDiv.className = 'yuzan-menu-tag-list';
       
       var myTags = [
-        { name: 'リール', url: '/tag/リール/' },
-        { name: 'ロッド', url: '/tag/ロッド/' },
-        { name: 'トレイルラン', url: '/tag/トレイルラン/' },
-        { name: '登山', url: '/tag/登山/' },
-        { name: 'キャンプ', url: '/tag/キャンプ/' },
-        { name: '渓流釣り', url: '/tag/渓流釣り/' }
+        { name: '渓流釣り', url: '/tag/渓流釣り/' },
+        { name: 'キャンプ', url: '/tag/キャンプ' },
+        { name: '登山', url: '/tag/登山/' },
+        { name: '初心者', url: '/tag/初心者/' },
+        { name: 'ルアー', url: '/tag/ルアー/' },
+        { name: '用語集', url: '/tag/用語集/' }
       ];
       
       myTags.forEach(function(tag) {
