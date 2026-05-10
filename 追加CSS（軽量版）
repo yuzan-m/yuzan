@@ -217,3 +217,14 @@ span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;
 .carousel{padding:10px 0 30px 0 !important;margin-bottom:30px !important}
 }
 .grecaptcha-badge{visibility:hidden}
+@media screen and (max-width: 768px) {
+  body.home .mobile-menu-buttons,
+  body.home .fixed-header,
+  body.home #header-container.fixed-header {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+  }
+}
