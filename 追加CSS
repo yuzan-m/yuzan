@@ -1,1806 +1,226 @@
-/* ===========================================
-   YUZAN Urban Outdoor Base Style
-   ===========================================*/
-
-/* 1. Global Reset */
-* { 
-  border-radius: 0 !important; 
-}
-
-/* 2. Base Colors */
-body { 
-  color: #1A1A1A; 
-  background-color: #F9F9F9; 
-}
-
-/* 3. Headings (H2, H3, H4) */
-.article h2 { 
-  background: #1a1a1a !important; 
-  color: #ffffff !important; 
-  padding: 10px 20px !important; /* 上下余白を微調整 */
-  margin: 30px 0 10px 0 !important; /* 上下の外側余白をさらに削減 */
-  border: none !important; 
-  font-size: 1.25rem !important; /* ★サイズを少し小さく調整 */
-  font-weight: 900 !important;
-  letter-spacing: 1.5px !important;
-  line-height: 1.4 !important; /* ★固定を解除し、複数行に対応 */
-  height: auto !important; /* ★高さを自動（可変）に変更 */
-  min-height: 0 !important;
-  box-sizing: border-box !important;
-  display: block !important;
-}
-
-/* 見出しが連続した場合の上の余白をさらにタイトに */
-.article h2 + h2,
-.article h3 + h3,
-.article h4 + h4 {
-  margin-top: 5px !important;
-}
-
-.article h3 { 
-  font-size: 1.2rem !important; /* H2に合わせて少し縮小 */
-  font-weight: 900 !important;
-  color: #1a1a1a !important; 
-  border-top: none !important; 
-  border-right: none !important; 
-  border-left: none !important; 
-  border-bottom: 3px solid #1a1a1a !important; 
-  padding: 0 0 8px 0 !important; 
-  margin: 30px 0 10px 0 !important; /* 上下の外側余白を削減 */
-}
-
-.article h4 {
-  font-size: 1.05rem !important; /* H2に合わせて少し縮小 */
-  font-weight: bold !important;
-  color: #1a1a1a !important;
-  background: #f2f2f2 !important; 
-  padding: 8px 16px !important;
-  margin: 30px 0 10px 0 !important; /* 上下の外側余白を削減 */
-  border-top: none !important;
-  border-right: none !important;
-  border-bottom: none !important;
-  border-left: 6px solid #1a1a1a !important; 
-  line-height: 1.4 !important;
-  box-sizing: border-box !important;
-}
-
-/* Reset Top Margin for Elements Following Headings */
-.article h2 + *,
-.article h3 + *,
-.article h4 + * {
-  margin-top: 0 !important;
-}
-
-/* 5. Anchor Links */
-a { 
-  transition: color 0.3s ease; 
-} 
-a:hover { 
-  color: #B05B3B; 
-}
-
-/* 6. Top Navigation */
-#navi .navi-in a { 
-  font-weight: bold; 
-  color: #1A1A1A; 
-} 
-#navi .navi-in a:hover { 
-  background-color: #1A1A1A; 
-  color: #FFFFFF; 
-}
-
-/* 7. Hide Elements on Page */
-.page .date-tags, 
-.page .author-info { 
-  display: none !important; 
-}
-
-/* 8. Hide Appeal Area */
-.appeal-in .appeal-content { 
-  display: none !important; 
-}
-
-/* ===========================================
-   9. Video First View
-   ===========================================*/
-.fv-video-wrapper { 
-  width: 100vw; 
-  margin-left: calc(50% - 50vw); 
-  position: relative; 
-  overflow: hidden; 
-  margin-bottom: 0 !important; 
-  background-color: #1A1A1A; 
-  z-index: 10 !important; 
-}
-.fv-video-wrapper video { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center center; 
-}
-
-/* Video: PC Layout */
-@media screen and (min-width: 769px) { 
-  .fv-video-wrapper { 
-    height: auto; 
-    aspect-ratio: 16 / 9; 
-  } 
-  .video-pc { display: block; } 
-  .video-sp { display: none; } 
-}
-
-/* Video: SP Layout */
-@media screen and (max-width: 768px) { 
-  .fv-video-wrapper { 
-    height: auto; 
-    aspect-ratio: 1 / 1; 
-  } 
-  .video-pc { display: none; } 
-  .video-sp { display: block; } 
-}
-
-/* ===========================================
-   10. Header Layout (PC)
-   ===========================================*/
-.header-container .header-in { 
-  max-width: 100% !important; 
-  width: 100% !important; 
-  padding: 0 20px !important; 
-  display: flex !important; 
-  align-items: center !important; 
-}
-.logo-header { 
-  margin-right: auto !important; 
-  margin-left: 0 !important; 
-  padding: 0 !important; 
-}
-
-/* Home Page Reset */
-body.home .header-container, 
-body.home .navi, 
-body.home .navi-in, 
-body.home #content, 
-body.home #content-in, 
-body.home .content-top, 
-body.home .widget-area, 
-body.home .widget, 
-body.home .widget_custom_html { 
-  margin-top: 0 !important; 
-  margin-bottom: 0 !important; 
-  padding-top: 0 !important; 
-  padding-bottom: 0 !important; 
-  border: none !important; 
-}
-
-/* Navigation PC Layout */
-@media screen and (min-width: 769px) {
-  .navi { 
-    flex-grow: 1 !important; 
-    width: 100% !important; 
-  } 
-  .navi-in > ul { 
-    display: flex !important; 
-    width: 100% !important; 
-  } 
-  .navi-in > ul > li { 
-    flex: 1 1 0 !important; 
-  }
-  .navi-in > ul > li > a { 
-    white-space: nowrap !important; 
-    overflow: visible !important; 
-    text-overflow: clip !important; 
-    border-left: 1px solid rgba(26, 26, 26, 0.2) !important; 
-    padding: 0 !important; 
-    display: flex !important; 
-    justify-content: center !important; 
-    font-weight: bold; 
-  }
-  .navi-in > ul > li:last-child > a { 
-    border-right: 1px solid rgba(26, 26, 26, 0.2) !important; 
-  }
-}
-
-/* Navigation Z-index */
-#navi-mobile, .mobile-menu { 
-  z-index: 100000 !important; 
-}
-
-/* ===========================================
-   11. Original Layout Elements
-   ===========================================*/
-
-/* Hide Default Meta */
-.view-count, .post-update, .fa-folder, .fa-clock-o, .fa-tags, 
-.entry-card-snippet, .admin-pv, .pv-area, .pt-count { 
-  display: none !important; 
-}
-
-/* Hide First Post in List */
-.home #main > .entry-cards > .entry-card-wrap:first-child, 
-.home #main > .list > .entry-card-wrap:first-child { 
-  display: none !important; 
-}
-
-/* Content Title */
-h2.yuzan-content-title { 
-  font-size: 2.0rem !important; 
-  font-weight: 900 !important; 
-  font-family: 'Arial Black', 'Impact', sans-serif !important; 
-  color: #1a1a1a !important; 
-  text-transform: uppercase; 
-  letter-spacing: 2px !important; 
-  text-align: center !important; 
-  margin: 60px auto 60px auto !important; 
-}
-
-/* Divider */
-hr.yuzan-divider { 
-  border: none !important; 
-  border-top: 1px solid rgba(0, 0, 0, 0.05) !important; 
-  margin: 0 auto !important; 
-  max-width: calc(100% - 40px); 
-}
-
-/* Tag Spacer */
-.yuzan-tag-spacer {
-  height: 60px; 
-  width: 100%; 
-  display: block;
-}
-
-/* Results Bar (Article List) */
-.yuzan-results-bar {
-  margin-top: 0px !important; 
-  background-color: #555555 !important; 
-  color: #ffffff !important; 
-  padding: 12px 30px !important; 
-  font-size: 0.9rem !important; 
-  font-family: 'Courier New', Consolas, monospace !important; 
-  font-weight: bold !important; 
-  text-align: left !important; 
-  border-radius: 8px 8px 0 0 !important; 
-  width: 100% !important; 
-  max-width: calc(100% - 40px) !important; 
-  margin-left: auto !important; 
-  margin-right: auto !important; 
-  margin-bottom: 0 !important; 
-  box-sizing: border-box !important;
-}
-
-/* Ranking Bar */
-.yuzan-ranking-bar {
-  background-color: #B8860B !important; 
-  margin-top: 0px !important; 
-}
-
-/* ===========================================
-   12. Tag Cloud
-   ===========================================*/
-
-/* Hide Titles */
-.widget_tag_cloud .widget-title, 
-.widget_tag_cloud h3, 
-.wp-block-tag-cloud h2 { 
-  display: none !important; 
-}
-
-/* Tag Cloud Container */
-.widget_tag_cloud,
-.tagcloud, 
-.wp-block-tag-cloud { 
-  margin-bottom: 25px !important; 
-  padding: 0 !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important; 
-  width: 100% !important;
-}
-
-/* Tag Items */
-.tagcloud a, 
-.wp-block-tag-cloud a {
-  background: #1a1a1a !important;
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: 30px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 4px 16px !important;
-  margin: 5px !important;
-  font-size: 0.8rem !important;
-  text-decoration: none !important;
-  float: none !important;
-  flex-grow: 0 !important;
-  width: auto !important;
-  max-width: max-content !important;
-}
-
-/* ===========================================
-   13. Category Banners
-   ===========================================*/
-.category-banners { 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 15px; 
-  max-width: 1200px; 
-  margin: 0 auto 60px auto; 
-  padding: 0 20px; 
-}
-.category-banners a img { 
-  width: 100%; 
-  height: auto; 
-  aspect-ratio: 21 / 9; 
-  object-fit: cover; 
-  border-radius: 4px !important; 
-  transition: opacity 0.3s ease; 
-}
-.category-banners a:hover img { 
-  opacity: 0.7; 
-}
-
-/* ===========================================
-   14. Entry Card Design
-   ===========================================*/
-.widget { 
-  margin-bottom: 0 !important; 
-  padding-bottom: 0 !important; 
-}
-
-/* Entry List Container */
-.home #main > .list, 
-.home #main > .entry-cards, 
-.home #main > .list-main, 
-.home #main > .ect-entry-card, 
-.home #main .entry-cards.cards,
-.yuzan-ranking-list {
-  background-color: #F2F2F2 !important; 
-  padding: 30px !important; 
-  border-radius: 0 0 8px 8px !important; 
-  margin-bottom: 60px !important; 
-  margin-top: -2px !important; 
-  width: 100% !important; 
-  max-width: calc(100% - 40px) !important; 
-  margin-left: auto !important; 
-  margin-right: auto !important; 
-  box-sizing: border-box !important; 
-  position: relative; 
-  z-index: 1;
-}
-
-/* Entry Card Item */
-.entry-card-wrap.a-wrap {
-  display: flex !important; 
-  flex-direction: column !important; 
-  background: transparent !important; 
-  padding: 30px 0 !important; 
-  border-radius: 0 !important; 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; 
-  box-shadow: none !important; 
-  margin-bottom: 0 !important; 
-  width: 100% !important; 
-  transition: transform 0.3s ease !important; 
-}
-.entry-card-wrap.a-wrap:hover { 
-  transform: translateY(-2px) !important; 
-}
-.entry-card-content, 
-.entry-card-meta { 
-  display: contents !important; 
-}
-
-/* Post Date & Ripple Animation */
-.entry-card-wrap.a-wrap { 
-  --cat-ripple-color: 149, 165, 166; 
-} 
-
-/* Category Ripple Colors */
-.entry-card-wrap.a-wrap:has(.cat-label-4) { /* CAMP */
-  --cat-ripple-color: 243, 122, 36 !important; 
-}
-.entry-card-wrap.a-wrap:has(.cat-label-2) { /* STREAM FISHING */
-  --cat-ripple-color: 34, 142, 204 !important; 
-}
-.entry-card-wrap.a-wrap:has(.cat-label-3) { /* HIKING */
-  --cat-ripple-color: 46, 184, 114 !important; 
-}
-
-.entry-card-meta .post-date { 
-  order: 1 !important; 
-  font-size: 0.85rem !important; 
-  color: #333 !important; 
-  margin-bottom: 10px !important; 
-  display: flex !important; 
-  align-items: center !important; 
-  width: 100% !important; 
-}
-.entry-card-meta .post-date::before { 
-  content: ''; 
-  display: inline-block; 
-  width: 12px; 
-  height: 12px; 
-  border-radius: 50%; 
-  margin-right: 12px; 
-  background-color: rgb(var(--cat-ripple-color)); 
-  animation: yuzan-ripple 1.5s infinite ease-out; 
-}
-
-@keyframes yuzan-ripple { 
-  0% { box-shadow: 0 0 0 0 rgba(var(--cat-ripple-color), 0.7); } 
-  70% { box-shadow: 0 0 0 10px rgba(var(--cat-ripple-color), 0); } 
-  100% { box-shadow: 0 0 0 0 rgba(var(--cat-ripple-color), 0); } 
-}
-
-/* Entry Card Title */
-.entry-card-title { 
-  order: 2 !important; 
-  font-size: 1.3rem !important; 
-  font-weight: 900 !important; 
-  line-height: 1.5 !important; 
-  margin-bottom: 0 !important; 
-  text-align: left !important; 
-  color: #1a1a1a !important; 
-  display: -webkit-box !important; 
-  -webkit-box-orient: vertical !important; 
-  -webkit-line-clamp: 2 !important; 
-  overflow: hidden !important; 
-  height: 3.0em !important; 
-}
-
-/* Entry Card Thumbnail */
-.entry-card-thumb { 
-  order: 5 !important; 
-  margin-top: 40px !important; 
-  width: 100% !important; 
-  aspect-ratio: 16 / 9 !important; 
-  position: relative; 
-  overflow: visible !important; 
-  border-radius: 4px !important; 
-}
-.entry-card-thumb img { 
-  width: 100% !important; 
-  height: 100% !important; 
-  object-fit: cover !important; 
-  border-radius: 4px !important; 
-  transition: transform 0.4s ease !important; 
-}
-
-/* Category Label */
-.entry-card-thumb .cat-label { 
-  display: inline-flex !important; 
-  align-items: center !important; 
-  justify-content: center !important; 
-  position: absolute !important; 
-  top: -32px !important; 
-  left: 0 !important; 
-  background-color: #1a1a1a !important; 
-  color: #fff !important; 
-  padding: 2px 14px !important; 
-  line-height: 1 !important; 
-  height: 24px !important; 
-  border-radius: 30px !important; 
-  font-size: 0.75rem !important; 
-  font-family: 'Courier New', Consolas, monospace !important; 
-  font-weight: bold !important; 
-  border: none !important; 
-  z-index: 10 !important; 
-}
-
-/* 2-Column Layout (PC) */
-@media screen and (min-width: 769px) {
-  .home #main > .list, 
-  .home #main > .entry-cards, 
-  .yuzan-ranking-list { 
-    display: grid !important; 
-    grid-template-columns: repeat(2, 1fr) !important; 
-    column-gap: 30px !important; 
-    row-gap: 0 !important; 
-  }
-  .entry-card-wrap.a-wrap:hover .entry-card-thumb img { 
-    transform: scale(1.05) !important; 
-  }
-}
-
-/* ===========================================
-   15. Latest Post Layout
-   ===========================================*/
-.yuzan-latest-post { 
-  padding: 0 20px; 
-  margin-bottom: 40px; 
-}
-.yuzan-latest-post .entry-card-wrap.a-wrap { 
-  background-color: #F2F2F2 !important; 
-  padding: 30px !important; 
-  border-radius: 8px !important; 
-  margin-bottom: 0 !important; 
-  border-bottom: none !important; 
-}
-
-/* Bottom Margin Adjustments */
-.yuzan-ranking-list .widget-entry-cards,
-.yuzan-latest-post .widget-entry-cards {
-  margin-bottom: 0 !important; 
-}
-.yuzan-ranking-list .a-wrap:last-child,
-.yuzan-latest-post .a-wrap:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-  border-bottom: none !important;
-}
-
-/* ===========================================
-   16. Marquee Animation
-   ===========================================*/
-.yuzan-marquee-wrapper { 
-  width: 100vw; 
-  margin-left: calc(50% - 50vw); 
-  overflow: hidden; 
-  background-color: transparent; 
-  padding: 0 0 20px 0 !important; 
-  display: flex; 
-}
-.yuzan-marquee-content { 
-  display: flex; 
-  width: max-content; 
-}
-.marquee-text { 
-  display: flex; 
-  white-space: nowrap; 
-  animation: marquee-scroll 30s linear infinite; 
-}
-.marquee-text span { 
-  font-size: 6.5rem !important; 
-  font-weight: 900; 
-  color: #1a1a1a; 
-  font-family: 'Arial Black', 'Impact', sans-serif; 
-  text-transform: uppercase; 
-  padding-right: 50px; 
-  line-height: 1; 
-}
-@keyframes marquee-scroll { 
-  0% { transform: translateX(0); } 
-  100% { transform: translateX(-100%); } 
-}
-
-/* ===========================================
-   17. Responsive Layout (SP)
-   ===========================================*/
-@media screen and (max-width: 768px) {
-  
-  /* Reset Margins */
-  body.home, 
-  body.home #container, 
-  body.home #content, 
-  body.home #content-in, 
-  body.home #main { 
-    padding-top: 0 !important; 
-    margin-top: 0 !important; 
-  }
-  
-  /* Header Container */
-  body.home #header, 
-  body.home .header-container { 
-    position: absolute !important; 
-    top: 0 !important;
-    left: 0 !important; 
-    width: 100% !important; 
-    height: 0 !important; 
-    min-height: 0 !important; 
-    padding: 0 !important; 
-    margin: 0 !important;
-    background: transparent !important; 
-    border: none !important; 
-    box-shadow: none !important; 
-    z-index: 9999 !important; 
-  }
-
-  /* Hide Unused Menu Buttons */
-  .mobile-menu-buttons .search-menu-button, 
-  .mobile-menu-buttons .logo-menu-button, 
-  .mobile-menu-buttons .home-menu-button, 
-  .mobile-menu-buttons .top-menu-button, 
-  .mobile-menu-buttons .sidebar-menu-button, 
-  .mobile-search-button, 
-  .search-button {
-    display: none !important; 
-    width: 0 !important; 
-    height: 0 !important; 
-    opacity: 0 !important; 
-    pointer-events: none !important; 
-  }
-
-  /* Hamburger Menu Button */
-  .mobile-menu-buttons .menu-button, 
-  .mobile-menu-button {
-    display: block !important; 
-    position: fixed !important; 
-    top: 15px !important; 
-    right: 15px !important; 
-    left: auto !important; 
-    width: 50px !important; 
-    height: 50px !important; 
-    background-color: rgba(26, 26, 26, 0.8) !important; 
-    border-radius: 50% !important; 
-    z-index: 99999 !important; 
-    margin: 0 !important; 
-    padding: 0 !important; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important; 
-    font-size: 0 !important; 
-    color: transparent !important;
-  }
-  
-  /* Hamburger Menu Icon */
-  .mobile-menu-buttons .menu-button span.fa, 
-  .mobile-menu-buttons .menu-button i, 
-  .mobile-menu-button span.fa, 
-  .mobile-menu-button i { 
-    color: #fff !important; 
-    font-size: 24px !important; 
-    position: absolute !important; 
-    top: 50% !important; 
-    left: 50% !important; 
-    transform: translate(-50%, -50%) !important; 
-    margin: 0 !important; 
-    padding: 0 !important; 
-  }
-  
-  /* Marquee (SP) */
-  .yuzan-marquee-wrapper { 
-    padding: 0 0 10px 0 !important; 
-  }
-  .marquee-text span { 
-    font-size: 4rem !important; 
-    padding-right: 30px !important; 
-  }
-
-  /* Tag Spacer (SP) */
-  .yuzan-tag-spacer {
-    height: 40px !important; 
-  }
-	
-  /* Results Bar (SP) */
-  .yuzan-results-bar { 
-    width: 95vw !important; 
-    max-width: 95vw !important; 
-    font-size: 1.1rem !important; 
-    padding: 15px 20px !important; 
-    margin-top: 0px !important; 
-    margin-bottom: 0 !important; 
-    margin-left: calc(50% - 47.5vw) !important; 
-    margin-right: calc(50% - 47.5vw) !important; 
-    box-sizing: border-box !important; 
-  }
-
-  /* Entry List (SP) */
-  .home #main > .list, 
-  .home #main > .entry-cards, 
-  .yuzan-ranking-list {
-    display: flex !important; 
-    flex-direction: column !important; 
-    padding: 15px !important; 
-    width: 95vw !important; 
-    max-width: 95vw !important; 
-    margin-top: -2px !important; 
-    margin-bottom: 60px !important; 
-    margin-left: calc(50% - 47.5vw) !important; 
-    margin-right: calc(50% - 47.5vw) !important; 
-    box-sizing: border-box !important; 
-  }
-  
-  /* Heading Title (SP) */
-  h2.yuzan-content-title { 
-    font-size: 1.8rem !important;
-    margin-top: 30px !important; 
-    margin-bottom: 30px !important; 
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-	
-  /* Tag Cloud Margin (SP) */
-  body .home #content .tagcloud, 
-  body .home #content .wp-block-tag-cloud {
-    margin-bottom: 40px !important; 
-  }
-	
-  /* Category Banners (SP) */
-  .category-banners { 
-    gap: 10px; 
-    padding: 0 15px; 
-  }
-}
-
-/* ===========================================
-   18. Mobile Menu Drawer Design
-   ===========================================*/
-@media screen and (max-width: 768px) {
-  
-  /* Menu Container */
-  #navi-menu-content, .navi-menu-content, 
-  #navi-mobile, .menu-drawer, .slide-in { 
-    background-color: #1a1a1a !important; 
-    background-image: none !important; 
-  }
-  
-  /* Menu List Background */
-  .navi-menu-content ul, .navi-menu-content li, 
-  #navi-mobile ul, #navi-mobile li { 
-    background-color: transparent !important; 
-    border-color: #333333 !important; 
-  }
-  
-  /* Close Button */
-  .navi-menu-close-button, .close-button, #navi-menu-close-button { 
-    position: fixed !important; 
-    top: 15px !important; 
-    right: 15px !important; 
-    background-color: rgba(26, 26, 26, 0.8) !important; 
-    color: #ffffff !important; 
-    border-radius: 50% !important; 
-    width: 50px !important; 
-    height: 50px !important; 
-    display: flex !important; 
-    align-items: center !important; 
-    justify-content: center !important; 
-    z-index: 999999 !important; 
-    border: none !important; 
-    font-size: 24px !important; 
-  }
-  
-  /* Link Text Color */
-  .navi-menu-content a, #navi-mobile a { 
-    color: #ffffff !important; 
-  }
-  
-  /* Sub-menu Design */
-  .navi-menu-content ul.sub-menu a, #navi-mobile ul.sub-menu a { 
-    color: #cccccc !important; 
-    font-weight: bold !important; 
-    padding: 15px 20px 15px 30px !important; 
-    font-size: 1rem !important; 
-    border-bottom: 1px solid #2a2a2a !important; 
-  }
-  
-  /* Menu Headers */
-  span.yuzan-menu-header { 
-    font-family: 'Arial Black', 'Impact', sans-serif !important; 
-    font-size: 1.6rem !important; 
-    font-weight: 900 !important; 
-    color: #ffffff !important; 
-    letter-spacing: 2px !important; 
-    padding: 40px 20px 10px 20px !important; 
-    border-bottom: 2px solid #333333 !important; 
-    display: block !important; 
-    cursor: default !important; 
-  }
-  
-  /* Tag List Container */
-  .yuzan-menu-tag-list { 
-    display: flex !important; 
-    flex-wrap: wrap !important; 
-    padding: 20px 20px !important; 
-    gap: 10px !important; 
-    background-color: #1a1a1a !important; 
-  }
-
-  /* Tag Items */
-  .yuzan-menu-tag-list a.yuzan-cloned-tag { 
-    background-color: #333333 !important; 
-    color: #ffffff !important; 
-    padding: 8px 18px !important; 
-    border-radius: 30px !important; 
-    font-size: 0.85rem !important; 
-    margin: 0 !important; 
-    border: none !important; 
-    display: inline-block !important; 
-    text-decoration: none !important; 
-  }
-  .yuzan-menu-tag-list a.yuzan-cloned-tag::before { 
-    content: "\f02b"; 
-    font-family: "FontAwesome"; 
-    margin-right: 6px; 
-    font-size: 0.8rem; 
-    opacity: 0.7; 
-  }
-  
-  /* Search Box Container */
-  .yuzan-menu-search-box { 
-    padding: 20px 20px 40px 20px !important; 
-    background-color: #1a1a1a !important; 
-  }
-  .yuzan-menu-search-box .search-form { 
-    display: flex !important; 
-    position: relative !important; 
-    background-color: transparent !important; 
-    padding: 0 !important; 
-    margin: 0 !important; 
-  }
-  
-  /* Search Input Field */
-  .yuzan-menu-search-box input.search-field { 
-    flex-grow: 1 !important; 
-    background-color: #333333 !important; 
-    border: none !important; 
-    color: #ffffff !important; 
-    font-size: 1rem !important; 
-    padding: 0 15px !important; 
-    height: 40px !important; 
-    border-radius: 4px !important; 
-    outline: none !important; 
-    margin: 0 10px 0 0 !important; 
-    box-shadow: none !important; 
-    -webkit-appearance: none !important; 
-  }
-
-  /* Search Submit Button */
-  .yuzan-menu-search-box button.search-submit { 
-    position: relative !important; 
-    top: auto !important; right: auto !important; 
-    bottom: auto !important; left: auto !important; 
-    background-color: #555555 !important; 
-    color: #ffffff !important; 
-    border: none !important; 
-    width: 45px !important; 
-    min-width: 45px !important; 
-    height: 40px !important; 
-    border-radius: 4px !important; 
-    display: flex !important; 
-    align-items: center !important; 
-    justify-content: center !important; 
-    cursor: pointer !important; 
-    padding: 0 !important; 
-    margin: 0 !important; 
-    transform: none !important; 
-  }
-  .yuzan-menu-search-box button.search-submit span, 
-  .yuzan-menu-search-box button.search-submit i { 
-    display: none !important; 
-  }
-  .yuzan-menu-search-box button.search-submit::after { 
-    content: "\f002" !important; 
-    font-family: "FontAwesome" !important; 
-    font-size: 1.2rem !important; 
-    color: #ffffff !important; 
-    display: block !important; 
-  }
-}
-
-/* ===========================================
-   19. Ranking Label Design
-   ===========================================*/
-.yuzan-ranking-list .rank-label {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 10px !important;
-  left: 10px !important;
-  width: 24px !important;
-  height: 24px !important;
-  background-color: rgba(26, 26, 26, 0.9) !important;
-  color: #ffffff !important;
-  font-family: 'Arial Black', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: bold !important;
-  z-index: 20 !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-/* Thumbnail Positioning Adjustment */
-.yuzan-ranking-list .popular-entry-card-thumb {
-  position: relative !important;
-}
-
-/* Category Label Offset */
-.yuzan-ranking-list .popular-entry-card-category {
-  left: 40px !important; 
-}
-
-/* ===========================================
-   20. Footer Customization
-   ===========================================*/
-
-/* Footer Background */
-#footer {
-  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/footer-design.png") !important;
-  background-color: #ffffff !important;
-  background-repeat: no-repeat !important;
-  background-position: bottom center !important;
-  border-top: none !important;
-  position: relative;
-  z-index: 1;
-}
-
-/* Footer Container */
-.navi-footer-in {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 30px 20px 0 20px !important;
-  box-sizing: border-box !important;
-}
-
-/* Footer Logo */
-.yuzan-footer-logo-link {
-  display: inline-block !important;
-  width: 80px !important;
-  height: 80px !important;
-  margin: 0 0 40px 0 !important;
-}
-.yuzan-footer-logo-link img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  transition: opacity 0.3s ease !important;
-}
-.yuzan-footer-logo-link:hover img {
-  opacity: 0.7 !important;
-}
-
-/* Footer Menu */
-.navi-footer-in ul {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  gap: 15px !important;
-  margin: 0 0 40px 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-.navi-footer-in ul li a {
-  font-family: 'Courier New', Consolas, monospace !important;
-  font-size: 0.95rem !important;
-  font-weight: bold !important;
-  color: #1a1a1a !important;
-  letter-spacing: 1px !important;
-  text-decoration: none !important;
-  border: none !important;
-  padding: 0 !important;
-  transition: opacity 0.3s ease !important;
-  white-space: nowrap !important;
-  word-break: keep-all !important;
-}
-
-.navi-footer-in ul li a:hover {
-  opacity: 0.5 !important;
-}
-
-/* Footer Copyright */
-.credit {
-  font-family: 'Courier New', Consolas, monospace !important;
-  color: #1a1a1a !important;
-  font-size: 0.8rem !important;
-  font-weight: bold !important;
-  padding: 0 !important;
-  background: transparent !important;
-  text-align: left !important;
-  width: 100% !important;
-  letter-spacing: 1px !important;
-}
-
-/* Responsive Footer Padding */
-@media screen and (min-width: 769px) {
-  #footer { 
-    padding-bottom: 350px !important; 
-  }
-}
-@media screen and (max-width: 768px) {
-  #footer {
-    background-size: 100% auto !important;
-    padding-bottom: 220px !important;
-  }
-  .navi-footer-in {
-    padding-top: 20px !important;
-  }
-}
-
-/* ===========================================
-   21. Subpage Layout Adjustments
-   ===========================================*/
-
-/* Hide Elements on Subpages */
-body:not(.home) .yuzan-tag-spacer,
-body:not(.home) .yuzan-results-bar {
-  display: none !important;
-}
-
-/* Subpage Header Display */
-html, body {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-body:not(.home) #container {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Subpage Mobile Menu Wrap */
-body:not(.home) .mobile-menu-buttons {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  overflow: visible !important;
-  z-index: 100000 !important; 
-}
-
-/* Hide Unused Elements on Subpages */
-body:not(.home) #navi,
-body:not(.home) .navi,
-body:not(.home) .notice,
-body:not(.home) .content-top {
-  display: none !important;
-}
-
-/* Subpage Header Layout */
-body:not(.home) #header {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  background-color: #ffffff !important;
-  border: none !important;
-  border-bottom: 2px solid #1a1a1a !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  z-index: 9999 !important;
-}
-body:not(.home) .header-container,
-body:not(.home) .header-in {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  background: transparent !important;
-  border: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Subpage Logo */
-body:not(.home) .logo-header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 70px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-}
-body:not(.home) .logo-header a {
-  display: block !important;
-  width: 200px !important;
-  height: 40px !important;
-  background-image: url("https://yuzan-life.com/wp-content/uploads/2026/04/yuzan-logo-yoko.png") !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  color: transparent !important;
-  font-size: 0 !important;
-  border: none !important;
-}
-body:not(.home) .logo-header img,
-body:not(.home) .tagline {
-  display: none !important;
-}
-
-/* Subpage Content Area */
-body:not(.home) #content,
-body:not(.home) #content-in,
-body:not(.home) #main,
-body:not(.home) .main {
-  position: relative !important;
-  z-index: 1 !important;
-  background-color: transparent !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Breadcrumb Wrapper Full Width */
-body:not(.home) .breadcrumb-wrap {
-  background-color: #ffffff !important;
-  margin-top: -20px !important;
-  padding-top: 40px !important; 
-  padding-bottom: 10px !important;
-  position: relative !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  padding-left: calc(50vw - 50% + 20px) !important; 
-  padding-right: calc(50vw - 50% + 20px) !important;
-  box-sizing: border-box !important;
-}
-
-/* ===========================================
-   22. Article Page Design
-   ===========================================*/
-
-/* Header Display Order */
-.article-header {
-  display: flex !important;
-  flex-direction: column !important;
-}
-.article-header .eye-catch {
-  order: 1 !important; 
-  margin-bottom: 20px !important;
-}
-.article-header .entry-title {
-  order: 2 !important; 
-  margin-top: 10px !important;
-}
-.article-header .date-tags,
-.article-header .post-meta {
-  order: 3 !important; 
-}
-
-/* Article Eye-catch Category Label */
-.article-header .eye-catch .cat-label {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-  padding: 4px 16px !important;
-  border-radius: 30px !important;
-  font-size: 0.8rem !important;
-  font-family: 'Courier New', Consolas, monospace !important;
-  font-weight: bold !important;
-  top: 10px !important;
-  left: 10px !important;
-  border: none !important;
-}
-
-/* Article Categories and Tags */
-.entry-categories a,
-.entry-tags a,
-.cat-link,
-.tag-link {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important; 
-  border: none !important;
-  border-radius: 30px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important; 
-  padding: 6px 14px !important;
-  margin: 0 6px 8px 0 !important;
-  font-size: 0.8rem !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  box-sizing: border-box !important;
-}
-.entry-categories a:hover,
-.entry-tags a:hover,
-.cat-link:hover,
-.tag-link:hover {
-  opacity: 0.7 !important;
-  color: #ffffff !important;
-}
-.entry-categories a .fa,
-.entry-tags a .fa,
-.cat-link .fa,
-.tag-link .fa,
-.entry-categories a span,
-.entry-tags a span {
-  color: #ffffff !important;
-  margin-right: 5px !important; 
-  font-size: 0.85rem !important;
-  display: inline-block !important;
-  line-height: 1 !important;
-}
-
-/* ===========================================
-   23. Breadcrumbs
- ===========================================*/
-.breadcrumb, .bcrumb {
-  margin-bottom: 20px !important;
-  background: transparent !important;
-  padding: 0 !important;
-}
-.breadcrumb span[itemprop="name"], 
-.bcrumb span[itemprop="name"],
-.breadcrumb a,
-.bcrumb a {
-  font-family: 'Courier New', Consolas, 'Arial Black', 'Noto Sans JP', sans-serif !important;
-  font-size: 0.85rem !important;
-  font-weight: 900 !important; 
-  color: #1a1a1a !important; 
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important; 
-}
-.breadcrumb a:hover span, 
-.bcrumb a:hover span {
-  opacity: 0.5 !important;
-}
-.breadcrumb .fa, 
-.bcrumb .fa {
-  color: #888888 !important;
-  font-size: 0.9rem !important;
-  margin: 0 6px !important;
-}
-
-/* Hide on Top Page */
-body.home .breadcrumb, 
-body.home .bcrumb {
-  display: none !important;
-}
-
-/* ===========================================
-   24. Author Profile Card
-   =========================================== */
-
-/* Profile Container */
-.author-widget,
-.author-box {
-  background-color: #ffffff !important;
-  padding: 20px 20px !important; 
-  border: 1px solid rgba(0, 0, 0, 0.05) !important; 
-  margin-bottom: 40px !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: flex-start !important;
-}
-
-/* Title */
-.author-widget .author-title,
-.author-box .author-widget-name {
-  width: 100% !important;
-  font-family: 'Courier New', Consolas, 'Noto Sans JP', sans-serif !important;
-  font-size: 0.8rem !important;
-  font-weight: bold !important;
-  color: #888888 !important;
-  margin-bottom: 12px !important; 
-  text-align: left !important;
-  display: block !important;
-}
-
-/* Author Thumbnail */
-.author-widget .author-thumb,
-.author-box .author-thumb {
-  margin: 0 15px 0 0 !important;
-  padding: 0 !important;
-  width: 70px !important; 
-  height: 70px !important;
-  flex-shrink: 0 !important;
-  float: none !important; 
-}
-.author-widget .author-thumb img,
-.author-box .author-thumb img {
-  border-radius: 50% !important;
-  width: 100% !important;
-  height: 100% !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  display: block !important;
-}
-
-/* Author Content */
-.author-widget .author-content,
-.author-box .author-content {
-  flex: 1 !important; 
-  min-width: 0 !important; 
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important; 
-  margin: 0 !important; 
-  padding: 0 !important;
-  float: none !important;
-  text-align: left !important;
-}
-
-/* Author Name */
-.author-widget .author-name,
-.author-box .author-name {
-  font-size: 1.1rem !important;
-  font-weight: 900 !important;
-  color: #1a1a1a !important;
-  margin: 0 0 6px 0 !important; 
-  line-height: 1.2 !important;
-}
-.author-widget .author-name a,
-.author-box .author-name a {
-  color: #1a1a1a !important;
-  text-decoration: none !important;
-}
-
-/* Author Description */
-.author-widget .author-description,
-.author-box .author-description {
-  font-size: 0.85rem !important;
-  line-height: 1.6 !important;
-  color: #333333 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Hide Default Social Icons */
-.author-widget .author-follows,
-.author-box .author-follows,
-.author-widget .sns-follow-buttons,
-.author-box .sns-follow-buttons {
-  display: none !important;
-}
-
-/* ===========================================
-   25. SNS Share Customization
-   ===========================================*/
-
-/* Share Message Container */
-.sns-share-message {
-  font-size: 0 !important; 
-  background-color: transparent !important;
-  display: block !important; 
-  width: 100% !important; 
-  text-align: center !important;
-  margin: 0 0 20px 0 !important; 
-  padding: 0 !important; 
-  border: none !important;
-}
-
-/* Custom Share Text */
-.sns-share-message::before {
-  content: "SHARE" !important;
-  font-family: 'Courier New', Consolas, monospace !important; 
-  font-size: 1.4rem !important;
-  font-weight: 900 !important; 
-  letter-spacing: 3px !important; 
-  color: #1a1a1a !important; 
-  display: inline-block !important; 
-  line-height: 1.2 !important; 
-}
-
-/* =========================================================
-   26. Table of Contents (Numbered H2 & Bordered)
-   ========================================================= */
-.toc {
-  background-color: #f2f2f2 !important;
-  border: none !important;
-  padding: 15px 25px 15px 25px !important;
-  margin: 0 0 30px 0 !important;
-}
-.toc-title {
-  font-family: 'Arial Black', sans-serif !important;
-  font-weight: 900 !important;
-  font-size: 1.1rem !important;
-  color: #1a1a1a !important;
-  text-align: center !important;
-  margin-bottom: 10px !important;
-  padding-bottom: 8px !important;
-  border-bottom: 2px solid #1a1a1a !important;
-}
-
-/* 本文の箇条書きデザイン（27番）の干渉を完全にブロック */
-.article .toc-content ul, 
-.article .toc-content ol {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  list-style: none !important;
-}
-
-/* リスト項目のデフォルト設定 */
-.article .toc-content li {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  line-height: 1.4 !important;
-}
-
-.article .toc-content li::before {
-  content: none !important;
-}
-
-/* ★ ナンバリング用のカウンターをセット ★ */
-.article .toc-content > .toc-list {
-  counter-reset: toc-h2-counter !important;
-}
-
-/* H2項目（一番上の階層）の設定 */
-.article .toc-content > .toc-list > li {
-  border-top: 1px solid #e0e0e0 !important;
-  padding: 12px 0 12px 34px !important; /* 左側に番号を入れる余白(34px)を確保 */
-  position: relative !important;
-  counter-increment: toc-h2-counter !important; /* 番号を1ずつ増やす */
-}
-.article .toc-content > .toc-list > li:first-child {
-  border-top: none !important;
-}
-
-/* ★ H2のナンバリングデザイン（黒四角＋白文字） ★ */
-.article .toc-content > .toc-list > li::before {
-  content: counter(toc-h2-counter) !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 12px !important; /* H2テキストの高さに合わせる */
-  width: 22px !important;
-  height: 22px !important;
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-  font-family: 'Arial Black', sans-serif !important;
-  font-size: 0.85rem !important;
-  font-weight: 900 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 0 !important; /* 四角形にする */
-}
-
-/* 共通リンク設定 */
-.article .toc-content a {
-  display: inline !important; 
-  color: #1a1a1a !important;
-  text-decoration: none !important;
-  font-size: 0.95rem !important;
-}
-
-/* H2（親要素）のリンクのみ太字にする */
-.article .toc-content > .toc-list > li > a {
-  font-weight: bold !important;
-}
-
-/* H3, H4（子要素）のリンクは太字にしない（通常体） */
-.article .toc-content ul ul a,
-.article .toc-content ol ol a {
-  font-weight: normal !important;
-}
-
-.article .toc-content a:hover {
-  opacity: 0.6 !important;
-  text-decoration: underline !important;
-}
-
-/* 下の階層（H3, H4）の設定：余白とインデント */
-.article .toc-content ul ul,
-.article .toc-content ol ol {
-  padding-left: 10px !important; /* H2テキストより少し右にズラす */
-  margin-top: 6px !important;
-}
-.article .toc-content ul ul li,
-.article .toc-content ol ol li {
-  border: none !important;
-  padding: 4px 0 !important; /* 上下の隙間 */
-}
-
-/* 子要素（H3, H4）には絶対に番号を出さない設定 */
-.article .toc-content ul ul li::before,
-.article .toc-content ol ol li::before {
-  content: none !important;
-}
-
-/* Cocoonデフォルトのナンバー（数字）を非表示 */
-.toc-list .toc-list-number {
-  display: none !important;
-}
-
-/* =========================================================
-   27. List Design (UL, OL) with Gray Background
-   ========================================================= */
-.article ul, .article ol {
-  padding: 0 !important;
-  margin: 30px 0 !important;
-}
-
-/* Base style for both list types */
-.article ul li, .article ol li {
-  padding: 10px 15px !important; /* 内側の余白 */
-  margin: 0 !important; /* 隙間をなくしてくっつける */
-  line-height: 1.6;
-  position: relative;
-  /* グレーの背景（ストライプではなく均一なグレー） */
-  background-color: #f2f2f2 !important; 
-  /* リスト同士の境界線 */
-  border-bottom: 1px solid #e0e0e0 !important; 
-}
-
-/* 最後のアイテムの境界線を消す */
-.article ul li:last-child, .article ol li:last-child {
-  border-bottom: none !important;
-}
-
-/* Bullet list (UL) */
-.article ul li {
-  list-style: none !important;
-  padding-left: 1.8em !important; /* ドット用の左余白 */
-}
-
-.article ul li::before {
-  content: "";
-  position: absolute;
-  left: 0.6em; /* 左端から少し離す */
-  top: 50%; /* 上下中央 */
-  transform: translateY(-50%); /* ビシッと中央に */
-  width: 6px;
-  height: 6px;
-  background: #1a1a1a; /* 四角いドットでシャープに */
-}
-
-/* Number list (OL) */
-.article ol li {
-  list-style-position: inside !important; /* 番号を内側に */
-  font-weight: bold;
-}
-
-/* =========================================================
-   28. Blockquote (引用) with Solid Design
-   ========================================================= */
-.article blockquote {
-  background: #f2f2f2 !important; /* 全体をグレー背景に */
-  border-left: 4px solid #1a1a1a !important; /* 左側の黒線 */
-  margin: 30px 0 !important;
-  padding: 20px 30px !important;
-  color: #1a1a1a !important;
-  font-style: italic;
-  font-family: inherit !important;
-  border-radius: 0 !important; /* 角丸を排除 */
-}
-
-/* アイコンフォントのエラーを避けるため、引用アイコン（before）を非表示に */
-.article blockquote::before, .article blockquote::after {
-  content: none !important;
-}
-
-/* =========================================================
-   29. Information Box (案内ボックス)
-   ========================================================= */
-/* Cocoonの「白抜き」「案内」等のボックスを上書き */
-.blank-box, .common-box {
-  border: 1px solid #1a1a1a !important;
-  background-color: #fff !important;
-  border-radius: 0 !important; /* 角丸を排除 */
-  padding: 20px !important;
-  margin: 30px 0 !important;
-}
-
-/* グレー背景のシンプルボックス */
-.gray-box {
-  background-color: #f2f2f2 !important;
-  border: none !important;
-  padding: 20px !important;
-  margin: 30px 0 !important;
-}
-
-/* =========================================================
-   30. Speech Bubble (吹き出し - 全幅＆拡大版)
-   ========================================================= */
-.speech-balloon {
-  margin-bottom: 30px !important;
-  border: none !important;
-  box-shadow: none !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  width: 100% !important; /* 全幅を強制 */
-  max-width: 100% !important;
-}
-
-/* 右向き・左向きのレイアウト制御 */
-.speech-balloon-left { flex-direction: row !important; }
-.speech-balloon-right { flex-direction: row-reverse !important; }
-
-/* 三角の残骸を完全に消去 */
-.speech-balloon::before, .speech-balloon::after,
-.speech-content::before, .speech-content::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* アイコンコンテナ（サイズを100pxで絶対に固定） */
-.speech-person {
-  flex: 0 0 100px !important; /* 横幅が潰れないようロック */
-  width: 100px !important;
-  text-align: center !important;
-}
-.speech-balloon-left .speech-person {
-  margin-right: 20px !important;
-  margin-left: 0 !important;
-}
-.speech-balloon-right .speech-person {
-  margin-left: 20px !important;
-  margin-right: 0 !important;
-}
-
-/* アイコン画像（強制的に100pxに拡大） */
-.speech-person img {
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  border: none !important;
-  box-shadow: none !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-
-/* メンバー名 */
-.speech-name {
-  font-size: 0.8rem !important;
-  font-weight: bold !important;
-  color: #1a1a1a !important;
-  margin-top: 8px !important;
-  line-height: 1.2 !important;
-}
-
-/* テキストエリア（残りの画面幅を100%使い切る） */
-.speech-content {
-  background-color: #f2f2f2 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  color: #1a1a1a !important;
-  flex: 1 1 auto !important; /* 余白をすべて吸収 */
-  min-width: 0 !important;
-  width: 100% !important;
-  max-width: none !important; /* Cocoonデフォルトの幅制限を完全解除 */
-  padding: 20px !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-}
-
-/* =========================================================
-   31. Internal Blog Card (関連記事)
-   ========================================================= */
-.blogcard {
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 0 !important;
-  padding: 10px !important;
-  transition: all 0.3s ease;
-}
-
-.blogcard:hover {
-  background-color: #f9f9f9 !important;
-  border-color: #1a1a1a !important;
-}
-
-.blogcard-title {
-  font-weight: 900 !important;
-  line-height: 1.4 !important;
-}
-
-/* =========================================================
-   32. Article Responsive Adjustments (SP)
-   ========================================================= */
-@media screen and (max-width: 768px) {
-  /* ① H2のサイズ・余白調整 */
-  .article h2 {
-    font-size: 1.15rem !important; /* 担当者様ご指定のサイズ */
-    padding: 8px 12px !important; /* 余白を詰める */
-    margin: 25px 0 10px 0 !important;
-  }
-
-  /* ② 吹き出しの全幅化・親要素の余白を突破・アイコン拡大維持 */
-  .speech-balloon {
-    margin-bottom: 25px !important;
-    /* ★ 親要素の左右の余白（約15px〜20px）を無視して画面端まで広げる裏技 */
-    margin-left: -15px !important;
-    margin-right: -15px !important;
-    padding-left: 15px !important;  /* アイコンが画面端に張り付かないように内側へ戻す */
-    padding-right: 15px !important; /* テキストが画面端に張り付かないように内側へ戻す */
-    width: calc(100% + 30px) !important; /* マイナスした分だけ全体の幅を広げる */
-    max-width: none !important;
-  }
-  
-  .speech-person {
-    flex: 0 0 75px !important; /* スマホは75pxでロック（維持） */
-    width: 75px !important;
-  }
-  .speech-balloon-left .speech-person { margin-right: 15px !important; }
-  .speech-balloon-right .speech-person { margin-left: 15px !important; }
-
-  .speech-person img {
-    width: 75px !important;
-    height: 75px !important;
-  }
-  
-  .speech-content {
-    padding: 15px !important;
-    font-size: 0.95rem !important;
-  }
-	
-/* ===========================================
-   33. Manga Carousel (縦型漫画スライダー - 完全版)
-   ===========================================*/
-
-/* カルーセルエリア全体の背景・余白 */
-.carousel {
-  background-color: transparent !important; 
-  padding: 20px 0 40px 0 !important;
-  margin-bottom: 40px !important;
-}
-
-/* カルーセルカード全体 */
-.carousel-entry-card {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  padding: 0 10px !important; 
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-/* ★ 1. 画像の「枠」をご指定の比率（1055:1491）に絶対固定 ★ */
-.carousel-entry-card-thumb {
-  padding-top: 141.32% !important; /* 1055:1491の比率 */
-  padding-bottom: 0 !important; 
-  height: 0 !important;
-  width: 100% !important;
-  border-radius: 0 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  order: 1 !important; 
-  background: transparent !important;
-  position: relative !important; 
-}
-
-/* ★ 2. 復元されたオリジナル画像が枠をピッタリ埋め尽くす ★ */
-.carousel-entry-card-thumb img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* オリジナル画像が来るので綺麗に埋まります！ */
-  transition: transform 0.3s ease !important;
-}
-
-/* ホバー時のズームアクション */
-.carousel-entry-card:hover .carousel-entry-card-thumb img {
-  transform: scale(1.05) !important;
-}
-
-/* カテゴリーラベルを完全に消す */
-.carousel-entry-card-thumb .cat-label,
-.carousel-entry-card-thumb .ribbon {
-  display: none !important;
-}
-
-/* テキストエリア全体の調整 */
-.carousel-entry-card-content {
-  order: 2 !important; 
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 12px 0 0 0 !important; 
-  background: transparent !important;
-}
-
-/* 日付とタイトルのデザイン */
-.carousel-entry-card-meta {
-  order: 1 !important;
-  margin-bottom: 4px !important;
-  display: block !important;
-}
-.carousel-entry-card-meta .post-date {
-  font-size: 0.8rem !important; 
-  color: #888888 !important; 
-  font-family: 'Courier New', Consolas, monospace !important;
-  font-weight: bold !important;
-}
-.carousel-entry-card-meta .post-date::before {
-  display: none !important;
-}
-
-.carousel-entry-card-title {
-  order: 2 !important;
-  font-size: 1.05rem !important; 
-  font-weight: 900 !important;
-  color: #1a1a1a !important;
-  line-height: 1.4 !important;
-  margin: 0 !important;
-  display: -webkit-box !important;
-  -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 2 !important; 
-  overflow: hidden !important;
-  text-align: center !important; 
-}
-
-/* スマホ用の余白調整 */
-@media screen and (max-width: 768px) {
-  .carousel {
-    padding: 10px 0 30px 0 !important;
-    margin-bottom: 30px !important;
-  }
-}
+*{border-radius:0 !important}
+body{color:#1A1A1A;background-color:#F9F9F9}
+.article h2{background:#1a1a1a !important;color:#ffffff !important;padding:10px 20px !important;margin:30px 0 10px 0 !important;border:none !important;font-size:1.25rem !important;font-weight:900 !important;letter-spacing:1.5px !important;line-height:1.4 !important;height:auto !important;min-height:0 !important;box-sizing:border-box !important;display:block !important}
+.article h2+h2,.article h3+h3,.article h4+h4{margin-top:5px !important}
+.article h3{font-size:1.2rem !important;font-weight:900 !important;color:#1a1a1a !important;border-top:none !important;border-right:none !important;border-left:none !important;border-bottom:3px solid #1a1a1a !important;padding:0 0 8px 0 !important;margin:30px 0 10px 0 !important}
+.article h4{font-size:1.05rem !important;font-weight:bold !important;color:#1a1a1a !important;background:#f2f2f2 !important;padding:8px 16px !important;margin:30px 0 10px 0 !important;border-top:none !important;border-right:none !important;border-bottom:none !important;border-left:6px solid #1a1a1a !important;line-height:1.4 !important;box-sizing:border-box !important}
+.article h2+*,.article h3+*,.article h4+*{margin-top:0 !important}
+a{transition:color .3s ease}
+a:hover{color:#B05B3B}
+#navi .navi-in a{font-weight:bold;color:#1A1A1A}
+#navi .navi-in a:hover{background-color:#1A1A1A;color:#FFFFFF}
+.page .date-tags,.page .author-info{display:none !important}
+.appeal-in .appeal-content{display:none !important}
+.fv-video-wrapper{width:100vw;margin-left:calc(50% - 50vw);position:relative;overflow:hidden;margin-bottom:0 !important;background-color:#1A1A1A;z-index:10 !important}
+.fv-video-wrapper video{width:100%;height:100%;object-fit:cover;object-position:center center}
+.header-container .header-in{max-width:100% !important;width:100% !important;padding:0 20px !important;display:flex !important;align-items:center !important}
+.logo-header{margin-right:auto !important;margin-left:0 !important;padding:0 !important}
+body.home .header-container,body.home .navi,body.home .navi-in,body.home #content,body.home #content-in,body.home .content-top,body.home .widget-area,body.home .widget,body.home .widget_custom_html{margin-top:0 !important;margin-bottom:0 !important;padding-top:0 !important;padding-bottom:0 !important;border:none !important}
+#navi-mobile,.mobile-menu{z-index:100000 !important}
+.view-count,.post-update,.fa-folder,.fa-clock-o,.fa-tags,.entry-card-snippet,.admin-pv,.pv-area,.pt-count{display:none !important}
+.home #main>.entry-cards>.entry-card-wrap:first-child,.home #main>.list>.entry-card-wrap:first-child{display:none !important}
+h2.yuzan-content-title{font-size:2rem !important;font-weight:900 !important;font-family:'Arial Black','Impact',sans-serif !important;color:#1a1a1a !important;text-transform:uppercase;letter-spacing:2px !important;text-align:center !important;margin:60px auto !important}
+hr.yuzan-divider{border:none !important;border-top:1px solid rgba(0,0,0,.05) !important;margin:0 auto !important;max-width:calc(100% - 40px)}
+.yuzan-tag-spacer{height:60px;width:100%;display:block}
+.yuzan-results-bar{margin-top:0 !important;background-color:#555 !important;color:#fff !important;padding:12px 30px !important;font-size:.9rem !important;font-family:'Courier New',Consolas,monospace !important;font-weight:bold !important;text-align:left !important;border-radius:8px 8px 0 0 !important;width:100% !important;max-width:calc(100% - 40px) !important;margin-left:auto !important;margin-right:auto !important;margin-bottom:0 !important;box-sizing:border-box !important}
+.yuzan-ranking-bar{background-color:#B8860B !important;margin-top:0 !important}
+.widget_tag_cloud .widget-title,.widget_tag_cloud h3,.wp-block-tag-cloud h2{display:none !important}
+.widget_tag_cloud,.tagcloud,.wp-block-tag-cloud{margin-bottom:25px !important;padding:0 !important;display:flex !important;flex-wrap:wrap !important;justify-content:center !important;width:100% !important}
+.tagcloud a,.wp-block-tag-cloud a{background:#1a1a1a !important;color:#fff !important;border:none !important;border-radius:30px !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;padding:4px 16px !important;margin:5px !important;font-size:.8rem !important;text-decoration:none !important;float:none !important;flex-grow:0 !important;width:auto !important;max-width:max-content !important}
+.category-banners{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;max-width:1200px;margin:0 auto 60px auto;padding:0 20px}
+.category-banners a img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;border-radius:4px !important;transition:opacity .3s ease}
+.category-banners a:hover img{opacity:.7}
+.widget{margin-bottom:0 !important;padding-bottom:0 !important}
+.home #main>.list,.home #main>.entry-cards,.home #main>.list-main,.home #main>.ect-entry-card,.home #main .entry-cards.cards,.yuzan-ranking-list{background-color:#F2F2F2 !important;padding:30px !important;border-radius:0 0 8px 8px !important;margin-bottom:60px !important;margin-top:-2px !important;width:100% !important;max-width:calc(100% - 40px) !important;margin-left:auto !important;margin-right:auto !important;box-sizing:border-box !important;position:relative;z-index:1}
+.entry-card-wrap.a-wrap{display:flex !important;flex-direction:column !important;background:transparent !important;padding:30px 0 !important;border-radius:0 !important;border-bottom:1px solid rgba(0,0,0,.1) !important;box-shadow:none !important;margin-bottom:0 !important;width:100% !important;transition:transform .3s ease !important}
+.entry-card-wrap.a-wrap:hover{transform:translateY(-2px) !important}
+.entry-card-content,.entry-card-meta{display:contents !important}
+.entry-card-wrap.a-wrap{--cat-ripple-color:149,165,166}
+.entry-card-wrap.a-wrap:has(.cat-label-4){--cat-ripple-color:243,122,36 !important}
+.entry-card-wrap.a-wrap:has(.cat-label-2){--cat-ripple-color:34,142,204 !important}
+.entry-card-wrap.a-wrap:has(.cat-label-3){--cat-ripple-color:46,184,114 !important}
+.entry-card-meta .post-date{order:1 !important;font-size:.85rem !important;color:#333 !important;margin-bottom:10px !important;display:flex !important;align-items:center !important;width:100% !important}
+.entry-card-meta .post-date::before{content:'';display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:12px;background-color:rgb(var(--cat-ripple-color));animation:yuzan-ripple 1.5s infinite ease-out}
+.entry-card-title{order:2 !important;font-size:1.3rem !important;font-weight:900 !important;line-height:1.5 !important;margin-bottom:0 !important;text-align:left !important;color:#1a1a1a !important;display:-webkit-box !important;-webkit-box-orient:vertical !important;-webkit-line-clamp:2 !important;overflow:hidden !important;height:3.0em !important}
+.entry-card-thumb{order:5 !important;margin-top:40px !important;width:100% !important;aspect-ratio:16/9 !important;position:relative;overflow:visible !important;border-radius:4px !important}
+.entry-card-thumb img{width:100% !important;height:100% !important;object-fit:cover !important;border-radius:4px !important;transition:transform .4s ease !important}
+.entry-card-thumb .cat-label{display:inline-flex !important;align-items:center !important;justify-content:center !important;position:absolute !important;top:-32px !important;left:0 !important;background-color:#1a1a1a !important;color:#fff !important;padding:2px 14px !important;line-height:1 !important;height:24px !important;border-radius:30px !important;font-size:.75rem !important;font-family:'Courier New',Consolas,monospace !important;font-weight:bold !important;border:none !important;z-index:10 !important}
+.yuzan-latest-post{padding:0 20px;margin-bottom:40px}
+.yuzan-latest-post .entry-card-wrap.a-wrap{background-color:#F2F2F2 !important;padding:30px !important;border-radius:8px !important;margin-bottom:0 !important;border-bottom:none !important}
+.yuzan-ranking-list .widget-entry-cards,.yuzan-latest-post .widget-entry-cards{margin-bottom:0 !important}
+.yuzan-ranking-list .a-wrap:last-child,.yuzan-latest-post .a-wrap:last-child{margin-bottom:0 !important;padding-bottom:0 !important;border-bottom:none !important}
+.yuzan-marquee-wrapper{width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;background-color:transparent;padding:0 0 20px 0 !important;display:flex}
+.yuzan-marquee-content{display:flex;width:max-content}
+.marquee-text{display:flex;white-space:nowrap;animation:marquee-scroll 30s linear infinite}
+.marquee-text span{font-size:6.5rem !important;font-weight:900;color:#1a1a1a;font-family:'Arial Black','Impact',sans-serif;text-transform:uppercase;padding-right:50px;line-height:1}
+.yuzan-ranking-list .rank-label{display:flex !important;align-items:center !important;justify-content:center !important;position:absolute !important;top:10px !important;left:10px !important;width:24px !important;height:24px !important;background-color:rgba(26,26,26,.9) !important;color:#fff !important;font-family:'Arial Black',sans-serif !important;font-size:12px !important;font-weight:bold !important;z-index:20 !important;border:1px solid rgba(255,255,255,.3) !important}
+.yuzan-ranking-list .popular-entry-card-thumb{position:relative !important}
+.yuzan-ranking-list .popular-entry-card-category{left:40px !important}
+#footer{background-image:url("https://yuzan-life.com/wp-content/uploads/2026/04/footer-design.png") !important;background-color:#fff !important;background-repeat:no-repeat !important;background-position:bottom center !important;border-top:none !important;position:relative;z-index:1}
+.navi-footer-in{display:flex !important;flex-direction:column !important;align-items:flex-start !important;max-width:1200px !important;margin:0 auto !important;padding:30px 20px 0 20px !important;box-sizing:border-box !important}
+.yuzan-footer-logo-link{display:inline-block !important;width:80px !important;height:80px !important;margin:0 0 40px 0 !important}
+.yuzan-footer-logo-link img{width:100% !important;height:100% !important;object-fit:contain !important;transition:opacity .3s ease !important}
+.yuzan-footer-logo-link:hover img{opacity:.7 !important}
+.navi-footer-in ul{display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:15px !important;margin:0 0 40px 0 !important;padding:0 !important;list-style:none !important}
+.navi-footer-in ul li a{font-family:'Courier New',Consolas,monospace !important;font-size:.95rem !important;font-weight:bold !important;color:#1a1a1a !important;letter-spacing:1px !important;text-decoration:none !important;border:none !important;padding:0 !important;transition:opacity .3s ease !important;white-space:nowrap !important;word-break:keep-all !important}
+.navi-footer-in ul li a:hover{opacity:.5 !important}
+.credit{font-family:'Courier New',Consolas,monospace !important;color:#1a1a1a !important;font-size:.8rem !important;font-weight:bold !important;padding:0 !important;background:transparent !important;text-align:left !important;width:100% !important;letter-spacing:1px !important}
+body:not(.home) .yuzan-tag-spacer,body:not(.home) .yuzan-results-bar{display:none !important}
+html,body{margin-top:0 !important;padding-top:0 !important}
+body:not(.home) #container{margin-top:0 !important;padding-top:0 !important}
+body:not(.home) .mobile-menu-buttons{position:absolute !important;top:0 !important;left:0 !important;width:0 !important;height:0 !important;min-height:0 !important;margin:0 !important;padding:0 !important;border:none !important;background:transparent !important;overflow:visible !important;z-index:100000 !important}
+body:not(.home) #navi,body:not(.home) .navi,body:not(.home) .notice,body:not(.home) .content-top{display:none !important}
+body:not(.home) #header{position:relative !important;display:block !important;width:100% !important;background-color:#fff !important;border:none !important;border-bottom:2px solid #1a1a1a !important;margin:0 !important;padding:0 !important;z-index:9999 !important}
+body:not(.home) .header-container,body:not(.home) .header-in{position:relative !important;display:block !important;width:100% !important;background:transparent !important;border:none !important;margin:0 !important;padding:0 !important}
+body:not(.home) .logo-header{display:flex !important;align-items:center !important;justify-content:center !important;height:70px !important;padding:0 !important;margin:0 !important;border:none !important}
+body:not(.home) .logo-header a{display:block !important;width:200px !important;height:40px !important;background-image:url("https://yuzan-life.com/wp-content/uploads/2026/04/yuzan-logo-yoko-1-scaled.png") !important;background-size:contain !important;background-position:center center !important;background-repeat:no-repeat !important;color:transparent !important;font-size:0 !important;border:none !important}
+body:not(.home) .logo-header img,body:not(.home) .tagline{display:none !important}
+body:not(.home) #content,body:not(.home) #content-in,body:not(.home) #main,body:not(.home) .main{position:relative !important;z-index:1 !important;background-color:transparent !important;margin-top:0 !important;padding-top:0 !important}
+body:not(.home) .breadcrumb-wrap{background-color:#fff !important;margin-top:-20px !important;padding-top:40px !important;padding-bottom:10px !important;position:relative !important;width:100vw !important;max-width:100vw !important;margin-left:calc(50% - 50vw) !important;padding-left:calc(50vw - 50% + 20px) !important;padding-right:calc(50vw - 50% + 20px) !important;box-sizing:border-box !important}
+.article-header{display:flex !important;flex-direction:column !important}
+.article-header .eye-catch{order:1 !important;margin-bottom:20px !important}
+.article-header .entry-title{order:2 !important;margin-top:10px !important}
+.article-header .date-tags,.article-header .post-meta{order:3 !important}
+.article-header .eye-catch .cat-label{background-color:#1a1a1a !important;color:#fff !important;padding:4px 16px !important;border-radius:30px !important;font-size:.8rem !important;font-family:'Courier New',Consolas,monospace !important;font-weight:bold !important;top:10px !important;left:10px !important;border:none !important}
+.entry-categories a,.entry-tags a,.cat-link,.tag-link{background-color:#1a1a1a !important;color:#fff !important;border:none !important;border-radius:30px !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;line-height:1 !important;padding:6px 14px !important;margin:0 6px 8px 0 !important;font-size:.8rem !important;font-weight:bold !important;text-decoration:none !important;box-sizing:border-box !important}
+.entry-categories a:hover,.entry-tags a:hover,.cat-link:hover,.tag-link:hover{opacity:.7 !important;color:#fff !important}
+.entry-categories a .fa,.entry-tags a .fa,.cat-link .fa,.tag-link .fa,.entry-categories a span,.entry-tags a span{color:#fff !important;margin-right:5px !important;font-size:.85rem !important;display:inline-block !important;line-height:1 !important}
+.breadcrumb,.bcrumb{margin-bottom:20px !important;background:transparent !important;padding:0 !important}
+.breadcrumb span[itemprop="name"],.bcrumb span[itemprop="name"],.breadcrumb a,.bcrumb a{font-family:'Courier New',Consolas,'Arial Black','Noto Sans JP',sans-serif !important;font-size:.85rem !important;font-weight:900 !important;color:#1a1a1a !important;letter-spacing:2px !important;text-transform:uppercase !important}
+.breadcrumb a:hover span,.bcrumb a:hover span{opacity:.5 !important}
+.breadcrumb .fa,.bcrumb .fa{color:#888 !important;font-size:.9rem !important;margin:0 6px !important}
+body.home .breadcrumb,body.home .bcrumb{display:none !important}
+.author-widget,.author-box{background-color:#fff !important;padding:20px !important;border:1px solid rgba(0,0,0,.05) !important;margin-bottom:40px !important;display:flex !important;flex-wrap:wrap !important;align-items:flex-start !important}
+.author-widget .author-title,.author-box .author-widget-name{width:100% !important;font-family:'Courier New',Consolas,'Noto Sans JP',sans-serif !important;font-size:.8rem !important;font-weight:bold !important;color:#888 !important;margin-bottom:12px !important;text-align:left !important;display:block !important}
+.author-widget .author-thumb,.author-box .author-thumb{margin:0 15px 0 0 !important;padding:0 !important;width:70px !important;height:70px !important;flex-shrink:0 !important;float:none !important}
+.author-widget .author-thumb img,.author-box .author-thumb img{border-radius:50% !important;width:100% !important;height:100% !important;aspect-ratio:1/1 !important;object-fit:cover !important;display:block !important}
+.author-widget .author-content,.author-box .author-content{flex:1 !important;min-width:0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;margin:0 !important;padding:0 !important;float:none !important;text-align:left !important}
+.author-widget .author-name,.author-box .author-name{font-size:1.1rem !important;font-weight:900 !important;color:#1a1a1a !important;margin:0 0 6px 0 !important;line-height:1.2 !important}
+.author-widget .author-name a,.author-box .author-name a{color:#1a1a1a !important;text-decoration:none !important}
+.author-widget .author-description,.author-box .author-description{font-size:.85rem !important;line-height:1.6 !important;color:#333 !important;margin:0 !important;padding:0 !important}
+.author-widget .author-follows,.author-box .author-follows,.author-widget .sns-follow-buttons,.author-box .sns-follow-buttons{display:none !important}
+.sns-share-message{font-size:0 !important;background-color:transparent !important;display:block !important;width:100% !important;text-align:center !important;margin:0 0 20px 0 !important;padding:0 !important;border:none !important}
+.sns-share-message::before{content:"SHARE" !important;font-family:'Courier New',Consolas,monospace !important;font-size:1.4rem !important;font-weight:900 !important;letter-spacing:3px !important;color:#1a1a1a !important;display:inline-block !important;line-height:1.2 !important}
+.toc{background-color:#f2f2f2 !important;border:none !important;padding:15px 25px !important;margin:0 0 30px 0 !important}
+.toc-title{font-family:'Arial Black',sans-serif !important;font-weight:900 !important;font-size:1.1rem !important;color:#1a1a1a !important;text-align:center !important;margin-bottom:10px !important;padding-bottom:8px !important;border-bottom:2px solid #1a1a1a !important}
+.article .toc-content ul,.article .toc-content ol{margin:0 !important;padding:0 !important;border:none !important;background:transparent !important;list-style:none !important}
+.article .toc-content li{margin:0 !important;padding:0 !important;border:none !important;background:transparent !important;line-height:1.4 !important}
+.article .toc-content li::before{content:none !important}
+.article .toc-content > .toc-list{counter-reset:toc-h2-counter !important}
+.article .toc-content > .toc-list > li{border-top:1px solid #e0e0e0 !important;padding:12px 0 12px 34px !important;position:relative !important;counter-increment:toc-h2-counter !important}
+.article .toc-content > .toc-list > li:first-child{border-top:none !important}
+.article .toc-content > .toc-list > li::before{content:counter(toc-h2-counter) !important;position:absolute !important;left:0 !important;top:12px !important;width:22px !important;height:22px !important;background-color:#1a1a1a !important;color:#fff !important;font-family:'Arial Black',sans-serif !important;font-size:.85rem !important;font-weight:900 !important;display:flex !important;align-items:center !important;justify-content:center !important;border-radius:0 !important}
+.article .toc-content a{display:inline !important;color:#1a1a1a !important;text-decoration:none !important;font-size:.95rem !important}
+.article .toc-content > .toc-list > li > a{font-weight:bold !important}
+.article .toc-content ul ul a,.article .toc-content ol ol a{font-weight:normal !important}
+.article .toc-content a:hover{opacity:.6 !important;text-decoration:underline !important}
+.article .toc-content ul ul,.article .toc-content ol ol{padding-left:10px !important;margin-top:6px !important}
+.article .toc-content ul ul li,.article .toc-content ol ol li{border:none !important;padding:4px 0 !important}
+.article .toc-content ul ul li::before,.article .toc-content ol ol li::before{content:none !important}
+.toc-list .toc-list-number{display:none !important}
+.article ul,.article ol{padding:0 !important;margin:30px 0 !important}
+.article ul li,.article ol li{padding:10px 15px !important;margin:0 !important;line-height:1.6;position:relative;background-color:#f2f2f2 !important;border-bottom:1px solid #e0e0e0 !important}
+.article ul li:last-child,.article ol li:last-child{border-bottom:none !important}
+.article ul li{list-style:none !important;padding-left:1.8em !important}
+.article ul li::before{content:"";position:absolute;left:.6em;top:50%;transform:translateY(-50%);width:6px;height:6px;background:#1a1a1a}
+.article ol li{list-style-position:inside !important;font-weight:bold}
+.article blockquote{background:#f2f2f2 !important;border-left:4px solid #1a1a1a !important;margin:30px 0 !important;padding:20px 30px !important;color:#1a1a1a !important;font-style:italic;font-family:inherit !important;border-radius:0 !important}
+.article blockquote::before,.article blockquote::after{content:none !important}
+.blank-box,.common-box{border:1px solid #1a1a1a !important;background-color:#fff !important;border-radius:0 !important;padding:20px !important;margin:30px 0 !important}
+.gray-box{background-color:#f2f2f2 !important;border:none !important;padding:20px !important;margin:30px 0 !important}
+.speech-balloon{margin-bottom:30px !important;border:none !important;box-shadow:none !important;box-sizing:border-box !important;display:flex !important;align-items:flex-start !important;width:100% !important;max-width:100% !important}
+.speech-balloon-left{flex-direction:row !important}
+.speech-balloon-right{flex-direction:row-reverse !important}
+.speech-balloon::before,.speech-balloon::after,.speech-content::before,.speech-content::after{display:none !important;content:none !important}
+.speech-person{flex:0 0 100px !important;width:100px !important;text-align:center !important}
+.speech-balloon-left .speech-person{margin-right:20px !important;margin-left:0 !important}
+.speech-balloon-right .speech-person{margin-left:20px !important;margin-right:0 !important}
+.speech-person img{width:100px !important;height:100px !important;border-radius:50% !important;object-fit:cover !important;border:none !important;box-shadow:none !important;display:block !important;margin:0 auto !important}
+.speech-name{font-size:.8rem !important;font-weight:bold !important;color:#1a1a1a !important;margin-top:8px !important;line-height:1.2 !important}
+.speech-content{background-color:#f2f2f2 !important;border:none !important;border-radius:0 !important;color:#1a1a1a !important;flex:1 1 auto !important;min-width:0 !important;width:100% !important;max-width:none !important;padding:20px !important;margin:0 !important;box-sizing:border-box !important}
+.blogcard{border:1px solid #e0e0e0 !important;border-radius:0 !important;padding:10px !important;transition:all .3s ease}
+.blogcard:hover{background-color:#f9f9f9 !important;border-color:#1a1a1a !important}
+.blogcard-title{font-weight:900 !important;line-height:1.4 !important}
+.carousel{background-color:transparent !important;padding:20px 0 40px 0 !important;margin-bottom:40px !important}
+.carousel-entry-card{border-radius:0 !important;box-shadow:none !important;background:transparent !important;padding:0 10px !important;display:flex !important;flex-direction:column !important}
+.carousel-entry-card-thumb{padding-top:141.32% !important;padding-bottom:0 !important;height:0 !important;width:100% !important;border-radius:0 !important;overflow:hidden !important;margin:0 !important;order:1 !important;background:transparent !important;position:relative !important}
+.carousel-entry-card-thumb img{position:absolute !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important;object-fit:cover !important;transition:transform .3s ease !important}
+.carousel-entry-card:hover .carousel-entry-card-thumb img{transform:scale(1.05) !important}
+.carousel-entry-card-thumb .cat-label,.carousel-entry-card-thumb .ribbon{display:none !important}
+.carousel-entry-card-content{order:2 !important;display:flex !important;flex-direction:column !important;padding:12px 0 0 0 !important;background:transparent !important}
+.carousel-entry-card-meta{order:1 !important;margin-bottom:4px !important;display:block !important}
+.carousel-entry-card-meta .post-date{font-size:.8rem !important;color:#888 !important;font-family:'Courier New',Consolas,monospace !important;font-weight:bold !important}
+.carousel-entry-card-meta .post-date::before{display:none !important}
+.carousel-entry-card-title{order:2 !important;font-size:.9rem !important;font-weight:900 !important;color:#1a1a1a !important;line-height:1.4 !important;height:auto !important;max-height:none !important;margin:0 !important;display:-webkit-box !important;-webkit-box-orient:vertical !important;-webkit-line-clamp:4 !important;overflow:hidden !important;text-align:center !important}
+.article table{width:100% !important;min-width:500px !important;border-collapse:collapse !important;border:1px solid #1a1a1a !important;margin:0 !important}
+.article table th{background-color:#333 !important;color:#fff !important;font-weight:bold !important;padding:12px 15px !important;border:1px solid #ccc !important;text-align:center !important}
+.article table td{padding:12px 15px !important;border:1px solid #ccc !important;background-color:#fff !important;color:#1a1a1a !important;line-height:1.6 !important}
+.article table td:first-child,.article table th:first-child{white-space:nowrap !important}
+.yuzan-table-wrapper{overflow-x:auto;margin:2em 0 !important}
+@keyframes yuzan-ripple{0%{box-shadow:0 0 0 0 rgba(var(--cat-ripple-color),.7)}70%{box-shadow:0 0 0 10px rgba(var(--cat-ripple-color),0)}100%{box-shadow:0 0 0 0 rgba(var(--cat-ripple-color),0)}}
+@keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+@media screen and (min-width: 769px){
+.fv-video-wrapper{height:auto;aspect-ratio:16/9}
+.video-pc{display:block}
+.video-sp{display:none}
+.navi{flex-grow:1 !important;width:100% !important}
+.navi-in>ul{display:flex !important;width:100% !important}
+.navi-in>ul>li{flex:1 1 0 !important}
+.navi-in>ul>li>a{white-space:nowrap !important;overflow:visible !important;text-overflow:clip !important;border-left:1px solid rgba(26,26,26,.2) !important;padding:0 !important;display:flex !important;justify-content:center !important;font-weight:bold}
+.navi-in>ul>li:last-child>a{border-right:1px solid rgba(26,26,26,.2) !important}
+.home #main>.list,.home #main>.entry-cards,.yuzan-ranking-list{display:grid !important;grid-template-columns:repeat(2,1fr) !important;column-gap:30px !important;row-gap:0 !important}
+.entry-card-wrap.a-wrap:hover .entry-card-thumb img{transform:scale(1.05) !important}
+#footer{padding-bottom:350px !important}
+}
+@media screen and (max-width: 768px){
+.fv-video-wrapper{height:auto;aspect-ratio:1/1}
+.video-pc{display:none}
+.video-sp{display:block}
+body.home,body.home #container,body.home #content,body.home #content-in,body.home #main{padding-top:0 !important;margin-top:0 !important}
+body.home #header,body.home .header-container{position:absolute !important;top:0 !important;left:0 !important;width:100% !important;height:0 !important;min-height:0 !important;padding:0 !important;margin:0 !important;background:transparent !important;border:none !important;box-shadow:none !important;z-index:9999 !important}
+.mobile-menu-buttons .search-menu-button,.mobile-menu-buttons .logo-menu-button,.mobile-menu-buttons .home-menu-button,.mobile-menu-buttons .top-menu-button,.mobile-menu-buttons .sidebar-menu-button,.mobile-search-button,.search-button{display:none !important;width:0 !important;height:0 !important;opacity:0 !important;pointer-events:none !important}
+.mobile-menu-buttons .menu-button,.mobile-menu-button{display:block !important;position:fixed !important;top:15px !important;right:15px !important;left:auto !important;width:50px !important;height:50px !important;background-color:rgba(26,26,26,.8) !important;border-radius:50% !important;z-index:99999 !important;margin:0 !important;padding:0 !important;box-shadow:0 4px 10px rgba(0,0,0,.3) !important;font-size:0 !important;color:transparent !important}
+.mobile-menu-buttons .menu-button span.fa,.mobile-menu-buttons .menu-button i,.mobile-menu-button span.fa,.mobile-menu-button i{color:#fff !important;font-size:24px !important;position:absolute !important;top:50% !important;left:50% !important;transform:translate(-50%,-50%) !important;margin:0 !important;padding:0 !important}
+.yuzan-marquee-wrapper{padding:0 0 10px 0 !important}
+.marquee-text span{font-size:4rem !important;padding-right:30px !important}
+.yuzan-tag-spacer{height:40px !important}
+.yuzan-results-bar{width:95vw !important;max-width:95vw !important;font-size:1.1rem !important;padding:15px 20px !important;margin-top:0 !important;margin-bottom:0 !important;margin-left:calc(50% - 47.5vw) !important;margin-right:calc(50% - 47.5vw) !important;box-sizing:border-box !important}
+.home #main>.list,.home #main>.entry-cards,.yuzan-ranking-list{display:flex !important;flex-direction:column !important;padding:15px !important;width:95vw !important;max-width:95vw !important;margin-top:-2px !important;margin-bottom:60px !important;margin-left:calc(50% - 47.5vw) !important;margin-right:calc(50% - 47.5vw) !important;box-sizing:border-box !important}
+h2.yuzan-content-title{font-size:1.8rem !important;margin-top:30px !important;margin-bottom:30px !important;margin-left:auto !important;margin-right:auto !important}
+body .home #content .tagcloud,body .home #content .wp-block-tag-cloud{margin-bottom:40px !important}
+.category-banners{gap:10px;padding:0 15px}
+#navi-menu-content,.navi-menu-content,#navi-mobile,.menu-drawer,.slide-in{background-color:#1a1a1a !important;background-image:none !important}
+.navi-menu-content ul,.navi-menu-content li,#navi-mobile ul,#navi-mobile li{background-color:transparent !important;border-color:#333 !important}
+.navi-menu-close-button,.close-button,#navi-menu-close-button{position:fixed !important;top:15px !important;right:15px !important;background-color:rgba(26,26,26,.8) !important;color:#fff !important;border-radius:50% !important;width:50px !important;height:50px !important;display:flex !important;align-items:center !important;justify-content:center !important;z-index:999999 !important;border:none !important;font-size:24px !important}
+.navi-menu-content a,#navi-mobile a{color:#fff !important}
+
+/* ▼ 修正1：リスト特有の見えない余白を完全にゼロにする */
+#navi-mobile ul, #navi-mobile li, .navi-menu-content ul, .navi-menu-content li, .yuzan-trout-menu-item {padding-left:0 !important;margin-left:0 !important;list-style:none !important;}
+
+/* ▼ 修正2：TROUT FISHINGリストも同じクラス指定に含め、左を30pxで揃える */
+.navi-menu-content ul.sub-menu a,#navi-mobile ul.sub-menu a,.yuzan-menu-trout-list a{color:#ccc !important;font-weight:bold !important;padding:15px 20px 15px 30px !important;font-size:1rem !important;border-bottom:1px solid #285430 !important;text-decoration:none !important;display:block !important;margin:0 !important;box-sizing:border-box !important}
+
+/* ▼ 修正3：見出しもmarginを0に固定して、左を20pxでピシッと揃える */
+span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;font-size:1.6rem !important;font-weight:900 !important;color:#fff !important;letter-spacing:2px !important;padding:40px 20px 10px 20px !important;border-bottom:2px solid #333 !important;display:block !important;cursor:default !important;margin:0 !important;box-sizing:border-box !important}
+
+.yuzan-menu-tag-list{display:flex !important;flex-wrap:wrap !important;padding:20px 20px !important;gap:10px !important;background-color:#1a1a1a !important}
+.yuzan-menu-tag-list a.yuzan-cloned-tag{background-color:#333 !important;color:#fff !important;padding:8px 18px !important;border-radius:30px !important;font-size:.85rem !important;margin:0 !important;border:none !important;display:inline-block !important;text-decoration:none !important}
+.yuzan-menu-tag-list a.yuzan-cloned-tag::before{content:"\f02b";font-family:"FontAwesome";margin-right:6px;font-size:.8rem;opacity:.7}
+.yuzan-menu-search-box{padding:20px 20px 40px 20px !important;background-color:#1a1a1a !important}
+.yuzan-menu-search-box .search-form{display:flex !important;position:relative !important;background-color:transparent !important;padding:0 !important;margin:0 !important}
+.yuzan-menu-search-box input.search-field{flex-grow:1 !important;background-color:#333 !important;border:none !important;color:#fff !important;font-size:1rem !important;padding:0 15px !important;height:40px !important;border-radius:4px !important;outline:none !important;margin:0 10px 0 0 !important;box-shadow:none !important;-webkit-appearance:none !important}
+.yuzan-menu-search-box button.search-submit{position:relative !important;top:auto !important;right:auto !important;bottom:auto !important;left:auto !important;background-color:#555 !important;color:#fff !important;border:none !important;width:45px !important;min-width:45px !important;height:40px !important;border-radius:4px !important;display:flex !important;align-items:center !important;justify-content:center !important;cursor:pointer !important;padding:0 !important;margin:0 !important;transform:none !important}
+.yuzan-menu-search-box button.search-submit span,.yuzan-menu-search-box button.search-submit i{display:none !important}
+.yuzan-menu-search-box button.search-submit::after{content:"\f002" !important;font-family:"FontAwesome" !important;font-size:1.2rem !important;color:#fff !important;display:block !important}
+#footer{background-size:100% auto !important;padding-bottom:220px !important}
+.navi-footer-in{padding-top:20px !important}
+.article h2{font-size:1.15rem !important;padding:8px 12px !important;margin:25px 0 10px 0 !important}
+.speech-balloon{margin-bottom:30px !important;margin-left:-15px !important;margin-right:-15px !important;padding-left:15px !important;padding-right:15px !important;width:calc(100% + 30px) !important;max-width:none !important}
+.speech-person{flex:0 0 75px !important;width:75px !important}
+.speech-balloon-left .speech-person{margin-right:15px !important}
+.speech-balloon-right .speech-person{margin-left:15px !important}
+.speech-person img{width:75px !important;height:75px !important}
+.speech-content{padding:15px !important;font-size:.95rem !important}
+.carousel{padding:10px 0 30px 0 !important;margin-bottom:30px !important}
+}
+.grecaptcha-badge { visibility: hidden; }
