@@ -228,3 +228,6 @@ span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;
     min-height: 0 !important;
   }
 }
+.archive-title {
+  display: none !important;
+}
