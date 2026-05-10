@@ -193,8 +193,9 @@ body .home #content .tagcloud,body .home #content .wp-block-tag-cloud{margin-bot
 .navi-menu-content ul,.navi-menu-content li,#navi-mobile ul,#navi-mobile li{background-color:transparent !important;border-color:#333 !important}
 .navi-menu-close-button,.close-button,#navi-menu-close-button{position:fixed !important;top:15px !important;right:15px !important;background-color:rgba(26,26,26,.8) !important;color:#fff !important;border-radius:50% !important;width:50px !important;height:50px !important;display:flex !important;align-items:center !important;justify-content:center !important;z-index:999999 !important;border:none !important;font-size:24px !important}
 .navi-menu-content a,#navi-mobile a{color:#fff !important}
-.navi-menu-content ul.sub-menu a,#navi-mobile ul.sub-menu a{color:#ccc !important;font-weight:bold !important;padding:15px 20px 15px 30px !important;font-size:1rem !important;border-bottom:1px solid #2a2a !important}
-span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;font-size:1.6rem !important;font-weight:900 !important;color:#fff !important;letter-spacing:2px !important;padding:40px 20px 10px 20px !important;border-bottom:2px solid #333 !important;display:block !important;cursor:default !important}
+#navi-mobile ul,#navi-mobile li,.navi-menu-content ul,.navi-menu-content li,.yuzan-trout-menu-item{padding-left:0 !important;margin-left:0 !important;list-style:none !important}
+.navi-menu-content ul.sub-menu a,#navi-mobile ul.sub-menu a,.yuzan-menu-trout-list a{color:#ccc !important;font-weight:bold !important;padding:15px 20px 15px 30px !important;font-size:1rem !important;border-bottom:1px solid #285430 !important;text-decoration:none !important;display:block !important;margin:0 !important;box-sizing:border-box !important}
+span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;font-size:1.6rem !important;font-weight:900 !important;color:#fff !important;letter-spacing:2px !important;padding:40px 20px 10px 20px !important;border-bottom:2px solid #333 !important;display:block !important;cursor:default !important;margin:0 !important;box-sizing:border-box !important}
 .yuzan-menu-tag-list{display:flex !important;flex-wrap:wrap !important;padding:20px 20px !important;gap:10px !important;background-color:#1a1a1a !important}
 .yuzan-menu-tag-list a.yuzan-cloned-tag{background-color:#333 !important;color:#fff !important;padding:8px 18px !important;border-radius:30px !important;font-size:.85rem !important;margin:0 !important;border:none !important;display:inline-block !important;text-decoration:none !important}
 .yuzan-menu-tag-list a.yuzan-cloned-tag::before{content:"\f02b";font-family:"FontAwesome";margin-right:6px;font-size:.8rem;opacity:.7}
@@ -215,4 +216,4 @@ span.yuzan-menu-header{font-family:'Arial Black','Impact',sans-serif !important;
 .speech-content{padding:15px !important;font-size:.95rem !important}
 .carousel{padding:10px 0 30px 0 !important;margin-bottom:30px !important}
 }
-.grecaptcha-badge { visibility: hidden; }
+.grecaptcha-badge{visibility:hidden}
