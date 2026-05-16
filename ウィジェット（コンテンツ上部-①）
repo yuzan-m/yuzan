@@ -5,64 +5,15 @@
 <hr class="yuzan-divider">
 
 <h2 class="yuzan-content-title">TROUT FISHING</h2>
-<style>
-.trout-category-cards{display:flex;flex-direction:column;background-color:#1a1a1a;border:1px solid #333;border-radius:6px;overflow:hidden;margin-bottom:20px;}
-.trout-card{display:flex;align-items:center;background:#1a1a1a;text-decoration:none;transition:background-color 0.3s ease;margin-bottom:12px;position:relative;}
-.trout-card:last-child{margin-bottom:0;}
-.trout-card:not(:last-child)::after{content:"";position:absolute;bottom:-6px;left:0;width:100%;height:1px;background-color:#444;}
-.trout-card:hover{background-color:#252525;}
-.trout-card-img{width:30%;aspect-ratio:1/1;background:#000;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
-.trout-card-img img{width:100%;height:100% !important;object-fit:cover;transition:opacity 0.4s ease;margin:0;display:block;opacity:0.9;}
-.trout-card:hover .trout-card-img img{opacity:0.7;}
-.trout-card-text{width:70%;padding:18px 20px;display:flex;flex-direction:column;justify-content:center;}
-.trout-card-title{font-size:1.15rem;font-weight:bold;color:#ffffff;margin-bottom:6px;font-family:'Arial Black','Impact',sans-serif;letter-spacing:1px;}
-.trout-card-desc{font-size:0.85rem;color:#aaaaaa;line-height:1.4;}
-@media(max-width:600px){.trout-card-img{width:35%;}.trout-card-text{width:65%;padding:12px 15px;}.trout-card-title{font-size:1rem;}.trout-card-desc{font-size:0.75rem;}}
-</style>
+<style>.trout-category-cards{display:flex;flex-direction:column;background-color:#1a1a1a;border:1px solid #333;border-radius:6px;overflow:hidden;margin-bottom:20px}.trout-card{display:flex;align-items:center;background:#1a1a1a;text-decoration:none;transition:background-color .3s ease;margin-bottom:12px;position:relative}.trout-card:last-child{margin-bottom:0}.trout-card:not(:last-child)::after{content:"";position:absolute;bottom:-6px;left:0;width:100%;height:1px;background-color:#444}.trout-card:hover{background-color:#252525}.trout-card-img{width:25%;aspect-ratio:1/1;background:#000;flex-shrink:0;display:flex;align-items:center;justify-content:center}.trout-card-img img{width:100%;height:100% !important;object-fit:cover;transition:opacity .4s ease;margin:0;display:block;opacity:.9}.trout-card:hover .trout-card-img img{opacity:.7}.trout-card-text{width:75%;padding:15px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}.trout-card-title{font-size:1.1rem;font-weight:bold;color:#fff;margin-bottom:4px;font-family:'Arial Black','Impact',sans-serif;letter-spacing:1px;line-height:1.2}.trout-card-desc{font-size:.8rem;color:#aaa;line-height:1.4}@media(max-width:600px){.trout-card-img{width:28%}.trout-card-text{width:72%;padding:10px 12px}.trout-card-title{font-size:1rem;margin-bottom:2px}.trout-card-desc{font-size:.75rem}}</style>
 
 <div class="trout-category-cards">
-  <a href="/category/fishing/beginner/" class="trout-card">
-    <div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-beginner_1.png" alt="初心者ガイド" decoding="async"></div>
-    <div class="trout-card-text">
-      <span class="trout-card-title">初心者ガイド</span>
-      <span class="trout-card-desc">ネイティブトラウトやエリアトラウトを始めるための基礎知識</span>
-    </div>
-  </a>
-  <a href="/category/fishing/tackle/" class="trout-card">
-    <div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-tackle_1.png" alt="タックル・装備" decoding="async"></div>
-    <div class="trout-card-text">
-      <span class="trout-card-title">タックル・装備</span>
-      <span class="trout-card-desc">こだわりのロッド・リール・ウェーダー・ブーツ等のレビューや紹介</span>
-    </div>
-  </a>
-  <a href="/category/fishing/lure/" class="trout-card">
-    <div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-lure_1.png" alt="ルアー・釣り方" decoding="async"></div>
-    <div class="trout-card-text">
-      <span class="trout-card-title">ルアー・釣り方</span>
-      <span class="trout-card-desc">ミノーを中心としたルアー解説とアプローチ手法</span>
-    </div>
-  </a>
-  <a href="/category/fishing/safety/" class="trout-card">
-    <div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-safety_1.png" alt="安全対策" decoding="async"></div>
-    <div class="trout-card-text">
-      <span class="trout-card-title">安全対策</span>
-      <span class="trout-card-desc">熊対策や遭難防止など、山へ入るための必須知識</span>
-    </div>
-  </a>
-  <a href="/category/fishing/journal/" class="trout-card">
-    <div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-journal_1.png" alt="釣行記" decoding="async"></div>
-    <div class="trout-card-text">
-      <span class="trout-card-title">釣行記</span>
-      <span class="trout-card-desc">遊山メンバーのリアルな釣りの記録</span>
-    </div>
-  </a>
-  <a href="/category/fishing/food/" class="trout-card">
-    <div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-food_1.png" alt="渓流飯" decoding="async"></div>
-    <div class="trout-card-text">
-      <span class="trout-card-title">渓流飯</span>
-      <span class="trout-card-desc">源流で楽しむ無骨で最高なキャンプ飯</span>
-    </div>
-  </a>
+<a href="/category/fishing/beginner/" class="trout-card"><div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-beginner_500.png" alt="初心者ガイド" decoding="async"></div><div class="trout-card-text"><span class="trout-card-title">初心者ガイド</span><span class="trout-card-desc">ネイティブトラウトやエリアトラウトを始めるための基礎知識</span></div></a>
+<a href="/category/fishing/tackle/" class="trout-card"><div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-tackle_500.png" alt="タックル・装備" decoding="async"></div><div class="trout-card-text"><span class="trout-card-title">タックル・装備</span><span class="trout-card-desc">こだわりのロッド・リール・ウェーダー・ブーツ等のレビューや紹介</span></div></a>
+<a href="/category/fishing/lure/" class="trout-card"><div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-lure_500.png" alt="ルアー・釣り方" decoding="async"></div><div class="trout-card-text"><span class="trout-card-title">ルアー・釣り方</span><span class="trout-card-desc">ミノーを中心としたルアー解説とアプローチ手法</span></div></a>
+<a href="/category/fishing/safety/" class="trout-card"><div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-safety_500.png" alt="安全対策" decoding="async"></div><div class="trout-card-text"><span class="trout-card-title">安全対策</span><span class="trout-card-desc">熊対策や遭難防止など、山へ入るための必須知識</span></div></a>
+<a href="/category/fishing/journal/" class="trout-card"><div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-journal_500.png" alt="釣行記" decoding="async"></div><div class="trout-card-text"><span class="trout-card-title">釣行記</span><span class="trout-card-desc">遊山メンバーのリアルな釣りの記録</span></div></a>
+<a href="/category/fishing/food/" class="trout-card"><div class="trout-card-img"><img src="https://yuzan-life.com/wp-content/uploads/2026/05/native-trout-food_500.png" alt="渓流飯" decoding="async"></div><div class="trout-card-text"><span class="trout-card-title">渓流飯</span><span class="trout-card-desc">源流で楽しむ無骨で最高なキャンプ飯</span></div></a>
 </div>
 
 <hr class="yuzan-divider">
